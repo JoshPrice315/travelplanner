@@ -15,8 +15,10 @@ var getLocation = function() {
 
     var skyScannerSearch = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/NYC/2020-04-25?inboundpartialdate=2020-04-30"
 
+    var hotelSearchUrl = "http://engine.hotellook.com/api/v2/lookup.json?query=london&lang=ru&lookFor=both&limit=1&token=065c3b8c9e2bb6252bf699eacc8fd32c"
 
-    fetch(attractionSearchURL
+
+    fetch(hotelSearchUrl
     //     {
 	// "method": "GET",
 	// "headers": {
