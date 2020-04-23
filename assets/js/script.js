@@ -9,19 +9,27 @@ var getLocation = function() {
 
     var  oAuthToken = "https://test.api.amadeus.com/v1/security/oauth2/token"
 
+    var testURL = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/USA/USD/en-US/"
 
-    fetch(oAuthToken, 
-        {
-        method : "POST",
-        body : {
-            grant_type : "client_credentials",
-            client_id : "cFoJTq5iwLIpiwBQvmWjpgsHY2ON3CAy",
-            client_secret: "QBxVw4TBoEbP2LfL"
-        },
-        headers: { 'Content-type': 'application/x-www-form-urlencoded' }
+
+    fetch("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/NYC/2020-04-25?inboundpartialdate=2020-04-30", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+		"x-rapidapi-key": "5748a536b5mshfe885049fe60f17p14f38fjsn322ccf2c0aa7"
+	}
+})
+    //     {
+    //     method : "POST",
+    //     body : {
+    //         grant_type : "client_credentials",
+    //         client_id : "cFoJTq5iwLIpiwBQvmWjpgsHY2ON3CAy",
+    //         client_secret: "QBxVw4TBoEbP2LfL"
+    //     },
+    //     headers: { 'Content-type': 'application/x-www-form-urlencoded' }
         
-    }
-    )
+    // }
+    
     .then(function(response) {
         if (response.ok) {
 
@@ -45,7 +53,7 @@ var getLocation = function() {
 
     })
     .catch(function(error) {
-        alert("Unable to connect to Amadeus")
+        alert("Unable to connect to the Server")
     })
 }
 
