@@ -45,7 +45,7 @@ var toLocationInputIdEl = document.querySelector("#to-location-input-id");
 
 //this function passes the input data to the function 
 var formSubmitHandler = function(event) {
-    event.preventDefault();
+    // event.preventDefault();
     startDate = startdatepickerinputEl.value.trim();
     endDate = enddatepickerinputEl.value.trim();
     fromLocation = fromLocationInputIdEl.value.trim();
@@ -266,6 +266,7 @@ var searchAttractionData = function() {
 
 
 // getLocation();
+// formSubmitHandler();
 // searchAttractionData();
 // getFlightData();
 // getHotelData();
