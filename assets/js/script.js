@@ -60,15 +60,16 @@ $(document).ready(function(){
 var getFlightData = function() {
 
     // var flightSearchUrl = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/USA/USD/en-US/"
-    var skyScannerSearchUrl = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/NYC/2020-04-25?inboundpartialdate=2020-04-30"
+    var skyScannerSearchUrl = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/NYC/2020-04-30?inboundpartialdate=2020-05-15"
+    var skyScannerSearchUrl2 = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/LON/2020-05-01?inboundpartialdate=2020-05-15"
 
-    fetch(skyScannerSearchUrl, {
-        	"method": "GET",
-        	"headers": {
-        		"x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
-        		"x-rapidapi-key": "5748a536b5mshfe885049fe60f17p14f38fjsn322ccf2c0aa7"
-        	}
-        })
+    fetch(skyScannerSearchUrl2, {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+		"x-rapidapi-key": "5748a536b5mshfe885049fe60f17p14f38fjsn322ccf2c0aa7"
+	}
+})
     .then(function(response) {
         if (response.ok) {
             response.json().then(function(jsonResponse) {
@@ -90,7 +91,7 @@ var getFlightData = function() {
 var getHotelData = function() {
     
     var hotelSearchUrl = "http://engine.hotellook.com/api/v2/lookup.json?query=london&lang=ru&lookFor=both&limit=1&token=065c3b8c9e2bb6252bf699eacc8fd32c";
-    var hotelSearchUrl2 = "http://engine.hotellook.com/api/v2/cache.json?location=Atlanta&checkIn=2020-05-01&checkOut=2020-05-15&currency=usd&limit=5&token=065c3b8c9e2bb6252bf699eacc8fd32c";
+    var hotelSearchUrl2 = "http://engine.hotellook.com/api/v2/cache.json?location=NYC&checkIn=2020-05-02&checkOut=2020-05-15&currency=usd&limit=3&token=065c3b8c9e2bb6252bf699eacc8fd32c";
 
     fetch(hotelSearchUrl2)
     .then(function(response) {
@@ -116,7 +117,7 @@ var getHotelData = function() {
 // function to get attraction data
 
 var searchAttractionData = function() {
-    var attractionSearchURL = "https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=YgasmQcKMenqrHdAGUHQgz3JdB9tVnSi"
+    var attractionSearchURL = "https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=YgasmQcKMenqrHdAGUHQgz3JdB9tVnSi&keyword=NewYork"
 
     fetch(attractionSearchURL)
     .then(function(response) {
