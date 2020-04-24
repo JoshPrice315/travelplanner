@@ -32,8 +32,6 @@ $(document).ready(function(){
 var userFormEl = document.querySelector("#valueinputform");
 var valueinputformEl = document.querySelector("#valueinputform");
 var submitButtonEl = document.querySelector("#search-button");
-// var startdateinputformEl = document.querySelector("#startdateinputform");
-// var enddateinputformEl = document.querySelector("#enddateinputform");
 var startdatepickerinputEl = document.querySelector("#datepicker-start-id");
 var enddatepickerinputEl = document.querySelector("#datepicker-end-id");
 var fromLocationInputIdEl = document.querySelector("#from-location-input-id");
@@ -49,9 +47,15 @@ var formSubmitHandler = function(event) {
     
 
     startDate = startdatepickerinputEl.value.trim();
-    console.log(startDate);
+    console.log("startDate " + startDate);
+    var formattedStartDate = moment(startDate).format('YYYY-MM-DD');
+    console.log("formattedStartDate " + formattedStartDate);
+
     endDate = enddatepickerinputEl.value.trim();
     console.log(endDate);
+    var formattedEndDate = moment(endDate).format('YYYY-MM-DD');
+    console.log("formattedEndDate " + formattedEndDate);
+
     fromLocation = fromLocationInputIdEl.value.trim();
     console.log(fromLocation);
     toLocation = toLocationInputIdEl.value.trim();
@@ -61,6 +65,7 @@ var formSubmitHandler = function(event) {
     if (startDate && endDate && fromLocation && toLocation) {
         //to get the cities with the city name
         getFlightData();
+        getHotelData();
       
 
         // //push selected city name to the cityArray array
@@ -71,7 +76,7 @@ var formSubmitHandler = function(event) {
 
         //to clear the input form field after submit
         startdatepickerinputEl.value = "";
-        enddateinputformEl.value = "",
+        enddatepickerinputEl.value = "",
         fromLocationInputIdEl.value = "";
         toLocationInputIdEl.value = "";
 
@@ -211,24 +216,6 @@ var searchAttractionData = function() {
     })
 }
 
-// var getYelpData = function() {
-//     var yelpBusinessURL = "https://api.yelp.com/v3/businesses/search"
-
-//     fetch(yelpBusinessURL)
-//     .then(function(response) {
-//         if(response.ok) {
-//             response.json().then(function(yelpDataResponse) {
-//                 console.log(yelpDataResponse);
-//             })
-//         }
-//         else {
-//             alert("Error: " + response.statusText);
-//         }
-//     })
-//     .catch(function(error) {
-//         alert("Unable to connect to Yelp!");
-//     })
-// }
 
 
 
@@ -238,48 +225,17 @@ var searchAttractionData = function() {
 
 
 
-// var getLocation = function() {
-//     var apiLocationUrl = "https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=SYD&destinationLocationCode=BKK&departureDate=2020-08-01&returnDate=2020-08-05&adults=2&includedAirlineCodes=TG&max=3";
-
-//     // https://test.api.amadeus.com/v2/reference-data/urls/checkin-links?airlineCode=1X" \
-//     //   -H "Authorization: Bearer CpjU0sEenniHCgPDrndzOSWFk5mN
-
-//     var  oAuthToken = "https://test.api.amadeus.com/v1/security/oauth2/token"
-
-
-//     fetch(oAuthToken, {
-//         method : "POST",
-//         body : {
-//             grant_type : "client_credentials",
-//             client_id : "cFoJTq5iwLIpiwBQvmWjpgsHY2ON3CAy",
-//             client_secret: "QBxVw4TBoEbP2LfL"
-//         },
-//         headers: { 'Content-type': 'application/x-www-form-urlencoded' }
-        
-//     })
-//     .then(function(response) {
-//         if (response.ok) {
-//             response.json().then(function(jsonResponse) {
-//                 console.log(jsonResponse);
-//             })
-//         }
-//         else {
-//             alert("Error: " + response.statusText);
-//         }
-//     })
-//     .catch(function(error) {
-//         alert("Unable to connect to the Server")
-//     })
-// }
 
 
 
 
-// getLocation();
-// formSubmitHandler();
+
+
+
+
 // searchAttractionData();
 // getFlightData();
 // getHotelData();
 submitButtonEl.addEventListener("click", formSubmitHandler);
-// getYelpData();
+
 
