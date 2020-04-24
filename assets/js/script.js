@@ -1,4 +1,22 @@
+// Calender Start 
+$(document).ready(function(){
+    $('.datepicker-start').datepicker();
+  });
 
+// Calender End   
+$(document).ready(function(){
+    $('.datepicker-end').datepicker();
+  });
+
+// Destination Input 
+$(document).ready(function() {
+    $('.input-field').characterCounter();
+  });
+
+// Mobile Navi 
+$(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
 
 
 // var getLocation = function() {
