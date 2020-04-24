@@ -19,39 +19,39 @@ $(document).ready(function(){
   });
 
 
-// var getLocation = function() {
-//     var apiLocationUrl = "https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=SYD&destinationLocationCode=BKK&departureDate=2020-08-01&returnDate=2020-08-05&adults=2&includedAirlineCodes=TG&max=3";
+var getLocation = function() {
+    var apiLocationUrl = "https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=SYD&destinationLocationCode=BKK&departureDate=2020-08-01&returnDate=2020-08-05&adults=2&includedAirlineCodes=TG&max=3";
 
-//     // https://test.api.amadeus.com/v2/reference-data/urls/checkin-links?airlineCode=1X" \
-//     //   -H "Authorization: Bearer CpjU0sEenniHCgPDrndzOSWFk5mN
+    // https://test.api.amadeus.com/v2/reference-data/urls/checkin-links?airlineCode=1X" \
+    //   -H "Authorization: Bearer CpjU0sEenniHCgPDrndzOSWFk5mN
 
-//     var  oAuthToken = "https://test.api.amadeus.com/v1/security/oauth2/token"
+    var  oAuthToken = "https://test.api.amadeus.com/v1/security/oauth2/token"
 
 
-//     fetch(oAuthToken, {
-//         method : "POST",
-//         body : {
-//             grant_type : "client_credentials",
-//             client_id : "cFoJTq5iwLIpiwBQvmWjpgsHY2ON3CAy",
-//             client_secret: "QBxVw4TBoEbP2LfL"
-//         },
-//         headers: { 'Content-type': 'application/x-www-form-urlencoded' }
+    fetch(oAuthToken, {
+        method : "POST",
+        body : {
+            grant_type : "client_credentials",
+            client_id : "cFoJTq5iwLIpiwBQvmWjpgsHY2ON3CAy",
+            client_secret: "QBxVw4TBoEbP2LfL"
+        },
+        headers: { 'Content-type': 'application/x-www-form-urlencoded' }
         
-//     })
-//     .then(function(response) {
-//         if (response.ok) {
-//             response.json().then(function(jsonResponse) {
-//                 console.log(jsonResponse);
-//             })
-//         }
-//         else {
-//             alert("Error: " + response.statusText);
-//         }
-//     })
-//     .catch(function(error) {
-//         alert("Unable to connect to the Server")
-//     })
-// }
+    })
+    .then(function(response) {
+        if (response.ok) {
+            response.json().then(function(jsonResponse) {
+                console.log(jsonResponse);
+            })
+        }
+        else {
+            alert("Error: " + response.statusText);
+        }
+    })
+    .catch(function(error) {
+        alert("Unable to connect to the Server")
+    })
+}
 
 
 
@@ -61,7 +61,7 @@ var getFlightData = function() {
 
     // var flightSearchUrl = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/USA/USD/en-US/"
     var skyScannerSearchUrl = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/NYC/2020-04-30?inboundpartialdate=2020-05-15"
-    var skyScannerSearchUrl2 = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/LON/2020-05-01?inboundpartialdate=2020-05-15"
+    var skyScannerSearchUrl2 = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/NYC/2020-05-01?inboundpartialdate=2020-05-15"
 
     fetch(skyScannerSearchUrl2, {
 	"method": "GET",
@@ -74,6 +74,22 @@ var getFlightData = function() {
         if (response.ok) {
             response.json().then(function(jsonResponse) {
             console.log(jsonResponse);
+            var carrierID = jsonResponse.Quotes[0].OutboundLeg.CarrierIds[0];
+            console.log(carrierID);
+
+            var carrierName;
+
+            for (var i = 0; i < jsonResponse.Carriers.length; i++) {
+                var carriers = jsonResponse.Carriers[i]
+                console.log(carriers);
+                if (carrierID === carriers.CarrierId) {
+                    carrierName = carriers.Name;
+                    console.log(carrierName);
+                }
+                
+            }
+
+
             })   
         }
         else {
