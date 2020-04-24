@@ -19,6 +19,7 @@
             <li><a href="#flights">Flights</a></li>
             <li><a href="#hotels">Hotels</a></li>
             <li><a href="#events">Events</a></li>
+            <li><a class="waves-effect waves-light btn #424242 grey darken-3">My Trip</a></li>
         </ul>
     </div>
     
@@ -27,52 +28,89 @@
             <li><a href="#flights">Flights</a></li>
             <li><a href="#hotels">Hotels</a></li>
             <li><a href="#events">Events</a></li>
+            <li><a class="waves-effect waves-light btn #424242 grey darken-3">My Trip</a></li>
       </ul>
  </nav>
-
-    <!-- Start Date / End Date Input -->
+    
 <body>
-<div class="container"> 
+
+<!-- Inputs -->
+<div class="container-fluid"> 
+    <!-- Start Date / End Date Input -->
     <div class="row">
-        <form class="col s6">
+        <form class="col s2">
             <div class="dates">
             <label for="datepicker-start">Start Date</label>
             <input type="text" class="datepicker-start">
             </div>
         </form>
  
-        <form class="col s6">
+        <form class="col s2">
             <div class="dates">
             <label for="datepicker-end">End Date</label>
             <input type="text" class="datepicker-end">
             </div>
         </form>
-    </div>
-
-
-
+    
     <!-- Destination Input-->
-    <div class="row">
-        <div class="input-field col s6">
+        <div class="input-field col s2">
             <i class="material-icons prefix">add_location</i>
             <input id="icon_add_location" type="text" class="current">
             <label for="icon_add_location">Your Current Location</label>
         </div>
 
-        <div class="input-field col s6">
+        <div class="input-field col s2">
             <i class="material-icons prefix">add_location</i>
               <input id="icon_add_location" type="text" class="destination">
               <label for="icon_add_location">Your Destination Location</label>
         </div>
+
+        <div class="input-field col s2">
+            <i class="material-icons prefix">group</i>
+              <input id="icon_group" type="text" class="destination">
+              <label for="icon_group">Enter Party Size</label>
+        </div>
+
+        <div class="input-field col s2">
+        <button class="btn waves-effect waves-light #424242 grey darken-3" type="submit" name="action">Submit
+            <i class="material-icons right">done</i>
+          </button>
+        </div>
     </div>
 </div>
+
+<!-- Body Cards --> 
+<div class="container-fluid"> 
+    <!-- Flight Card -->
+    <div class="row" id="#flights">
+        <ul class="collection with-header">
+            <li class="collection-header"><h4 class="hotel-title"><i class="material-icons left">flight</i>Flights</h4></li>
+            <li class="collection-item flight-1"><div>Flight Info #1<a href="#!" class="secondary-content"><i class="material-icons">add</i></a></div></li>
+            <li class="collection-item flight-2"><div>Flight Info #2<a href="#!" class="secondary-content"><i class="material-icons">add</i></a></div></li>
+            <li class="collection-item flight-3"><div>Flight Info #3<a href="#!" class="secondary-content"><i class="material-icons">add</i></a></div></li>
+            <li class="collection-item flight-4"><div>Flight Info #4<a href="#!" class="secondary-content"><i class="material-icons">add</i></a></div></li>
+        </ul>
+    <div>
+
+    <!-- Hotel Card -->
+    <div class="row" id="#hotels">
+        <ul class="collection with-header">
+            <li class="collection-header"><h4 class="flight-title"><i class="material-icons left">hotel</i>Hotels</h2>
+            <li class="collection-item flight-1"><div>Flight Info #1<a href="#!" class="secondary-content"><i class="material-icons">add</i></a></div></li>
+            <li class="collection-item flight-2"><div>Flight Info #2<a href="#!" class="secondary-content"><i class="material-icons">add</i></a></div></li>
+            <li class="collection-item flight-3"><div>Flight Info #3<a href="#!" class="secondary-content"><i class="material-icons">add</i></a></div></li>
+            <li class="collection-item flight-4"><div>Flight Info #4<a href="#!" class="secondary-content"><i class="material-icons">add</i></a></div></li>
+        </ul>
+    <div>
+<div>
+
 
 
     <!-- Footer
     <footer class="page-footer #01579b light-blue darken-4">
         <div class="footer-copyright">
           <div class="container">
-              © 2020 Application by Izabela Petrovicova, Joshua Price, & Nicole Wallace 
+              © 2020 Powered By / Created by Izabela Petrovicova, Joshua Price, & Nicole Wallace 
           </div>
         </div>
     </footer> -->
