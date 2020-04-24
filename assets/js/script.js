@@ -8,10 +8,16 @@ $(document).ready(function(){
     $('.datepicker-end').datepicker();
   });
 
-// Destination Input 
+// From Input 
 $(document).ready(function() {
-    $('.input-field').characterCounter();
+    $('.from-location-input-id').characterCounter();
   });
+
+  // To Input 
+$(document).ready(function() {
+    $('.to-location-input-id').characterCounter();
+  });
+
 
 // Mobile Navi 
 $(document).ready(function(){
@@ -24,39 +30,49 @@ $('.carousel.carousel-slider').carousel({
   });
 
 
-var getLocation = function() {
-    var apiLocationUrl = "https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=SYD&destinationLocationCode=BKK&departureDate=2020-08-01&returnDate=2020-08-05&adults=2&includedAirlineCodes=TG&max=3";
+//global variables
 
-    // https://test.api.amadeus.com/v2/reference-data/urls/checkin-links?airlineCode=1X" \
-    //   -H "Authorization: Bearer CpjU0sEenniHCgPDrndzOSWFk5mN
+//input form elements
+var userFormEl = document.querySelector("#search-button");
+var startdateinputformEl = document.querySelector("#startdateinputform");
+var enddateinputformEl = document.querySelector("#enddateinputform");
+var startdatepickerinputEl = document.querySelector("#datepicker-start-id");
+var enddatepickerinputEl = document.querySelector("#datepicker-end-id");
+var fromLocationInputIdEl = document.querySelector("#from-location-input-id");
+var toLocationInputIdEl = document.querySelector("#to-location-input-id");
 
-    var  oAuthToken = "https://test.api.amadeus.com/v1/security/oauth2/token"
 
 
-    fetch(oAuthToken, {
-        method : "POST",
-        body : {
-            grant_type : "client_credentials",
-            client_id : "cFoJTq5iwLIpiwBQvmWjpgsHY2ON3CAy",
-            client_secret: "QBxVw4TBoEbP2LfL"
-        },
-        headers: { 'Content-type': 'application/x-www-form-urlencoded' }
+//this function passes the input data to the function 
+var formSubmitHandler = function(event) {
+    event.preventDefault();
+    startDate = startdatepickerinputEl.value.trim();
+    endDate = enddatepickerinputEl.value.trim();
+    fromLocation = fromLocationInputIdEl.value.trim();
+    toLocation = toLocationInputIdEl.value.trim();
+    console.log(startDate, endDate, fromLocation, toLocation);
+
+    if (startDate) {
+        //to get the cities with the city name
+        getFlightData();
+      
+
+        //push selected city name to the cityArray array
+        startDateArray.push(startDate);
+        //set the startDate to the localStorage
+        localStorage.setItem("Start Date", JSON.stringify(startDateArray));
         
-    })
-    .then(function(response) {
-        if (response.ok) {
-            response.json().then(function(jsonResponse) {
-                console.log(jsonResponse);
-            })
-        }
-        else {
-            alert("Error: " + response.statusText);
-        }
-    })
-    .catch(function(error) {
-        alert("Unable to connect to the Server")
-    })
+
+        //to clear the input form field after submit
+        startdatepickerinputEl.value = "";
+
+    } else {
+        alert("Please enter a Start Date")
+    }
+    console.log(event);
 }
+
+
 
 
 
@@ -66,7 +82,7 @@ var getFlightData = function() {
 
     // var flightSearchUrl = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/USA/USD/en-US/"
     var skyScannerSearchUrl = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/NYC/2020-04-30?inboundpartialdate=2020-05-15"
-    var skyScannerSearchUrl2 = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/SEA/2020-05-01?inboundpartialdate=2020-05-15"
+    var skyScannerSearchUrl2 = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/NYC/2020-05-01?inboundpartialdate=2020-05-15"
     // var skyScannerSearchUrl3 = "https://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/{country}/{currency}/{locale}/{originPlace}/{destinationPlace}/{outboundPartialDate}/{inboundPartialDate}?apiKey={apiKey}""
 
     fetch(skyScannerSearchUrl2, {
@@ -205,9 +221,54 @@ var searchAttractionData = function() {
 // }
 
 
+
+
+
+
+
+
+
+// var getLocation = function() {
+//     var apiLocationUrl = "https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=SYD&destinationLocationCode=BKK&departureDate=2020-08-01&returnDate=2020-08-05&adults=2&includedAirlineCodes=TG&max=3";
+
+//     // https://test.api.amadeus.com/v2/reference-data/urls/checkin-links?airlineCode=1X" \
+//     //   -H "Authorization: Bearer CpjU0sEenniHCgPDrndzOSWFk5mN
+
+//     var  oAuthToken = "https://test.api.amadeus.com/v1/security/oauth2/token"
+
+
+//     fetch(oAuthToken, {
+//         method : "POST",
+//         body : {
+//             grant_type : "client_credentials",
+//             client_id : "cFoJTq5iwLIpiwBQvmWjpgsHY2ON3CAy",
+//             client_secret: "QBxVw4TBoEbP2LfL"
+//         },
+//         headers: { 'Content-type': 'application/x-www-form-urlencoded' }
+        
+//     })
+//     .then(function(response) {
+//         if (response.ok) {
+//             response.json().then(function(jsonResponse) {
+//                 console.log(jsonResponse);
+//             })
+//         }
+//         else {
+//             alert("Error: " + response.statusText);
+//         }
+//     })
+//     .catch(function(error) {
+//         alert("Unable to connect to the Server")
+//     })
+// }
+
+
+
+
 // getLocation();
-searchAttractionData();
-getFlightData();
-getHotelData();
+// searchAttractionData();
+// getFlightData();
+// getHotelData();
+userFormEl.addEventListener("submit", formSubmitHandler);
 // getYelpData();
 
