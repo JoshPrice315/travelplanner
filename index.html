@@ -39,45 +39,46 @@
 <div class="container-fluid"> 
     <!-- Start Date / End Date Input -->
     <div class="row" id="valueinputform">
-        <form class="col s2" id="startdateinputform">
+
+        <!-- <div class="col-3">
+            <form id="inputform">
+              <h3>Search for a City:</h3>
+              <input class="form-input form-label" type="text" placeholder="Search.." name="city" id="cityinput">
+              <button type="submit" class="btn fa fa-search" id="searchbtnid"></button>
+            </form>
+          </div> -->
+
+        <form class="col s2" >
             <div class="dates">
             <label for="datepicker-start">Start Date</label>
             <input type="text" class="datepicker-start" id="datepicker-start-id">
             </div>
-        </form>
- 
+        </form> 
+
         <form class="col s2" id="enddateinputform">
             <div class="dates">
             <label for="datepicker-end">End Date</label>
             <input type="text" class="datepicker-end" id="datepicker-end-id">
             </div>
         </form>
-    
-    <!-- Destination Input-->
         <div class="input-field col s2">
             <i class="material-icons prefix">add_location</i>
-            <input id="from-location-input-id" type="text" class="current">
+            <input type="text" class="current" id="from-location-input-id">
             <label for="icon_from_location">From?</label>
-        </div>
+        </div>   
 
         <div class="input-field col s2">
             <i class="material-icons prefix">add_location</i>
-              <input id="to-location-input-id" type="text" class="destination">
-              <label for="icon_to_location">To?</label>
+            <input  type="text" class="destination" id="to-location-input-id">
+            <label for="icon_to_location">To?</label>
         </div>
-
         <div class="input-field col s2">
-            <i class="material-icons prefix">group</i>
-              <input id="icon_group" type="text" class="destination">
-              <label for="icon_group">Passengers?</label>
-        </div>
+                <button class="btn waves-effect waves-light #424242 grey darken-3" type="submit" id="search-button">Search
+                <i class="material-icons right">done</i>
+              </button>
+        </div>    
 
-        <div class="input-field col s2">
-        <button class="btn waves-effect waves-light #424242 grey darken-3" type="submit" id="search-button">Search
 
-            <i class="material-icons right">done</i>
-          </button>
-        </div>
     </div>
 </div>
 

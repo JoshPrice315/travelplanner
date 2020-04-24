@@ -33,43 +33,57 @@ $('.carousel.carousel-slider').carousel({
 //global variables
 
 //input form elements
+
+
 var userFormEl = document.querySelector("#search-button");
-var startdateinputformEl = document.querySelector("#startdateinputform");
-var enddateinputformEl = document.querySelector("#enddateinputform");
+var valueinputformEl = document.querySelector("#valueinputform");
+// var startdateinputformEl = document.querySelector("#startdateinputform");
+// var enddateinputformEl = document.querySelector("#enddateinputform");
 var startdatepickerinputEl = document.querySelector("#datepicker-start-id");
 var enddatepickerinputEl = document.querySelector("#datepicker-end-id");
 var fromLocationInputIdEl = document.querySelector("#from-location-input-id");
 var toLocationInputIdEl = document.querySelector("#to-location-input-id");
 
 
+var startDateArray = [];
+
 
 //this function passes the input data to the function 
 var formSubmitHandler = function(event) {
-    // event.preventDefault();
-    startDate = startdatepickerinputEl.value.trim();
-    endDate = enddatepickerinputEl.value.trim();
-    fromLocation = fromLocationInputIdEl.value.trim();
-    toLocation = toLocationInputIdEl.value.trim();
-    console.log(startDate, endDate, fromLocation, toLocation);
+    event.preventDefault();
+    
 
-    if (startDate) {
+    var startDate = startdatepickerinputEl.value.trim();
+    console.log(startDate);
+    var endDate = enddatepickerinputEl.value.trim();
+    console.log(endDate);
+    var fromLocation = fromLocationInputIdEl.value.trim();
+    console.log(fromLocation);
+    var toLocation = toLocationInputIdEl.value.trim();
+    console.log(toLocation);
+
+
+    if (startDate, endDate, fromLocation, toLocation) {
         //to get the cities with the city name
-        getFlightData();
+        // getFlightData();
       
 
         //push selected city name to the cityArray array
-        startDateArray.push(startDate);
+        startDateArray.push(startDate, endDate, fromLocation, toLocation);
         //set the startDate to the localStorage
         localStorage.setItem("Start Date", JSON.stringify(startDateArray));
         
 
         //to clear the input form field after submit
-        startdatepickerinputEl.value = "";
+        // startdatepickerinputEl.value = "";
+        // enddateinputformEl.value = "",
+        // fromLocationInputIdEl.value = "";
+        // toLocationInputIdEl.value = "";
 
     } else {
         alert("Please enter a Start Date")
     }
-    console.log(event);
+    // console.log(event);
 }
 
 
