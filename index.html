@@ -3,9 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Travel Planner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
+    <!-- Navigation -->
+<nav>
+    <div class="nav-wrapper #01579b light-blue darken-4">
+        <a href="#!" class="brand-logo">Travel Planner</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#flights">Flights</a></li>
+            <li><a href="#hotels">Hotels</a></li>
+            <li><a href="#events">Events</a></li>
+        </ul>
+    </div>
     
+      <!-- Mobile Nav -->
+      <ul class="sidenav" id="mobile-demo">
+            <li><a href="#flights">Flights</a></li>
+            <li><a href="#hotels">Hotels</a></li>
+            <li><a href="#events">Events</a></li>
+      </ul>
+ </nav>
+
+    <!-- Start Date / End Date Input -->
+<body>
+<div class="container"> 
+    <div class="row">
+        <form class="col s6">
+            <div class="dates">
+            <label for="datepicker-start">Start Date</label>
+            <input type="text" class="datepicker-start">
+            </div>
+        </form>
+ 
+        <form class="col s6">
+            <div class="dates">
+            <label for="datepicker-end">End Date</label>
+            <input type="text" class="datepicker-end">
+            </div>
+        </form>
+    </div>
+
+
+
+    <!-- Destination Input-->
+    <div class="row">
+        <div class="input-field col s6">
+            <i class="material-icons prefix">add_location</i>
+            <input id="icon_add_location" type="text" class="current">
+            <label for="icon_add_location">Your Current Location</label>
+        </div>
+
+        <div class="input-field col s6">
+            <i class="material-icons prefix">add_location</i>
+              <input id="icon_add_location" type="text" class="destination">
+              <label for="icon_add_location">Your Destination Location</label>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Footer
+    <footer class="page-footer #01579b light-blue darken-4">
+        <div class="footer-copyright">
+          <div class="container">
+              © 2020 Application by Izabela Petrovicova, Joshua Price, & Nicole Wallace 
+          </div>
+        </div>
+    </footer> -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
