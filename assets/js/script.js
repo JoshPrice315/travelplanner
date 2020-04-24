@@ -24,39 +24,50 @@ $('.carousel.carousel-slider').carousel({
   });
 
 
-var getLocation = function() {
-    var apiLocationUrl = "https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=SYD&destinationLocationCode=BKK&departureDate=2020-08-01&returnDate=2020-08-05&adults=2&includedAirlineCodes=TG&max=3";
+//global variables
 
-    // https://test.api.amadeus.com/v2/reference-data/urls/checkin-links?airlineCode=1X" \
-    //   -H "Authorization: Bearer CpjU0sEenniHCgPDrndzOSWFk5mN
+//input form elements
+var userFormEl = document.querySelector("#valueinputform");
+var startdateinputformEl = document.querySelector("#startdateinputform");
+var enddateinputformEl = document.querySelector("#enddateinputform");
+var startdatepickerinputEl = document.querySelector("#datepicker-start-id");
+var enddatepickerinputEl = document.querySelector("#datepicker-end-id");
+var fromLocationInputIdEl = document.querySelector("#from-location-input-id");
+var toLocationInputIdEl = document.querySelector("#to-location-input-id");
 
-    var  oAuthToken = "https://test.api.amadeus.com/v1/security/oauth2/token"
 
 
-    fetch(oAuthToken, {
-        method : "POST",
-        body : {
-            grant_type : "client_credentials",
-            client_id : "cFoJTq5iwLIpiwBQvmWjpgsHY2ON3CAy",
-            client_secret: "QBxVw4TBoEbP2LfL"
-        },
-        headers: { 'Content-type': 'application/x-www-form-urlencoded' }
+//this function passes the input data to the function 
+var formSubmitHandler = function(event) {
+    event.preventDefault();
+    startDate = startdatepickerinputEl.value.trim();
+    endDate = enddatepickerinputEl.value.trim();
+    fromLocation = fromLocationInputIdEl.value.trim();
+    toLocation = toLocationInputIdEl.value.trim();
+    console.log(startDate, endDate, fromLocation, toLocation);
+
+    if (startDate) {
+        // //to get the cities with the city name
+        // getWeatherPerCity(cityName);
+        // getFiveDayForecast(cityName);
         
-    })
-    .then(function(response) {
-        if (response.ok) {
-            response.json().then(function(jsonResponse) {
-                console.log(jsonResponse);
-            })
-        }
-        else {
-            alert("Error: " + response.statusText);
-        }
-    })
-    .catch(function(error) {
-        alert("Unable to connect to the Server")
-    })
+
+        // //push selected city name to the cityArray array
+        // cityArray.push(cityName);
+        // //set the city to the localStorage
+        // localStorage.setItem("city", JSON.stringify(cityArray));
+        
+
+        // //to clear the input form field after submit
+        // cityInputEl.value = "";
+
+    } else {
+        alert("Please enter a Start Date")
+    }
+    console.log(event);
 }
+
+
 
 
 
@@ -205,9 +216,54 @@ var searchAttractionData = function() {
 // }
 
 
+
+
+
+
+
+
+
+// var getLocation = function() {
+//     var apiLocationUrl = "https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=SYD&destinationLocationCode=BKK&departureDate=2020-08-01&returnDate=2020-08-05&adults=2&includedAirlineCodes=TG&max=3";
+
+//     // https://test.api.amadeus.com/v2/reference-data/urls/checkin-links?airlineCode=1X" \
+//     //   -H "Authorization: Bearer CpjU0sEenniHCgPDrndzOSWFk5mN
+
+//     var  oAuthToken = "https://test.api.amadeus.com/v1/security/oauth2/token"
+
+
+//     fetch(oAuthToken, {
+//         method : "POST",
+//         body : {
+//             grant_type : "client_credentials",
+//             client_id : "cFoJTq5iwLIpiwBQvmWjpgsHY2ON3CAy",
+//             client_secret: "QBxVw4TBoEbP2LfL"
+//         },
+//         headers: { 'Content-type': 'application/x-www-form-urlencoded' }
+        
+//     })
+//     .then(function(response) {
+//         if (response.ok) {
+//             response.json().then(function(jsonResponse) {
+//                 console.log(jsonResponse);
+//             })
+//         }
+//         else {
+//             alert("Error: " + response.statusText);
+//         }
+//     })
+//     .catch(function(error) {
+//         alert("Unable to connect to the Server")
+//     })
+// }
+
+
+
+
 // getLocation();
 searchAttractionData();
 getFlightData();
 getHotelData();
+userFormEl.addEventListener("submit", formSubmitHandler);
 // getYelpData();
 

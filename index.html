@@ -38,42 +38,43 @@
 <!-- Inputs -->
 <div class="container-fluid"> 
     <!-- Start Date / End Date Input -->
-    <div class="row">
-        <form class="col s2">
+    <div class="row" id="valueinputform">
+        <form class="col s2" id="startdateinputform">
             <div class="dates">
             <label for="datepicker-start">Start Date</label>
-            <input type="text" class="datepicker-start">
+            <input type="text" class="datepicker-start" id="datepicker-start-id">
             </div>
         </form>
  
-        <form class="col s2">
+        <form class="col s2" id="enddateinputform">
             <div class="dates">
             <label for="datepicker-end">End Date</label>
-            <input type="text" class="datepicker-end">
+            <input type="text" class="datepicker-end" id="datepicker-end-id">
             </div>
         </form>
     
     <!-- Destination Input-->
         <div class="input-field col s2">
             <i class="material-icons prefix">add_location</i>
-            <input id="icon_add_location" type="text" class="current">
-            <label for="icon_add_location">Your Current Location</label>
+            <input id="from-location-input-id" type="text" class="current">
+            <label for="icon_from_location">From?</label>
         </div>
 
         <div class="input-field col s2">
             <i class="material-icons prefix">add_location</i>
-              <input id="icon_add_location" type="text" class="destination">
-              <label for="icon_add_location">Your Destination Location</label>
+              <input id="to-location-input-id" type="text" class="destination">
+              <label for="icon_to_location">To?</label>
         </div>
 
         <div class="input-field col s2">
             <i class="material-icons prefix">group</i>
               <input id="icon_group" type="text" class="destination">
-              <label for="icon_group">Enter Party Size</label>
+              <label for="icon_group">Passengers?</label>
         </div>
 
         <div class="input-field col s2">
-        <button class="btn waves-effect waves-light #424242 grey darken-3" type="submit" name="action">Search
+        <button class="btn waves-effect waves-light #424242 grey darken-3" type="submit" name="action" id="search-button">Search
+
             <i class="material-icons right">done</i>
           </button>
         </div>
