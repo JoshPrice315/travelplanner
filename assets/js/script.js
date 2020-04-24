@@ -8,10 +8,16 @@ $(document).ready(function(){
     $('.datepicker-end').datepicker();
   });
 
-// Destination Input 
+// From Input 
 $(document).ready(function() {
-    $('.input-field').characterCounter();
+    $('.from-location-input-id').characterCounter();
   });
+
+  // To Input 
+$(document).ready(function() {
+    $('.to-location-input-id').characterCounter();
+  });
+
 
 // Mobile Navi 
 $(document).ready(function(){
@@ -27,7 +33,7 @@ $('.carousel.carousel-slider').carousel({
 //global variables
 
 //input form elements
-var userFormEl = document.querySelector("#valueinputform");
+var userFormEl = document.querySelector("#search-button");
 var startdateinputformEl = document.querySelector("#startdateinputform");
 var enddateinputformEl = document.querySelector("#enddateinputform");
 var startdatepickerinputEl = document.querySelector("#datepicker-start-id");
@@ -47,19 +53,18 @@ var formSubmitHandler = function(event) {
     console.log(startDate, endDate, fromLocation, toLocation);
 
     if (startDate) {
-        // //to get the cities with the city name
-        // getWeatherPerCity(cityName);
-        // getFiveDayForecast(cityName);
+        //to get the cities with the city name
+        getFlightData();
+      
+
+        //push selected city name to the cityArray array
+        startDateArray.push(startDate);
+        //set the startDate to the localStorage
+        localStorage.setItem("Start Date", JSON.stringify(startDateArray));
         
 
-        // //push selected city name to the cityArray array
-        // cityArray.push(cityName);
-        // //set the city to the localStorage
-        // localStorage.setItem("city", JSON.stringify(cityArray));
-        
-
-        // //to clear the input form field after submit
-        // cityInputEl.value = "";
+        //to clear the input form field after submit
+        startdatepickerinputEl.value = "";
 
     } else {
         alert("Please enter a Start Date")
@@ -77,7 +82,7 @@ var getFlightData = function() {
 
     // var flightSearchUrl = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/USA/USD/en-US/"
     var skyScannerSearchUrl = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/NYC/2020-04-30?inboundpartialdate=2020-05-15"
-    var skyScannerSearchUrl2 = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/SEA/2020-05-01?inboundpartialdate=2020-05-15"
+    var skyScannerSearchUrl2 = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/NYC/2020-05-01?inboundpartialdate=2020-05-15"
     // var skyScannerSearchUrl3 = "https://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/{country}/{currency}/{locale}/{originPlace}/{destinationPlace}/{outboundPartialDate}/{inboundPartialDate}?apiKey={apiKey}""
 
     fetch(skyScannerSearchUrl2, {
@@ -261,9 +266,9 @@ var searchAttractionData = function() {
 
 
 // getLocation();
-searchAttractionData();
-getFlightData();
-getHotelData();
+// searchAttractionData();
+// getFlightData();
+// getHotelData();
 userFormEl.addEventListener("submit", formSubmitHandler);
 // getYelpData();
 
