@@ -72,7 +72,7 @@ var getFlightData = function() {
 var getHotelData = function() {
     
     var hotelSearchUrl = "http://engine.hotellook.com/api/v2/lookup.json?query=london&lang=ru&lookFor=both&limit=1&token=065c3b8c9e2bb6252bf699eacc8fd32c";
-    var hotelSearchUrl2 = "http://engine.hotellook.com/api/v2/cache.json?location=Atlanta&checkIn=2020-05-01&checkOut=2020-05-15&currency=usd&limit=1&token=065c3b8c9e2bb6252bf699eacc8fd32c";
+    var hotelSearchUrl2 = "http://engine.hotellook.com/api/v2/cache.json?location=Atlanta&checkIn=2020-05-01&checkOut=2020-05-15&currency=usd&limit=5&token=065c3b8c9e2bb6252bf699eacc8fd32c";
 
     fetch(hotelSearchUrl2)
     .then(function(response) {
