@@ -15,7 +15,12 @@ h2 {
 
 .container-fluid {
     justify-content: center;
-    margin: 50px 150px;
+    margin: 50px 200px 50px 200px;
+}
+
+.container-fluid-cards {
+    justify-content: center;
+    margin: 50px 250px;
 }
 
 .brand-logo {
@@ -44,6 +49,10 @@ footer {
     background-color: var(--main-color);
     color: #fff;
 }
+
+.material-icons{
+    color: var(--main-color);
+    }
 
 .hero {
     background-image: url("https://images.pexels.com/photos/2007401/pexels-photo-2007401.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
