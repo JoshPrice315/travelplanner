@@ -47,9 +47,15 @@ var formSubmitHandler = function (event) {
 
 
     startDate = startdatepickerinputEl.value.trim();
-    console.log(startDate);
+    console.log("startDate " + startDate);
+    var formattedStartDate = moment(startDate).format('YYYY-MM-DD');
+    console.log("formattedStartDate " + formattedStartDate);
+
     endDate = enddatepickerinputEl.value.trim();
     console.log(endDate);
+    var formattedEndDate = moment(endDate).format('YYYY-MM-DD');
+    console.log("formattedEndDate " + formattedEndDate);
+
     fromLocation = fromLocationInputIdEl.value.trim();
     console.log(fromLocation);
     toLocation = toLocationInputIdEl.value.trim();
@@ -60,7 +66,11 @@ var formSubmitHandler = function (event) {
         //to get the cities with the city name
         getFlightData();
         getHotelData();
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> c43e79309894371df307e1adf5297429801a55cf
 
         // //push selected city name to the cityArray array
         startDateArray.push(startDate, endDate, fromLocation, toLocation);
@@ -71,7 +81,11 @@ var formSubmitHandler = function (event) {
         //to clear the input form field after submit
         startdatepickerinputEl.value = "";
         enddatepickerinputEl.value = "",
+<<<<<<< HEAD
             fromLocationInputIdEl.value = "";
+=======
+        fromLocationInputIdEl.value = "";
+>>>>>>> c43e79309894371df307e1adf5297429801a55cf
         toLocationInputIdEl.value = "";
 
     }
@@ -212,6 +226,10 @@ var searchAttractionData = function () {
         })
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> c43e79309894371df307e1adf5297429801a55cf
 
 
 
@@ -228,9 +246,17 @@ var searchAttractionData = function () {
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c43e79309894371df307e1adf5297429801a55cf
 // searchAttractionData();
 // getFlightData();
 // getHotelData();
 submitButtonEl.addEventListener("click", formSubmitHandler);
+<<<<<<< HEAD
 console.log(startDate);
+=======
+
+
+>>>>>>> c43e79309894371df307e1adf5297429801a55cf
