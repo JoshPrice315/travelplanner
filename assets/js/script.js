@@ -18,15 +18,9 @@ $(document).ready(function() {
     $('.to-location-input-id').characterCounter();
   });
 
-
 // Mobile Navi 
 $(document).ready(function(){
     $('.sidenav').sidenav();
-  });
-
-$('.carousel.carousel-slider').carousel({
-    fullWidth: true,
-    indicators: true
   });
 
 

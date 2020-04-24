@@ -8,22 +8,57 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
-    <nav>
-        <div class="nav-wrapper #01579b light-blue darken-4">
-            <a href="index.html" class="brand-logo">Travel Planner</a>
+<!-- Navigation -->
+<nav>
+    <div class="nav-wrapper #01579b light-blue darken-4">
+        <a href="index.html" class="brand-logo">Travel Planner</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="index.html" class="waves-effect waves-light btn #424242 grey darken-3">Go To Travel Planner</a></li>
             </ul>
         </div>
         
-          <!-- Mobile Nav -->
-          <ul class="sidenav" id="mobile-demo">
-                <li><a href="index.html" class="waves-effect waves-light btn #424242 grey darken-3">Go To Travel Planner</a></li>
-          </ul>
-     </nav>
-        
+        <!-- Mobile Nav -->
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="index.html" class="waves-effect waves-light btn #424242 grey darken-3">Go To Travel Planner</a></li>
+        </ul>
+</nav>
+
+<main>
+<!-- Hero Image -->
+<section class="hero"></section>
+
+<!-- Body Cards --> 
+<div class="container-fluid" id="hide"> 
+    <!-- Flight Card -->
+    <div class="row" id="flights">
+        <ul class="collection with-header">
+            <li class="collection-header"><h4 class="hotel-title"><i class="material-icons left">flight</i>Your Saved Flights</h4></li>
+            <li class="collection-item" id="savedFlight-1"><div>Saved Flight #1<a href="#!" class="secondary-content"><i class="material-icons" id="savedFlight-1-btn">clear</i></a></div></li>
+            <li class="collection-item" id="savedFlight-2"><div>Saved Flight #2<a href="#!" class="secondary-content"><i class="material-icons" id="savedFlight-2-btn">clear</i></a></div></li>
+            <li class="collection-item" id="savedFlight-3"><div>Saved Flight #3<a href="#!" class="secondary-content"><i class="material-icons" id="savedFlight-3-btn">clear</i></a></div></li>
+        </ul>
+    <div>
+    
+    <!-- Hotel Card -->
+    <div class="row" id="hotels">
+        <ul class="collection with-header">
+            <li class="collection-header"><h4 class="flight-title"><i class="material-icons left">hotel</i>Your Saved Hotels</h2>
+            <li class="collection-item" id="savedHotel-1"><div>Saved Hotel #1<a href="#!" class="secondary-content"><i class="material-icons" id="savedFlight-1-btn">clear</i></a></div></li>
+            <li class="collection-item" id="savedHotel-2"><div>Saved Hotel #2<a href="#!" class="secondary-content"><i class="material-icons" id="savedFlight-2-btn">clear</i></a></div></li>
+            <li class="collection-item" id="savedHotel-3"><div>Saved Hotel #3<a href="#!" class="secondary-content"><i class="material-icons" id="savedFlight-3-btn">clear</i></a></div></li>
+        </ul>
+    <div>
+<div>
+</main>
+
+<footer class="page-footer #01579b light-blue darken-4">
+    <div class="container">
+    © 2020 Powered by SkyScanner & Hotel Look. Application created by Izabela Petrovicova, Josh Price, and Nicole Wallace 
+    </div>
+</footer>
 
 
 
