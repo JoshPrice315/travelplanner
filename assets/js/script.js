@@ -18,6 +18,11 @@ $(document).ready(function(){
     $('.sidenav').sidenav();
   });
 
+$('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: true
+  });
+
 
 var getLocation = function() {
     var apiLocationUrl = "https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=SYD&destinationLocationCode=BKK&departureDate=2020-08-01&returnDate=2020-08-05&adults=2&includedAirlineCodes=TG&max=3";
