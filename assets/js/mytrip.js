@@ -1,5 +1,5 @@
 
-
+// variables to target the ids of the elements
 var savedoutbounddate1El = document.querySelector("#saved-outbounddate1");
 var savedoutbounddate2El = document.querySelector("#saved-outbounddate2");
 var savedoutbounddate3El = document.querySelector("#saved-outbounddate3");
@@ -31,3 +31,17 @@ var saveddirect3El = document.querySelector("#saved-direct3");
 var saveddirectflighticon1 = document.querySelector("#saved-direct-flight-icon1");
 var saveddirectflighticon2 = document.querySelector("#saved-direct-flight-icon2");
 var saveddirectflighticon3 = document.querySelector("#saved-direct-flight-icon3");
+
+
+var getFlightsFromMyTrip = function() {
+
+    var startDateFlight1Display = JSON.parse(localStorage.getItem("startDateFlight1"));
+    document.getElementById("saved-outbounddate1").innerHTML = startDateFlight1Display
+
+        // // Get the data from the localStorage for row #5
+        // $("#saved-outbounddate1").val(JSON.parse(localStorage.getItem("startDateFlight1")));
+
+}
+
+getFlightsFromMyTrip();
+
