@@ -77,6 +77,8 @@ var directFlightIconEl1 = document.querySelector("#direct-flight-icon1")
 var directFlightIconEl2 = document.querySelector("#direct-flight-icon2")
 var directFlightIconEl3 = document.querySelector("#direct-flight-icon3")
 
+var showHiddenEl = document.querySelector("#hidden");
+
 
 
 
@@ -386,7 +388,8 @@ var getFlightData = function () {
 
      
 
-
+                    //this will remove the class that was defaulted from the HTML file so that the data placeholders show up
+                    showHiddenEl.classList.remove("hidden");
 
 
 
