@@ -8,15 +8,15 @@ $(document).ready(function () {
     $('.datepicker-end').datepicker();
 });
 
-// From Input 
-$(document).ready(function () {
-    $('.from-location-input-id').characterCounter();
-});
+// // From Input 
+// $(document).ready(function () {
+//     $('.from-location-input-id').characterCounter();
+// });
 
-// To Input 
-$(document).ready(function () {
-    $('.to-location-input-id').characterCounter();
-});
+// // To Input 
+// $(document).ready(function () {
+//     $('.to-location-input-id').characterCounter();
+// });
 
 // Mobile Navi 
 $(document).ready(function () {
@@ -31,6 +31,7 @@ $(document).ready(function () {
 
 var userFormEl = document.querySelector("#valueinputform");
 var valueinputformEl = document.querySelector("#valueinputform");
+
 var submitButtonEl = document.querySelector("#search-button");
 var startdatepickerinputEl = document.querySelector("#datepicker-start-id");
 var enddatepickerinputEl = document.querySelector("#datepicker-end-id");
@@ -39,49 +40,86 @@ var toLocationInputIdEl = document.querySelector("#to-location-input-id");
 
 
 var startDateArray = [];
+var endDateArray = [];
+var fromLocationArray = [];
+var toLocationArray = [];
+
+
+
 
 
 //this function passes the input data to the function 
 var formSubmitHandler = function (event) {
     event.preventDefault();
 
-
+    //get the value from the startDate field
     startDate = startdatepickerinputEl.value.trim();
-    console.log("startDate " + startDate);
+    // console.log("startDate " + startDate);
+
+    //format the startDate field into the format that API needs
     formattedStartDate = moment(startDate).format('YYYY-MM-DD');
     console.log("formattedStartDate " + formattedStartDate);
+
+    //get the value from the endDate field
     endDate = enddatepickerinputEl.value.trim();
-    console.log(endDate);
+    // console.log(endDate);
+
+    //format the endDate field into the format that API needs    
     formattedEndDate = moment(endDate).format('YYYY-MM-DD');
     console.log("formattedEndDate " + formattedEndDate);
+
+    //get the value of the fromLocation
     fromLocation = fromLocationInputIdEl.value.trim();
     console.log(fromLocation);
+
+    //get the value of the toLocation 
     toLocation = toLocationInputIdEl.value.trim();
     console.log(toLocation);
 
 
-    if (startDate && endDate && fromLocation && toLocation) {
-        //to get the cities with the city name
+
+
+    if (formattedStartDate && formattedEndDate && fromLocation && toLocation) {
+        //to call the functions if the data above was input 
         getFlightData();
         getHotelData();
 
 
-        // //push selected city name to the cityArray array
-        startDateArray.push(startDate, endDate, fromLocation, toLocation);
+        // //push selected startDate into the startDateArray 
+        startDateArray.push(formattedStartDate);
         //set the startDate to the localStorage
         localStorage.setItem("Start Date", JSON.stringify(startDateArray));
+
+
+        // //push selected endDate into the endDateArray 
+        endDateArray.push(formattedEndDate);
+        //set the endDate to the localStorage
+        localStorage.setItem("End Date", JSON.stringify(endDateArray));
+
+
+        //push selected fromLocation into the fromLocationArray 
+        fromLocationArray.push(fromLocation);
+        //set the fromLocation to the localStorage
+        localStorage.setItem("From Location", JSON.stringify(fromLocationArray));
+
+
+        //push selected toLocation into the toLocationArray 
+        toLocationArray.push(toLocation);
+        //set the toLocation to the localStorage
+        localStorage.setItem("To Location", JSON.stringify(toLocationArray));
+
 
 
         //to clear the input form field after submit
         startdatepickerinputEl.value = "";
         enddatepickerinputEl.value = "",
-            fromLocationInputIdEl.value = "";
+        fromLocationInputIdEl.value = "";
         toLocationInputIdEl.value = "";
 
     }
-    // else {
-    //     alert("Please enter a Start Date")
-    // }
+    else {
+        alert("Please enter a Start Date, End Date, From and To Location in order to search.")
+    }
     // console.log(event);
 }
 
@@ -93,12 +131,12 @@ var formSubmitHandler = function (event) {
 
 var getFlightData = function () {
 
-    // var flightSearchUrl = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/USA/USD/en-US/"
-    var skyScannerSearchUrl = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/NYC/2020-04-30?inboundpartialdate=2020-05-15"
-    var skyScannerSearchUrl2 = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/NYC/2020-05-01?inboundpartialdate=2020-05-15"
-    // var skyScannerSearchUrl3 = "https://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/{country}/{currency}/{locale}/{originPlace}/{destinationPlace}/{outboundPartialDate}/{inboundPartialDate}?apiKey={apiKey}""
+    // var skyScannerSearchUrl = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/NYC/2020-04-30?inboundpartialdate=2020-05-15"
+    // var skyScannerSearchUrl2 = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/NYC/2020-05-01?inboundpartialdate=2020-05-15"
+    // var skyScannerSearchUrl3 = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/" + fromLocation + "/" + toLocation + "/" + formattedStartDate + "?inboundpartialdate=" + formattedEndDate;
+    var skyScannerSearchUrl = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/" + fromLocation + "/" + toLocation + "/" + formattedStartDate + "?inboundpartialdate=" + formattedEndDate;
 
-    fetch(skyScannerSearchUrl2, {
+    fetch(skyScannerSearchUrl, {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
