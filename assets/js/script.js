@@ -326,23 +326,27 @@ var getFlightData = function () {
 
                     //get direct flight data
                     var directFlight1 = jsonResponse.Quotes[0].Direct;
-                    console.log(directFlight1);
+                    // console.log(directFlight1);
+
+                    //conditionality to show and hide checkbox based on the flight being direct or not
                     if (directFlight1) {
                         directFlightIconEl1.setAttribute("src", "./assets/images/checked_checkbox.png");
                     }
                     else {
                         directFlightIconEl1.setAttribute("src", "./assets/images/unchecked-checkbox.png");
                     }
+
                     var directFlight2 = jsonResponse.Quotes[1].Direct;
-                    console.log(directFlight2);
+                    // console.log(directFlight2);
                     if (directFlight2) {
-                        directFlightIconEl2.setAttribute("src", "./assets/images/checked-checkbox.png");
+                        directFlightIconEl2.setAttribute("src", "./assets/images/checked_checkbox.png");
                     }
                     else {
-                        directFlightIconEl2.setAttribute("src", "./assets/images/unchecked_checkbox.png");
+                        directFlightIconEl2.setAttribute("src", "./assets/images/unchecked-checkbox.png");
                     }
+
                     var directFlight3 = jsonResponse.Quotes[2].Direct;
-                    console.log(directFlight3);
+                    // console.log(directFlight3);
                     if (directFlight3) {
                         directFlightIconEl3.setAttribute("src", "./assets/images/checked_checkbox.png");
                     }
