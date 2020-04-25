@@ -428,7 +428,7 @@ var getFlightData = function () {
 
 //function to save Flight 1 data on button click to localStorage
 var saveFlight1ToMyTrip = function(event) {
-    console.log(event);
+    // console.log(event);
 
     //push selected startDate into the startDateArray 
     startDateArrayFlight1.push(formattedStartDate);
@@ -466,7 +466,7 @@ var saveFlight1ToMyTrip = function(event) {
 
 //function to save Flight 2 data on button click to localStorage
 var saveFlight2ToMyTrip = function(event) {
-    console.log(event);
+    // console.log(event);
 
     //push selected startDate into the startDateArray 
     startDateArrayFlight2.push(formattedStartDate);
@@ -504,7 +504,7 @@ var saveFlight2ToMyTrip = function(event) {
 
 //function to save Flight 3 data on button click to localStorage
 var saveFlight3ToMyTrip = function(event) {
-    console.log(event);
+    // console.log(event);
 
     //push selected startDate into the startDateArray 
     startDateArrayFlight3.push(formattedStartDate);
