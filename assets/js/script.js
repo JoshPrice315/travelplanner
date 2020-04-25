@@ -219,7 +219,7 @@ var getFlightData = function () {
                     // console.log(quotesArray);
 
                     if (quotesArray[0] === undefined) {
-                        alert("Please select a future and different date or city combination.")
+                        alert("Please select a different date or city combination.")
                     }
 
                     else {
@@ -426,7 +426,7 @@ var getFlightData = function () {
 }
 
 
-
+//function to save Flight 1 data on button click to localStorage
 var saveFlight1ToMyTrip = function(event) {
     console.log(event);
 
@@ -435,34 +435,114 @@ var saveFlight1ToMyTrip = function(event) {
     //set the startDate to the localStorage
     localStorage.setItem("startDateFlight1", JSON.stringify(startDateArrayFlight1));
 
-
     // //push selected endDate into the endDateArray 
     endDateArrayFlight1.push(formattedEndDate);
     //set the endDate to the localStorage
     localStorage.setItem("endDateFlight1", JSON.stringify(endDateArrayFlight1));
-
 
     //push selected fromLocation into the fromLocationArray 
     fromLocationArrayFlight1.push(fromLocation);
     //set the fromLocation to the localStorage
     localStorage.setItem("fromLocationFlight1", JSON.stringify(fromLocationArrayFlight1));
 
-
     //push selected toLocation into the toLocationArray 
     toLocationArrayFlight1.push(toLocation);
     //set the toLocation to the localStorage
     localStorage.setItem("toLocationFlight1", JSON.stringify(toLocationArrayFlight1));
 
-
+    //push carrier info into the carrierArray and then save to localStorage
     carrierArrayFlight1.push(carrierName1)
     localStorage.setItem("carrierFlight1", JSON.stringify(carrierArrayFlight1));
 
+    //push price info into the priceArray and then save to localStorage
     priceArrayFlight1.push(minPrice1);
     localStorage.setItem("priceFlight1", JSON.stringify(priceArrayFlight1));
 
+    //push direct info into the directArray and then save to localStorage
     directArrayFlight1.push(directFlight1);
     localStorage.setItem("directFlight1", JSON.stringify(directFlight1));
 }
+
+
+//function to save Flight 2 data on button click to localStorage
+var saveFlight2ToMyTrip = function(event) {
+    console.log(event);
+
+    //push selected startDate into the startDateArray 
+    startDateArrayFlight2.push(formattedStartDate);
+    //set the startDate to the localStorage
+    localStorage.setItem("startDateFlight2", JSON.stringify(startDateArrayFlight2));
+
+    // //push selected endDate into the endDateArray 
+    endDateArrayFlight2.push(formattedEndDate);
+    //set the endDate to the localStorage
+    localStorage.setItem("endDateFlight2", JSON.stringify(endDateArrayFlight2));
+
+    //push selected fromLocation into the fromLocationArray 
+    fromLocationArrayFlight2.push(fromLocation);
+    //set the fromLocation to the localStorage
+    localStorage.setItem("fromLocationFlight2", JSON.stringify(fromLocationArrayFlight2));
+
+    //push selected toLocation into the toLocationArray 
+    toLocationArrayFlight2.push(toLocation);
+    //set the toLocation to the localStorage
+    localStorage.setItem("toLocationFlight2", JSON.stringify(toLocationArrayFlight2));
+
+    //push carrier info into the carrierArray and then save to localStorage
+    carrierArrayFlight2.push(carrierName2)
+    localStorage.setItem("carrierFlight2", JSON.stringify(carrierArrayFlight2));
+
+    //push price info into the priceArray and then save to localStorage
+    priceArrayFlight2.push(minPrice2);
+    localStorage.setItem("priceFlight2", JSON.stringify(priceArrayFlight2));
+
+    //push direct info into the directArray and then save to localStorage
+    directArrayFlight2.push(directFlight2);
+    localStorage.setItem("directFlight2", JSON.stringify(directFlight2));
+}
+
+
+//function to save Flight 3 data on button click to localStorage
+var saveFlight3ToMyTrip = function(event) {
+    console.log(event);
+
+    //push selected startDate into the startDateArray 
+    startDateArrayFlight3.push(formattedStartDate);
+    //set the startDate to the localStorage
+    localStorage.setItem("startDateFlight3", JSON.stringify(startDateArrayFlight3));
+
+    // //push selected endDate into the endDateArray 
+    endDateArrayFlight3.push(formattedEndDate);
+    //set the endDate to the localStorage
+    localStorage.setItem("endDateFlight3", JSON.stringify(endDateArrayFlight3));
+
+    //push selected fromLocation into the fromLocationArray 
+    fromLocationArrayFlight3.push(fromLocation);
+    //set the fromLocation to the localStorage
+    localStorage.setItem("fromLocationFlight3", JSON.stringify(fromLocationArrayFlight3));
+
+    //push selected toLocation into the toLocationArray 
+    toLocationArrayFlight3.push(toLocation);
+    //set the toLocation to the localStorage
+    localStorage.setItem("toLocationFlight3", JSON.stringify(toLocationArrayFlight3));
+
+    //push carrier info into the carrierArray and then save to localStorage
+    carrierArrayFlight3.push(carrierName3)
+    localStorage.setItem("carrierFlight3", JSON.stringify(carrierArrayFlight3));
+
+    //push price info into the priceArray and then save to localStorage
+    priceArrayFlight3.push(minPrice3);
+    localStorage.setItem("priceFlight3", JSON.stringify(priceArrayFlight3));
+
+    //push direct info into the directArray and then save to localStorage
+    directArrayFlight3.push(directFlight3);
+    localStorage.setItem("directFlight3", JSON.stringify(directFlight3));
+}
+
+
+
+
+
 
 
 
@@ -537,7 +617,7 @@ submitButtonEl.addEventListener("click", formSubmitHandler);
 
 //event listener for flight 1 button so that it saves data to local storage for the 1st flight
 flight1buttonEl.addEventListener("click", saveFlight1ToMyTrip)
-
-
-// flight2buttonEl.addEventListener("click", saveFlight2ToMyTrip)
-// flight3buttonEl.addEventListener("click", saveFlight3ToMyTrip)
+//event listener for flight 2 button so that it saves data to local storage for the 2nd flight
+flight2buttonEl.addEventListener("click", saveFlight2ToMyTrip)
+//event listener for flight 2 button so that it saves data to local storage for the 3rd flight
+flight3buttonEl.addEventListener("click", saveFlight3ToMyTrip)
