@@ -488,10 +488,12 @@ var searchAttractionData = function () {
 
 
 
-
-// searchAttractionData();
-// getFlightData();
-// getHotelData();
+//event listener for the submit button so that it calls the formSubmitHandler function when the button is clicked
 submitButtonEl.addEventListener("click", formSubmitHandler);
 
+//event listener for flight 1 button so that it saves data to local storage for the 1st flight
 flight1buttonEl.addEventListener("click", saveFlight1ToMyTrip)
+
+
+// flight2buttonEl.addEventListener("click", saveFlight2ToMyTrip)
+// flight3buttonEl.addEventListener("click", saveFlight3ToMyTrip)
