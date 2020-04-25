@@ -589,24 +589,24 @@ var getHotelData = function () {
 
 // function to get attraction data
 
-var searchAttractionData = function () {
-    var attractionSearchURL = "https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=YgasmQcKMenqrHdAGUHQgz3JdB9tVnSi&keyword=NewYork"
+// var searchAttractionData = function () {
+//     var attractionSearchURL = "https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=YgasmQcKMenqrHdAGUHQgz3JdB9tVnSi&keyword=NewYork"
 
-    fetch(attractionSearchURL)
-        .then(function (response) {
-            if (response.ok) {
-                response.json().then(function (attractionDataResponse) {
-                    console.log(attractionDataResponse);
-                })
-            }
-            else {
-                alert("Error: " + response.statusText);
-            }
-        })
-        .catch(function (error) {
-            alert("Unable to connect to TicketMaster!");
-        })
-}
+//     fetch(attractionSearchURL)
+//         .then(function (response) {
+//             if (response.ok) {
+//                 response.json().then(function (attractionDataResponse) {
+//                     console.log(attractionDataResponse);
+//                 })
+//             }
+//             else {
+//                 alert("Error: " + response.statusText);
+//             }
+//         })
+//         .catch(function (error) {
+//             alert("Unable to connect to TicketMaster!");
+//         })
+// }
 
 
 
