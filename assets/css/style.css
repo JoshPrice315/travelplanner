@@ -54,6 +54,10 @@ footer {
     color: var(--main-color);
     }
 
+.left, .right {
+    color: white;
+    }
+
 .hero {
     background-image: url("https://images.pexels.com/photos/2007401/pexels-photo-2007401.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
     height: 600px;

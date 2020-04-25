@@ -1,11 +1,18 @@
-// Calender Start 
+// Disable previous days in calender variable 
+var minDate = new Date();
+
+// // Calender Start 
 $(document).ready(function () {
-    $('.datepicker-start').datepicker();
-});
+    $('.datepicker-start').datepicker({
+        minDate: minDate,
+    });
+ });
 
 // Calender End   
 $(document).ready(function () {
-    $('.datepicker-end').datepicker();
+    $('.datepicker-end').datepicker({
+        minDate: minDate 
+    });
 });
 
 // From Input 
