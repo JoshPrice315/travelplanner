@@ -64,7 +64,7 @@ var formSubmitHandler = function (event) {
     fromLocation = fromLocationInputIdEl.value.trim();
     console.log(fromLocation);
     toLocation = toLocationInputIdEl.value.trim();
-    console.log(toLocation);
+    console.log(toLocation);c
 
 
     if (startDate && endDate && fromLocation && toLocation) {
