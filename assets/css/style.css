@@ -69,3 +69,7 @@ footer {
 .hidden {
     visibility: hidden;
 }
+
+.card {
+    padding: 15px 15px;
+}
