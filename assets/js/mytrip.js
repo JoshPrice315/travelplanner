@@ -32,6 +32,14 @@ var saveddirectflighticon1 = document.querySelector("#saved-direct-flight-icon1"
 var saveddirectflighticon2 = document.querySelector("#saved-direct-flight-icon2");
 var saveddirectflighticon3 = document.querySelector("#saved-direct-flight-icon3");
 
+var removeFlight1buttonEl = document.querySelector("#removeFlight1button");
+var removeFlight2buttonEl = document.querySelector("#removeFlight2button");
+var removeFlight3buttonEl = document.querySelector("#removeFlight3button");
+
+var savedFlightCard1El = document.querySelector("#saved-flight-card-1");
+var savedFlightCard2El = document.querySelector("#saved-flight-card-2");
+var savedFlightCard3El = document.querySelector("#saved-flight-card-3");
+
 
 //function to reload the data onto the page from the localStorage and show it on the My Trips page
 var getFlight1FromMyTrip = function() {
@@ -247,9 +255,62 @@ var getFlight3FromMyTrip = function() {
 
 
 
+//function to remove items from localStorage on button click for the first flight
+var removeFlight1FromMyTrip = function() {
+    //remove items from localStorage for Flight 1
+    localStorage.removeItem("startDateFlight1");
+    localStorage.removeItem("endDateFlight1");
+    localStorage.removeItem("fromLocationFlight1");
+    localStorage.removeItem("toLocationFlight1");
+    localStorage.removeItem("carrierFlight1");
+    localStorage.removeItem("priceFlight1");
+    localStorage.removeItem("directFlight1");
+
+
+    // savedFlightCard1.classList.add("hidden");
+
+}
+
+//function to remove items from localStorage on button click for the second flight
+var removeFlight2FromMyTrip = function() {
+    //remove items from localStorage for Flight 1
+    localStorage.removeItem("startDateFlight2");
+    localStorage.removeItem("endDateFlight2");
+    localStorage.removeItem("fromLocationFlight2");
+    localStorage.removeItem("toLocationFlight2");
+    localStorage.removeItem("carrierFlight2");
+    localStorage.removeItem("priceFlight2");
+    localStorage.removeItem("directFlight2");
+
+    // savedFlightCard2.classList.add("hidden");
+}
+
+//function to remove items from localStorage on button click for the third flight
+var removeFlight3FromMyTrip = function() {
+    //remove items from localStorage for Flight 1
+    localStorage.removeItem("startDateFlight3");
+    localStorage.removeItem("endDateFlight3");
+    localStorage.removeItem("fromLocationFlight3");
+    localStorage.removeItem("toLocationFlight3");
+    localStorage.removeItem("carrierFlight3");
+    localStorage.removeItem("priceFlight3");
+    localStorage.removeItem("directFlight3");
+
+    // savedFlightCard3.classList.add("hidden");
+}
+
+
 
 
 getFlight1FromMyTrip();
 getFlight2FromMyTrip();
 getFlight3FromMyTrip();
+
+
+//event listener for flight 1 button so that it removes data to local storage for the 1st flight
+removeFlight1buttonEl.addEventListener("click", removeFlight1FromMyTrip)
+// //event listener for flight 2 button so that it removes data to local storage for the 2nd flight
+removeFlight2buttonEl.addEventListener("click", removeFlight2FromMyTrip)
+// //event listener for flight 3 button so that it removes data to local storage for the 3rd flight
+removeFlight3buttonEl.addEventListener("click", removeFlight3FromMyTrip)
 

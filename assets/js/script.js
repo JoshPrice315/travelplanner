@@ -637,5 +637,5 @@ submitButtonEl.addEventListener("click", formSubmitHandler);
 flight1buttonEl.addEventListener("click", saveFlight1ToMyTrip)
 //event listener for flight 2 button so that it saves data to local storage for the 2nd flight
 flight2buttonEl.addEventListener("click", saveFlight2ToMyTrip)
-//event listener for flight 2 button so that it saves data to local storage for the 3rd flight
+//event listener for flight 3 button so that it saves data to local storage for the 3rd flight
 flight3buttonEl.addEventListener("click", saveFlight3ToMyTrip)
