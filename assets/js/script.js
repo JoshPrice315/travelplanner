@@ -38,6 +38,10 @@ var enddatepickerinputEl = document.querySelector("#datepicker-end-id");
 var fromLocationInputIdEl = document.querySelector("#from-location-input-id");
 var toLocationInputIdEl = document.querySelector("#to-location-input-id");
 
+var outbounddate1El = document.querySelector("#outbounddate1");
+var outbounddate2El = document.querySelector("#outbounddate2");
+var outbounddate3El = document.querySelector("#outbounddate3");
+
 
 var startDateArray = [];
 var endDateArray = [];
@@ -148,27 +152,52 @@ var getFlightData = function () {
                 response.json().then(function (jsonResponse) {
                     console.log(jsonResponse);
 
+
+
+                    //get outBoundDates for the Quotes
+                    var outBoundDate1 = jsonResponse.Quotes[0].OutboundLeg.DepartureDate;
+                    console.log(outBoundDate1);
+                    var outBoundDate2 = jsonResponse.Quotes[1].OutboundLeg.DepartureDate;
+                    console.log(outBoundDate2);
+                    var outBoundDate3 = jsonResponse.Quotes[2].OutboundLeg.DepartureDate;
+                    console.log(outBoundDate3);
+
+                    //set the inBoundDates --> there is no such data returned from the API
+                    var inboundDate1 = formattedEndDate;
+                    console.log(inboundDate1);
+                    var inboundDate2 = formattedEndDate
+                    console.log(inboundDate2)
+                    var inboundDate3 = formattedEndDate
+                    console.log(inboundDate3)
+
+
+
+                    //get inboundDates for the Quotes
+
+
+                    //get originCityName from the jsonResponse
+                    var originCityName = jsonResponse.Places[1].CityName;
+                    // console.log(originCityName);
+
+                    //get destinationCityName from the jsonResponse
+                    var destinationCityName = jsonResponse.Places[0].CityName;
+                    // console.log(destinationCityName);                    
+
                     //get 3 carriers from the jsonResponse
                     var carrierID1 = jsonResponse.Quotes[0].OutboundLeg.CarrierIds[0];
                     var carrierID2 = jsonResponse.Quotes[1].OutboundLeg.CarrierIds[0];
                     var carrierID3 = jsonResponse.Quotes[2].OutboundLeg.CarrierIds[0];
-                    console.log(carrierID1, carrierID2, carrierID3);
+                    // console.log(carrierID1, carrierID2, carrierID3);
 
-                    //get originCityName from the jsonResponse
-                    var originCityName = jsonResponse.Places[1].CityName;
-                    console.log(originCityName);
 
-                    //get destinationCityName from the jsonResponse
-                    var destinationCityName = jsonResponse.Places[0].CityName;
-                    console.log(destinationCityName);
 
                     //get places(airports codes)
                     var destinationID1 = jsonResponse.Quotes[0].OutboundLeg.DestinationId;
-                    console.log(destinationID1);
+                    // console.log(destinationID1);
                     var destinationID2 = jsonResponse.Quotes[1].OutboundLeg.DestinationId;
-                    console.log(destinationID2);
+                    // console.log(destinationID2);
                     var destinationID3 = jsonResponse.Quotes[2].OutboundLeg.DestinationId;
-                    console.log(destinationID3);
+                    // console.log(destinationID3);
 
 
 
@@ -179,29 +208,29 @@ var getFlightData = function () {
 
                     for (var i = 0; i < jsonResponse.Places.length; i++) {
                         var destinationAirportCodes = jsonResponse.Places[i]
-                        console.log(destinationAirportCodes);
+                        // console.log(destinationAirportCodes);
                         if (destinationID1 === destinationAirportCodes.PlaceId) {
                             destinationAirportCode1 = destinationAirportCodes.IataCode;
-                            console.log("destinationAirportCode1 " + destinationAirportCode1);
+                            // console.log("destinationAirportCode1 " + destinationAirportCode1);
                         }
                         else if (destinationID2 === destinationAirportCodes.PlaceId) {
                             destinationAirportCode2 = destinationAirportCodes.IataCode;
-                            console.log("destinationAirportCode2 " + destinationAirportCode2);
+                            // console.log("destinationAirportCode2 " + destinationAirportCode2);
                         }
                         else if (destinationID3 === destinationAirportCodes.IataCode) {
                             destinationAirportCode3 = destinationAirportCodes.IataCode;
-                            console.log("destinationAirportCode3 " + destinationAirportCode3);
+                            // console.log("destinationAirportCode3 " + destinationAirportCode3);
                         }
                     }
 
 
                     //get the 3 quote min prices from the jsonResponse
                     var minPrice1 = jsonResponse.Quotes[0].MinPrice;
-                    console.log("$" + minPrice1);
+                    // console.log("$" + minPrice1);
                     var minPrice2 = jsonResponse.Quotes[1].MinPrice;
-                    console.log("$" + minPrice2);
+                    // console.log("$" + minPrice2);
                     var minPrice3 = jsonResponse.Quotes[2].MinPrice;
-                    console.log("$" + minPrice3);
+                    // console.log("$" + minPrice3);
 
 
 
@@ -212,20 +241,27 @@ var getFlightData = function () {
 
                     for (var i = 0; i < jsonResponse.Carriers.length; i++) {
                         var carriers = jsonResponse.Carriers[i]
-                        console.log(carriers);
+                        // console.log(carriers);
                         if (carrierID1 === carriers.CarrierId) {
                             carrierName1 = carriers.Name;
-                            console.log(carrierName1);
+                            // console.log(carrierName1);
                         }
                         else if (carrierID2 === carriers.CarrierId) {
                             carrierName2 = carriers.Name;
-                            console.log(carrierName2);
+                            // console.log(carrierName2);
                         }
                         else if (carrierID3 === carriers.CarrierId) {
                             carrierName3 = carriers.Name;
-                            console.log(carrierName3);
+                            // console.log(carrierName3);
                         }
                     }
+
+
+
+                    outbounddate1El.innerHTML = outBoundDate1;
+                    outBoundDate2.innerHTML = outBoundDate2;
+                    outBoundDate3.innerHTML = outBoundDate3;
+
                     
 
 
