@@ -92,13 +92,13 @@ var getFlight1FromMyTrip = function() {
 
 
 
-    document.getElementById("saved-outbounddate1").innerHTML = startDateFlight1DisplayItem;
-    document.getElementById("saved-inbounddate1").innerHTML = endDateFlight1DisplayItem;
-    document.getElementById("saved-origin1").innerHTML = fromLocationFlight1DisplayItem;
-    document.getElementById("saved-destination1").innerHTML = toLocationFlight1DisplayItem;
-    document.getElementById("saved-airlinecode1").innerHTML = carrierFlight1DisplayItem;
-    document.getElementById("saved-price1").innerHTML = priceFlight1DisplayItem;
-    document.getElementById("saved-direct1").innerHTML = directFlight1DisplayItem;
+    document.getElementById("saved-outbounddate1").innerHTML = "Outbound: " + startDateFlight1DisplayItem;
+    document.getElementById("saved-inbounddate1").innerHTML = "Inbound: " + endDateFlight1DisplayItem;
+    document.getElementById("saved-origin1").innerHTML = "Origin: " + " " + "(" + fromLocationFlight1DisplayItem + ")";
+    document.getElementById("saved-destination1").innerHTML = "Destination: " + " " + "(" + toLocationFlight1DisplayItem + ")";
+    document.getElementById("saved-airlinecode1").innerHTML = "Carrier: " + carrierFlight1DisplayItem;
+    document.getElementById("saved-price1").innerHTML = "Price: $" + priceFlight1DisplayItem;
+    document.getElementById("saved-direct1").innerHTML = "Direct Flight: " + directFlight1DisplayItem;
 
 }
 
