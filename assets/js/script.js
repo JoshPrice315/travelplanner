@@ -460,7 +460,7 @@ var saveFlight1ToMyTrip = function(event) {
 
     //push direct info into the directArray and then save to localStorage
     directArrayFlight1.push(directFlight1);
-    localStorage.setItem("directFlight1", JSON.stringify(directFlight1));
+    localStorage.setItem("directFlight1", JSON.stringify(directArrayFlight1));
 }
 
 
@@ -498,7 +498,7 @@ var saveFlight2ToMyTrip = function(event) {
 
     //push direct info into the directArray and then save to localStorage
     directArrayFlight2.push(directFlight2);
-    localStorage.setItem("directFlight2", JSON.stringify(directFlight2));
+    localStorage.setItem("directFlight2", JSON.stringify(directArrayFlight2));
 }
 
 
@@ -536,7 +536,7 @@ var saveFlight3ToMyTrip = function(event) {
 
     //push direct info into the directArray and then save to localStorage
     directArrayFlight3.push(directFlight3);
-    localStorage.setItem("directFlight3", JSON.stringify(directFlight3));
+    localStorage.setItem("directFlight3", JSON.stringify(directArrayFlight3));
 }
 
 
