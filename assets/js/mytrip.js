@@ -312,6 +312,10 @@ var removeFlight3FromMyTrip = function() {
 //     flightRowIdEl.removeChild(savedFlightCard1El);
 // }
 
+// function removeItem(savedFlightCard1El){
+//     var itemToRemove = document.getElementById(savedFlightCard1El);
+//     itemToRemove.parentNode.removeChild(itemToRemove);
+// }
     
 
 
