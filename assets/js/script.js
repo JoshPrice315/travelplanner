@@ -79,6 +79,10 @@ var directFlightIconEl3 = document.querySelector("#direct-flight-icon3")
 
 var showHiddenEl = document.querySelector("#hidden");
 
+var flight1buttonEl = document.querySelector("#flight1button");
+var flight2buttonEl = document.querySelector("#flight2button");
+var flight3buttonEl = document.querySelector("#flight3button");
+
 
 
 
@@ -133,30 +137,6 @@ var formSubmitHandler = function (event) {
         //to call the functions if the data above was input 
         getFlightData();
         getHotelData();
-
-
-        // //push selected startDate into the startDateArray 
-        startDateArray.push(formattedStartDate);
-        //set the startDate to the localStorage
-        localStorage.setItem("Start Date", JSON.stringify(startDateArray));
-
-
-        // //push selected endDate into the endDateArray 
-        endDateArray.push(formattedEndDate);
-        //set the endDate to the localStorage
-        localStorage.setItem("End Date", JSON.stringify(endDateArray));
-
-
-        //push selected fromLocation into the fromLocationArray 
-        fromLocationArray.push(fromLocation);
-        //set the fromLocation to the localStorage
-        localStorage.setItem("From Location", JSON.stringify(fromLocationArray));
-
-
-        //push selected toLocation into the toLocationArray 
-        toLocationArray.push(toLocation);
-        //set the toLocation to the localStorage
-        localStorage.setItem("To Location", JSON.stringify(toLocationArray));
 
 
 
@@ -253,11 +233,11 @@ var getFlightData = function () {
 
                     //get places(airports codes)
                     var destinationID1 = jsonResponse.Quotes[0].OutboundLeg.DestinationId;
-                    // console.log(destinationID1);
+                    console.log(destinationID1);
                     var destinationID2 = jsonResponse.Quotes[1].OutboundLeg.DestinationId;
-                    // console.log(destinationID2);
+                    console.log(destinationID2);
                     var destinationID3 = jsonResponse.Quotes[2].OutboundLeg.DestinationId;
-                    // console.log(destinationID3);
+                    console.log(destinationID3);
 
 
 
@@ -268,26 +248,26 @@ var getFlightData = function () {
 
                     for (var i = 0; i < jsonResponse.Places.length; i++) {
                         var destinationAirportCodes = jsonResponse.Places[i]
-                        // console.log(destinationAirportCodes);
+                        console.log(destinationAirportCodes);
                         if (destinationID1 === destinationAirportCodes.PlaceId) {
                             destinationAirportCode1 = destinationAirportCodes.IataCode;
                             console.log("destinationAirportCode1 " + destinationAirportCode1);
-                            // if (destinationAirportCode1 == "undefined") {
-                            //     destinationAirportCode1 == ""
+                            // if (destinationAirportCode1 === "undefined") {
+                            //     destinationAirportCode1 === ""
                             // }
                         }
                         else if (destinationID2 === destinationAirportCodes.PlaceId) {
                             destinationAirportCode2 = destinationAirportCodes.IataCode;
                             console.log("destinationAirportCode2 " + destinationAirportCode2);
-                            // if (destinationAirportCode2 == "undefined") {
-                            //     destinationAirportCode2 == ""
+                            // if (destinationAirportCode2 === "undefined") {
+                            //     destinationAirportCode2 === ""
                             // }
                         }
                         else if (destinationID3 === destinationAirportCodes.PlaceId) {
                             destinationAirportCode3 = destinationAirportCodes.IataCode;
                             console.log("destinationAirportCode3 " + destinationAirportCode3);
-                            // if (destinationAirportCode3 == "undefined") {
-                            //     destinationAirportCode3 == ""
+                            // if (destinationAirportCode3 === "undefined") {
+                            //     destinationAirportCode3 === ""
                             // }
                         }
                     }
@@ -393,6 +373,9 @@ var getFlightData = function () {
 
 
 
+
+
+
                     }
                     
 
@@ -407,6 +390,34 @@ var getFlightData = function () {
         .catch(function (error) {
             alert("Unable to connect to the SkyScanner!")
         })
+}
+
+
+
+var saveFlight1ToMyTrip = function(event) {
+    console.log(event);
+    //push selected startDate into the startDateArray 
+    startDateArray.push(formattedStartDate);
+    //set the startDate to the localStorage
+    localStorage.setItem("Start Date", JSON.stringify(startDateArray));
+
+
+    // //push selected endDate into the endDateArray 
+    endDateArray.push(formattedEndDate);
+    //set the endDate to the localStorage
+    localStorage.setItem("End Date", JSON.stringify(endDateArray));
+
+
+    //push selected fromLocation into the fromLocationArray 
+    fromLocationArray.push(fromLocation);
+    //set the fromLocation to the localStorage
+    localStorage.setItem("From Location", JSON.stringify(fromLocationArray));
+
+
+    //push selected toLocation into the toLocationArray 
+    toLocationArray.push(toLocation);
+    //set the toLocation to the localStorage
+    localStorage.setItem("To Location", JSON.stringify(toLocationArray));
 }
 
 
@@ -482,3 +493,5 @@ var searchAttractionData = function () {
 // getFlightData();
 // getHotelData();
 submitButtonEl.addEventListener("click", formSubmitHandler);
+
+flight1buttonEl.addEventListener("click", saveFlight1ToMyTrip)
