@@ -208,12 +208,12 @@ var getFlightData = function () {
 
 
                     //set the inBoundDates --> there is no such data returned from the API
-                    inboundDate1 = formattedEndDate;
-                    console.log(inboundDate1);
-                    inboundDate2 = formattedEndDate;
-                    console.log(inboundDate2)
-                    inboundDate3 = formattedEndDate;
-                    console.log(inboundDate3)
+                    // inboundDate1 = formattedEndDate;
+                    // console.log(inboundDate1);
+                    // inboundDate2 = formattedEndDate;
+                    // console.log(inboundDate2)
+                    // inboundDate3 = formattedEndDate;
+                    // console.log(inboundDate3)
 
 
 
@@ -326,9 +326,9 @@ var getFlightData = function () {
                     outbounddate2El.innerHTML = "Outbound: " + outBoundDate2Formatted;
                     outBoundDate3El.innerHTML = "Outbound: " + outBoundDate3Formatted;
 
-                    // inbounddate1El.innerHTML = formattedEndDate;
-                    // inboundDate2El.innerHTML = formattedEndDate;
-                    // inboundDate3El.innerHTML = formattedEndDate;
+                    // inbounddate1El.innerHTML = "Inbound: " + formattedEndDate;
+                    // inboundDate2El.innerHTML = "Inbound: " + formattedEndDate;
+                    // inboundDate3El.innerHTML = "Inbound: " + formattedEndDate;
 
                     origin1El.innerHTML = "Origin: " + originCityName + " " + "(" + fromLocation + ")";
                     origin2El.innerHTML = "Origin: " + originCityName + " " + "(" + fromLocation + ")";
