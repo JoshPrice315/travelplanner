@@ -91,10 +91,15 @@ var flight3buttonEl = document.querySelector("#flight3button");
 
 
 
-var startDateArray = [];
-var endDateArray = [];
-var fromLocationArray = [];
-var toLocationArray = [];
+var startDateArrayFlight1 = [];
+var endDateArrayFlight1 = [];
+var fromLocationArrayFlight1 = [];
+var toLocationArrayFlight1 = [];
+// //arrays to store the selected flight data
+// var flight1Array = [];
+// var flight2Array = [];
+// var flight3Array = [];
+
 var formattedEndDate
 var fromLocation
 
@@ -396,28 +401,29 @@ var getFlightData = function () {
 
 var saveFlight1ToMyTrip = function(event) {
     console.log(event);
+
     //push selected startDate into the startDateArray 
-    startDateArray.push(formattedStartDate);
+    startDateArrayFlight1.push(formattedStartDate);
     //set the startDate to the localStorage
-    localStorage.setItem("Start Date", JSON.stringify(startDateArray));
+    localStorage.setItem("startDateFlight1", JSON.stringify(startDateArrayFlight1));
 
 
     // //push selected endDate into the endDateArray 
-    endDateArray.push(formattedEndDate);
+    endDateArrayFlight1.push(formattedEndDate);
     //set the endDate to the localStorage
-    localStorage.setItem("End Date", JSON.stringify(endDateArray));
+    localStorage.setItem("endDateFlight1", JSON.stringify(endDateArrayFlight1));
 
 
     //push selected fromLocation into the fromLocationArray 
-    fromLocationArray.push(fromLocation);
+    fromLocationArrayFlight1.push(fromLocation);
     //set the fromLocation to the localStorage
-    localStorage.setItem("From Location", JSON.stringify(fromLocationArray));
+    localStorage.setItem("fromLocationFlight1", JSON.stringify(fromLocationArrayFlight1));
 
 
     //push selected toLocation into the toLocationArray 
-    toLocationArray.push(toLocation);
+    toLocationArrayFlight1.push(toLocation);
     //set the toLocation to the localStorage
-    localStorage.setItem("To Location", JSON.stringify(toLocationArray));
+    localStorage.setItem("toLocationFlight1", JSON.stringify(toLocationArrayFlight1));
 }
 
 
