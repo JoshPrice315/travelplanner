@@ -90,7 +90,7 @@ var flight3buttonEl = document.querySelector("#flight3button");
 
 
 
-
+//flight 1 arrays for local storage
 var startDateArrayFlight1 = [];
 var endDateArrayFlight1 = [];
 var fromLocationArrayFlight1 = [];
@@ -98,10 +98,26 @@ var toLocationArrayFlight1 = [];
 var carrierArrayFlight1 = [];
 var priceArrayFlight1 = [];
 var directArrayFlight1 = [];
-// //arrays to store the selected flight data
-// var flight1Array = [];
-// var flight2Array = [];
-// var flight3Array = [];
+
+//flight 2 arrays for local storage
+var startDateArrayFlight2 = [];
+var endDateArrayFlight2 = [];
+var fromLocationArrayFlight2 = [];
+var toLocationArrayFlight2 = [];
+var carrierArrayFlight2 = [];
+var priceArrayFlight2 = [];
+var directArrayFlight2 = [];
+
+
+//flight 3 arrays for local storage
+var startDateArrayFlight3 = [];
+var endDateArrayFlight3 = [];
+var fromLocationArrayFlight3 = [];
+var toLocationArrayFlight3 = [];
+var carrierArrayFlight3 = [];
+var priceArrayFlight3 = [];
+var directArrayFlight3 = [];
+
 
 var formattedEndDate;
 var fromLocation;
