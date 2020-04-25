@@ -78,6 +78,8 @@ var startDateArray = [];
 var endDateArray = [];
 var fromLocationArray = [];
 var toLocationArray = [];
+var formattedEndDate
+var fromLocation
 
 
 
@@ -187,19 +189,31 @@ var getFlightData = function () {
 
                     //get outBoundDates for the Quotes
                     var outBoundDate1 = jsonResponse.Quotes[0].OutboundLeg.DepartureDate;
-                    console.log(outBoundDate1);
+                    // console.log(outBoundDate1);
+                    var outBoundDate1Formatted = moment(outBoundDate1).format('YYYY-MM-DD');
+                    // console.log("outBoundDate1Formatted " + outBoundDate1Formatted);
+
                     var outBoundDate2 = jsonResponse.Quotes[1].OutboundLeg.DepartureDate;
                     console.log(outBoundDate2);
+                    var outBoundDate2Formatted = moment(outBoundDate2).format('YYYY-MM-DD');
+                    // console.log("outBoundDate2Formatted " + outBoundDate2Formatted);
+
                     var outBoundDate3 = jsonResponse.Quotes[2].OutboundLeg.DepartureDate;
                     console.log(outBoundDate3);
+                    var outBoundDate3Formatted = moment(outBoundDate3).format('YYYY-MM-DD');
+                    // console.log("outBoundDate3Formatted " + outBoundDate3Formatted);
+
+                
+
+
 
                     //set the inBoundDates --> there is no such data returned from the API
-                    var inboundDate = formattedEndDate;
-                    console.log(inboundDate);
-                    // var inboundDate2 = formattedEndDate;
-                    // console.log(inboundDate2)
-                    // var inboundDate3 = formattedEndDate;
-                    // console.log(inboundDate3)
+                    inboundDate1 = formattedEndDate;
+                    console.log(inboundDate1);
+                    inboundDate2 = formattedEndDate;
+                    console.log(inboundDate2)
+                    inboundDate3 = formattedEndDate;
+                    console.log(inboundDate3)
 
 
 
@@ -224,11 +238,11 @@ var getFlightData = function () {
 
                     //get places(airports codes)
                     var destinationID1 = jsonResponse.Quotes[0].OutboundLeg.DestinationId;
-                    // console.log(destinationID1);
+                    console.log(destinationID1);
                     var destinationID2 = jsonResponse.Quotes[1].OutboundLeg.DestinationId;
-                    // console.log(destinationID2);
+                    console.log(destinationID2);
                     var destinationID3 = jsonResponse.Quotes[2].OutboundLeg.DestinationId;
-                    // console.log(destinationID3);
+                    console.log(destinationID3);
 
 
 
@@ -242,15 +256,24 @@ var getFlightData = function () {
                         // console.log(destinationAirportCodes);
                         if (destinationID1 === destinationAirportCodes.PlaceId) {
                             destinationAirportCode1 = destinationAirportCodes.IataCode;
-                            // console.log("destinationAirportCode1 " + destinationAirportCode1);
+                            console.log("destinationAirportCode1 " + destinationAirportCode1);
+                            // if (destinationAirportCode1 == "undefined") {
+                            //     destinationAirportCode1 == ""
+                            // }
                         }
                         else if (destinationID2 === destinationAirportCodes.PlaceId) {
                             destinationAirportCode2 = destinationAirportCodes.IataCode;
-                            // console.log("destinationAirportCode2 " + destinationAirportCode2);
+                            console.log("destinationAirportCode2 " + destinationAirportCode2);
+                            // if (destinationAirportCode2 == "undefined") {
+                            //     destinationAirportCode2 == ""
+                            // }
                         }
-                        else if (destinationID3 === destinationAirportCodes.IataCode) {
+                        else if (destinationID3 === destinationAirportCodes.PlaceId) {
                             destinationAirportCode3 = destinationAirportCodes.IataCode;
-                            // console.log("destinationAirportCode3 " + destinationAirportCode3);
+                            console.log("destinationAirportCode3 " + destinationAirportCode3);
+                            // if (destinationAirportCode3 == "undefined") {
+                            //     destinationAirportCode3 == ""
+                            // }
                         }
                     }
 
@@ -288,34 +311,44 @@ var getFlightData = function () {
                     }
 
 
+                    //get direct flight data
+                    var directFlight1 = jsonResponse.Quotes[0].Direct;
+                    console.log(directFlight1);
+                    var directFlight2 = jsonResponse.Quotes[1].Direct;
+                    console.log(directFlight2);
+                    var directFlight3 = jsonResponse.Quotes[2].Direct;
+                    console.log(directFlight3);
+ 
 
-                    outbounddate1El.innerHTML = outBoundDate1;
-                    outbounddate2El.innerHTML = outBoundDate2;
-                    outBoundDate3El.innerHTML = outBoundDate3;
 
-                    // inbounddate1El.innerHTML = inboundDate;
-                    // inboundDate2El.innerHTML = inboundDate;
-                    // inboundDate3El.innerHTML = inboundDate;
 
-                    origin1El.innerHTML = originCityName;
-                    origin2El.innerHTML = originCityName;
-                    origin3El.innerHTML = originCityName;
+                    outbounddate1El.innerHTML = "Outbound: " + outBoundDate1Formatted;
+                    outbounddate2El.innerHTML = "Outbound: " + outBoundDate2Formatted;
+                    outBoundDate3El.innerHTML = "Outbound: " + outBoundDate3Formatted;
 
-                    destination1El.innerHTML = destinationCityName + " " + destinationAirportCode1;
-                    destination2El.innerHTML = destinationCityName + " " + destinationAirportCode2;
-                    destination3El.innerHTML = destinationCityName + " " + destinationAirportCode3;
+                    // inbounddate1El.innerHTML = formattedEndDate;
+                    // inboundDate2El.innerHTML = formattedEndDate;
+                    // inboundDate3El.innerHTML = formattedEndDate;
 
-                    airlinecode1El.innerHTML = carrierName1;
-                    airlinecode2El.innerHTML = carrierName2;
-                    airlinecode3El.innerHTML = carrierName3;
+                    origin1El.innerHTML = "Origin: " + originCityName + " " + "(" + fromLocation + ")";
+                    origin2El.innerHTML = "Origin: " + originCityName + " " + "(" + fromLocation + ")";
+                    origin3El.innerHTML = "Origin: " + originCityName + " " + "(" + fromLocation + ")";
 
-                    price1El.innerHTML = minPrice1;
-                    price2El.innerHTML = minPrice2;
-                    price3El.innerHTML = minPrice3;
+                    destination1El.innerHTML = "Destination: " + destinationCityName + " " + "(" + destinationAirportCode1 + ")";
+                    destination2El.innerHTML = "Destination: " + destinationCityName + " " + "(" + destinationAirportCode2 + ")";
+                    destination3El.innerHTML = "Destination: " + destinationCityName + " " + "(" + destinationAirportCode3 + ")";
 
-                    // direct1El.innerHTML = 
-                    // direct2El.innerHTML = 
-                    // direct3El.innerHTML = 
+                    airlinecode1El.innerHTML = "Carrier: " + carrierName1;
+                    airlinecode2El.innerHTML = "Carrier: " + carrierName2;
+                    airlinecode3El.innerHTML = "Carrier: " + carrierName3;
+
+                    price1El.innerHTML = "Price: $" + minPrice1;
+                    price2El.innerHTML = "Price: $" + minPrice2;
+                    price3El.innerHTML = "Price: $" + minPrice3;
+
+                    direct1El.innerHTML = "Direct Flight: " + directFlight1;
+                    direct2El.innerHTML = "Direct Flight: " + directFlight2;
+                    direct3El.innerHTML = "Direct Flight: " + directFlight3;
 
 
 
