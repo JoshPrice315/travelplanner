@@ -92,9 +92,9 @@ var hotelStars1El = document.querySelector("#hotelStars1");
 var hotelStars2El = document.querySelector("#hotelStars2");
 var hotelStars3El = document.querySelector("#hotelStars3");
 // Links hotel prices to index
-var hotelPrice1 = document.querySelector("#hotelPrice1");
-var hotelPrice1 = document.querySelector("#hotelPrice2");
-var hotelPrice1 = document.querySelector("#hotelPrice3");
+var hotelPrice1El = document.querySelector("#hotelPrice1");
+var hotelPrice2El = document.querySelector("#hotelPrice2");
+var hotelPrice3El = document.querySelector("#hotelPrice3");
 
 //flight 1 arrays for local storage
 var startDateArrayFlight1 = [];
@@ -182,7 +182,7 @@ var formSubmitHandler = function (event) {
         //to clear the input form field after submit
         startdatepickerinputEl.value = "";
         enddatepickerinputEl.value = "",
-            fromLocationInputIdEl.value = "";
+        fromLocationInputIdEl.value = "";
         toLocationInputIdEl.value = "";
 
     }
@@ -407,6 +407,8 @@ var getFlightData = function () {
 
 
 
+
+
                         //this will remove the class that was defaulted from the HTML file so that the data placeholders show up
                         showHiddenEl.classList.remove("hidden");
 
@@ -579,6 +581,19 @@ var getHotelData = function () {
                     var hotelPrice2 = jsonResponse[1].priceAvg;
                     var hotelPrice3 = jsonResponse[2].priceAvg;
                     console.log(hotelPrice1, hotelPrice2, hotelPrice3);
+
+                    hotelID1El.innerHTML = "Hotel Name: " + hotelID1;
+                    hotelID2El.innerHTML = "Hotel Name: " + hotelID2;
+                    hotelID3El.innerHTML = "Hotel Name: " + hotelID3;
+
+                    hotelStars1El.innerHTML = "Stars: " + hotelStars1;
+                    hotelStars2El.innerHTML = "Stars: " + hotelStars2;
+                    hotelStars3El.innerHTML = "Stars: " + hotelStars3;
+
+                    hotelPrice1El.innerHTML = "Price: " + "$" + hotelPrice1;
+                    hotelPrice2El.innerHTML = "Price: " + "$" + hotelPrice2;
+                    hotelPrice3El.innerHTML = "Price: " + "$" + hotelPrice3;
+
                 })
             }
             else {
@@ -589,9 +604,6 @@ var getHotelData = function () {
             alert("Unable to connect to HotelLook!");
         })
 }
-
-
-
 
 // function to get attraction data
 
