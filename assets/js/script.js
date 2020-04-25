@@ -8,15 +8,15 @@ $(document).ready(function () {
     $('.datepicker-end').datepicker();
 });
 
-// From Input 
-$(document).ready(function () {
-    $('.from-location-input-id').characterCounter();
-});
+// // From Input 
+// $(document).ready(function () {
+//     $('.from-location-input-id').characterCounter();
+// });
 
-// To Input 
-$(document).ready(function () {
-    $('.to-location-input-id').characterCounter();
-});
+// // To Input 
+// $(document).ready(function () {
+//     $('.to-location-input-id').characterCounter();
+// });
 
 // Mobile Navi 
 $(document).ready(function () {
@@ -31,57 +31,130 @@ $(document).ready(function () {
 
 var userFormEl = document.querySelector("#valueinputform");
 var valueinputformEl = document.querySelector("#valueinputform");
+
 var submitButtonEl = document.querySelector("#search-button");
 var startdatepickerinputEl = document.querySelector("#datepicker-start-id");
 var enddatepickerinputEl = document.querySelector("#datepicker-end-id");
 var fromLocationInputIdEl = document.querySelector("#from-location-input-id");
 var toLocationInputIdEl = document.querySelector("#to-location-input-id");
 
+var outbounddate1El = document.querySelector("#outbounddate1");
+var outbounddate2El = document.querySelector("#outbounddate2");
+var outBoundDate3El = document.querySelector("#outbounddate3");
+
+var inbounddate1El = document.querySelector("#inbounddate1");
+var inbounddate2El = document.querySelector("#inbounddate2");
+var inbounddate3El = document.querySelector("#inbounddate3");
+
+var origin1El = document.querySelector("#origin1");
+var origin2El = document.querySelector("#origin2");
+var origin3El = document.querySelector("#origin3");
+
+var destination1El = document.querySelector("#destination1");
+var destination2El = document.querySelector("#destination2");
+var destination3El = document.querySelector("#destination3");
+
+var airlinecode1El = document.querySelector("#airlinecode1");
+var airlinecode2El = document.querySelector("#airlinecode2");
+var airlinecode3El = document.querySelector("#airlinecode3");
+
+var price1El = document.querySelector("#price1");
+var price2El = document.querySelector("#price2");
+var price3El = document.querySelector("#price3");
+
+var direct1El = document.querySelector("#direct1");
+var direct2El = document.querySelector("#direct2");
+var direct3El = document.querySelector("#direct3");
+
+
+
+
+   
+
+
+
 
 var startDateArray = [];
+var endDateArray = [];
+var fromLocationArray = [];
+var toLocationArray = [];
+
+
+
 
 
 //this function passes the input data to the function 
 var formSubmitHandler = function (event) {
     event.preventDefault();
 
-
+    //get the value from the startDate field
     startDate = startdatepickerinputEl.value.trim();
-    console.log("startDate " + startDate);
+    // console.log("startDate " + startDate);
+
+    //format the startDate field into the format that API needs
     formattedStartDate = moment(startDate).format('YYYY-MM-DD');
     console.log("formattedStartDate " + formattedStartDate);
+
+    //get the value from the endDate field
     endDate = enddatepickerinputEl.value.trim();
-    console.log(endDate);
+    // console.log(endDate);
+
+    //format the endDate field into the format that API needs    
     formattedEndDate = moment(endDate).format('YYYY-MM-DD');
     console.log("formattedEndDate " + formattedEndDate);
+
+    //get the value of the fromLocation
     fromLocation = fromLocationInputIdEl.value.trim();
     console.log(fromLocation);
+
+    //get the value of the toLocation 
     toLocation = toLocationInputIdEl.value.trim();
     console.log(toLocation);
 
 
-    if (startDate && endDate && fromLocation && toLocation) {
-        //to get the cities with the city name
+
+
+    if (formattedStartDate && formattedEndDate && fromLocation && toLocation) {
+        //to call the functions if the data above was input 
         getFlightData();
         getHotelData();
 
 
-        // //push selected city name to the cityArray array
-        startDateArray.push(startDate, endDate, fromLocation, toLocation);
+        // //push selected startDate into the startDateArray 
+        startDateArray.push(formattedStartDate);
         //set the startDate to the localStorage
         localStorage.setItem("Start Date", JSON.stringify(startDateArray));
+
+
+        // //push selected endDate into the endDateArray 
+        endDateArray.push(formattedEndDate);
+        //set the endDate to the localStorage
+        localStorage.setItem("End Date", JSON.stringify(endDateArray));
+
+
+        //push selected fromLocation into the fromLocationArray 
+        fromLocationArray.push(fromLocation);
+        //set the fromLocation to the localStorage
+        localStorage.setItem("From Location", JSON.stringify(fromLocationArray));
+
+
+        //push selected toLocation into the toLocationArray 
+        toLocationArray.push(toLocation);
+        //set the toLocation to the localStorage
+        localStorage.setItem("To Location", JSON.stringify(toLocationArray));
+
 
 
         //to clear the input form field after submit
         startdatepickerinputEl.value = "";
         enddatepickerinputEl.value = "",
-            fromLocationInputIdEl.value = "";
+        fromLocationInputIdEl.value = "";
         toLocationInputIdEl.value = "";
 
     }
-    // else {
-    //     alert("Please enter a Start Date")
-    // }
+    else {
+        alert("Please enter a Start Date, End Date, From and To Location in order to search.")
+    }
     // console.log(event);
 }
 
@@ -93,12 +166,12 @@ var formSubmitHandler = function (event) {
 
 var getFlightData = function () {
 
-    // var flightSearchUrl = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/USA/USD/en-US/"
-    var skyScannerSearchUrl = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/NYC/2020-04-30?inboundpartialdate=2020-05-15"
-    var skyScannerSearchUrl2 = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/NYC/2020-05-01?inboundpartialdate=2020-05-15"
-    // var skyScannerSearchUrl3 = "https://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/{country}/{currency}/{locale}/{originPlace}/{destinationPlace}/{outboundPartialDate}/{inboundPartialDate}?apiKey={apiKey}""
+    // var skyScannerSearchUrl = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/NYC/2020-04-30?inboundpartialdate=2020-05-15"
+    // var skyScannerSearchUrl2 = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/NYC/2020-05-01?inboundpartialdate=2020-05-15"
+    // var skyScannerSearchUrl3 = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/" + fromLocation + "/" + toLocation + "/" + formattedStartDate + "?inboundpartialdate=" + formattedEndDate;
+    var skyScannerSearchUrl = "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/" + fromLocation + "/" + toLocation + "/" + formattedStartDate + "?inboundpartialdate=" + formattedEndDate;
 
-    fetch(skyScannerSearchUrl2, {
+    fetch(skyScannerSearchUrl, {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
@@ -109,48 +182,144 @@ var getFlightData = function () {
             if (response.ok) {
                 response.json().then(function (jsonResponse) {
                     console.log(jsonResponse);
+
+
+
+                    //get outBoundDates for the Quotes
+                    var outBoundDate1 = jsonResponse.Quotes[0].OutboundLeg.DepartureDate;
+                    console.log(outBoundDate1);
+                    var outBoundDate2 = jsonResponse.Quotes[1].OutboundLeg.DepartureDate;
+                    console.log(outBoundDate2);
+                    var outBoundDate3 = jsonResponse.Quotes[2].OutboundLeg.DepartureDate;
+                    console.log(outBoundDate3);
+
+                    //set the inBoundDates --> there is no such data returned from the API
+                    var inboundDate = formattedEndDate;
+                    console.log(inboundDate);
+                    // var inboundDate2 = formattedEndDate;
+                    // console.log(inboundDate2)
+                    // var inboundDate3 = formattedEndDate;
+                    // console.log(inboundDate3)
+
+
+
+                    //get inboundDates for the Quotes
+
+
+                    //get originCityName from the jsonResponse
+                    var originCityName = jsonResponse.Places[1].CityName;
+                    // console.log(originCityName);
+
+                    //get destinationCityName from the jsonResponse
+                    var destinationCityName = jsonResponse.Places[0].CityName;
+                    // console.log(destinationCityName);                    
+
+                    //get 3 carriers from the jsonResponse
                     var carrierID1 = jsonResponse.Quotes[0].OutboundLeg.CarrierIds[0];
                     var carrierID2 = jsonResponse.Quotes[1].OutboundLeg.CarrierIds[0];
                     var carrierID3 = jsonResponse.Quotes[2].OutboundLeg.CarrierIds[0];
-                    console.log(carrierID1, carrierID2, carrierID3);
+                    // console.log(carrierID1, carrierID2, carrierID3);
 
 
-                    var destinationCityName = jsonResponse.Places[0].CityName;
-                    console.log(destinationCityName);
 
-                    var originCityName = jsonResponse.Places[1].CityName;
-                    console.log(originCityName);
+                    //get places(airports codes)
+                    var destinationID1 = jsonResponse.Quotes[0].OutboundLeg.DestinationId;
+                    // console.log(destinationID1);
+                    var destinationID2 = jsonResponse.Quotes[1].OutboundLeg.DestinationId;
+                    // console.log(destinationID2);
+                    var destinationID3 = jsonResponse.Quotes[2].OutboundLeg.DestinationId;
+                    // console.log(destinationID3);
 
+
+
+                    //match up the places ID with the Quote Place ID
+                    var destinationAirportCode1;
+                    var destinationAirportCode2;
+                    var destinationAirportCode3;
+
+                    for (var i = 0; i < jsonResponse.Places.length; i++) {
+                        var destinationAirportCodes = jsonResponse.Places[i]
+                        // console.log(destinationAirportCodes);
+                        if (destinationID1 === destinationAirportCodes.PlaceId) {
+                            destinationAirportCode1 = destinationAirportCodes.IataCode;
+                            // console.log("destinationAirportCode1 " + destinationAirportCode1);
+                        }
+                        else if (destinationID2 === destinationAirportCodes.PlaceId) {
+                            destinationAirportCode2 = destinationAirportCodes.IataCode;
+                            // console.log("destinationAirportCode2 " + destinationAirportCode2);
+                        }
+                        else if (destinationID3 === destinationAirportCodes.IataCode) {
+                            destinationAirportCode3 = destinationAirportCodes.IataCode;
+                            // console.log("destinationAirportCode3 " + destinationAirportCode3);
+                        }
+                    }
+
+
+                    //get the 3 quote min prices from the jsonResponse
                     var minPrice1 = jsonResponse.Quotes[0].MinPrice;
-                    console.log("$" + minPrice1);
+                    // console.log("$" + minPrice1);
                     var minPrice2 = jsonResponse.Quotes[1].MinPrice;
-                    console.log("$" + minPrice2);
+                    // console.log("$" + minPrice2);
                     var minPrice3 = jsonResponse.Quotes[2].MinPrice;
-                    console.log("$" + minPrice3);
+                    // console.log("$" + minPrice3);
 
+
+
+                    //match up the carrier ID with the Carrier Name
                     var carrierName1;
                     var carrierName2;
                     var carrierName3;
 
                     for (var i = 0; i < jsonResponse.Carriers.length; i++) {
                         var carriers = jsonResponse.Carriers[i]
-                        console.log(carriers);
+                        // console.log(carriers);
                         if (carrierID1 === carriers.CarrierId) {
                             carrierName1 = carriers.Name;
-                            console.log(carrierName1);
+                            // console.log(carrierName1);
                         }
-
                         else if (carrierID2 === carriers.CarrierId) {
                             carrierName2 = carriers.Name;
-                            console.log(carrierName2);
+                            // console.log(carrierName2);
                         }
-
                         else if (carrierID3 === carriers.CarrierId) {
                             carrierName3 = carriers.Name;
-                            console.log(carrierName3);
+                            // console.log(carrierName3);
                         }
-
                     }
+
+
+
+                    outbounddate1El.innerHTML = outBoundDate1;
+                    outbounddate2El.innerHTML = outBoundDate2;
+                    outBoundDate3El.innerHTML = outBoundDate3;
+
+                    // inbounddate1El.innerHTML = inboundDate;
+                    // inboundDate2El.innerHTML = inboundDate;
+                    // inboundDate3El.innerHTML = inboundDate;
+
+                    origin1El.innerHTML = originCityName;
+                    origin2El.innerHTML = originCityName;
+                    origin3El.innerHTML = originCityName;
+
+                    destination1El.innerHTML = destinationCityName + " " + destinationAirportCode1;
+                    destination2El.innerHTML = destinationCityName + " " + destinationAirportCode2;
+                    destination3El.innerHTML = destinationCityName + " " + destinationAirportCode3;
+
+                    airlinecode1El.innerHTML = carrierName1;
+                    airlinecode2El.innerHTML = carrierName2;
+                    airlinecode3El.innerHTML = carrierName3;
+
+                    price1El.innerHTML = minPrice1;
+                    price2El.innerHTML = minPrice2;
+                    price3El.innerHTML = minPrice3;
+
+                    // direct1El.innerHTML = 
+                    // direct2El.innerHTML = 
+                    // direct3El.innerHTML = 
+
+
+
+
 
 
                 })
