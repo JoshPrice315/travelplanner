@@ -147,18 +147,55 @@ var getFlightData = function () {
             if (response.ok) {
                 response.json().then(function (jsonResponse) {
                     console.log(jsonResponse);
+
+                    //get 3 carriers from the jsonResponse
                     var carrierID1 = jsonResponse.Quotes[0].OutboundLeg.CarrierIds[0];
                     var carrierID2 = jsonResponse.Quotes[1].OutboundLeg.CarrierIds[0];
                     var carrierID3 = jsonResponse.Quotes[2].OutboundLeg.CarrierIds[0];
                     console.log(carrierID1, carrierID2, carrierID3);
 
-
-                    var destinationCityName = jsonResponse.Places[0].CityName;
-                    console.log(destinationCityName);
-
+                    //get originCityName from the jsonResponse
                     var originCityName = jsonResponse.Places[1].CityName;
                     console.log(originCityName);
 
+                    //get destinationCityName from the jsonResponse
+                    var destinationCityName = jsonResponse.Places[0].CityName;
+                    console.log(destinationCityName);
+
+                    //get places(airports codes)
+                    var destinationID1 = jsonResponse.Quotes[0].OutboundLeg.DestinationId;
+                    console.log(destinationID1);
+                    var destinationID2 = jsonResponse.Quotes[1].OutboundLeg.DestinationId;
+                    console.log(destinationID2);
+                    var destinationID3 = jsonResponse.Quotes[2].OutboundLeg.DestinationId;
+                    console.log(destinationID3);
+
+
+
+                    //match up the places ID with the Quote Place ID
+                    var destinationAirportCode1;
+                    var destinationAirportCode2;
+                    var destinationAirportCode3;
+
+                    for (var i = 0; i < jsonResponse.Places.length; i++) {
+                        var destinationAirportCodes = jsonResponse.Places[i]
+                        console.log(destinationAirportCodes);
+                        if (destinationID1 === destinationAirportCodes.PlaceId) {
+                            destinationAirportCode1 = destinationAirportCodes.IataCode;
+                            console.log("destinationAirportCode1 " + destinationAirportCode1);
+                        }
+                        else if (destinationID2 === destinationAirportCodes.PlaceId) {
+                            destinationAirportCode2 = destinationAirportCodes.IataCode;
+                            console.log("destinationAirportCode2 " + destinationAirportCode2);
+                        }
+                        else if (destinationID3 === destinationAirportCodes.IataCode) {
+                            destinationAirportCode3 = destinationAirportCodes.IataCode;
+                            console.log("destinationAirportCode3 " + destinationAirportCode3);
+                        }
+                    }
+
+
+                    //get the 3 quote min prices from the jsonResponse
                     var minPrice1 = jsonResponse.Quotes[0].MinPrice;
                     console.log("$" + minPrice1);
                     var minPrice2 = jsonResponse.Quotes[1].MinPrice;
@@ -166,6 +203,9 @@ var getFlightData = function () {
                     var minPrice3 = jsonResponse.Quotes[2].MinPrice;
                     console.log("$" + minPrice3);
 
+
+
+                    //match up the carrier ID with the Carrier Name
                     var carrierName1;
                     var carrierName2;
                     var carrierName3;
@@ -177,18 +217,16 @@ var getFlightData = function () {
                             carrierName1 = carriers.Name;
                             console.log(carrierName1);
                         }
-
                         else if (carrierID2 === carriers.CarrierId) {
                             carrierName2 = carriers.Name;
                             console.log(carrierName2);
                         }
-
                         else if (carrierID3 === carriers.CarrierId) {
                             carrierName3 = carriers.Name;
                             console.log(carrierName3);
                         }
-
                     }
+                    
 
 
                 })
