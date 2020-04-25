@@ -73,6 +73,10 @@ var direct1El = document.querySelector("#direct1");
 var direct2El = document.querySelector("#direct2");
 var direct3El = document.querySelector("#direct3");
 
+var directFlightIconEl1 = document.querySelector("#direct-flight-icon1")
+var directFlightIconEl2 = document.querySelector("#direct-flight-icon2")
+var directFlightIconEl3 = document.querySelector("#direct-flight-icon3")
+
 
 
 
@@ -321,12 +325,32 @@ var getFlightData = function () {
                     //get direct flight data
                     var directFlight1 = jsonResponse.Quotes[0].Direct;
                     console.log(directFlight1);
+                    if (directFlight1) {
+                        directFlightIconEl1.setAttribute("src", "./assets/images/checked_checkbox.png");
+                    }
+                    else {
+                        direct1El.innerHTML = "Direct Flight: No" ;
+                    }
                     var directFlight2 = jsonResponse.Quotes[1].Direct;
                     console.log(directFlight2);
+                    if (directFlight2) {
+                        directFlightIconEl2.setAttribute("src", "./assets/images/checked_checkbox.png");
+                    }
+                    else {
+                        direct2El.innerHTML = "Direct Flight: No" ;
+                    }
                     var directFlight3 = jsonResponse.Quotes[2].Direct;
                     console.log(directFlight3);
+                    if (directFlight3) {
+                        directFlightIconEl3.setAttribute("src", "./assets/images/checked_checkbox.png");
+                    }
+                    else {
+                        direct3El.innerHTML = "Direct Flight: No" ;
+                    }
  
-
+                    direct1El.innerHTML = "Direct Flight: ";
+                    direct2El.innerHTML = "Direct Flight: ";
+                    direct3El.innerHTML = "Direct Flight: ";
 
 
                     outbounddate1El.innerHTML = "Outbound: " + outBoundDate1Formatted;
@@ -353,9 +377,7 @@ var getFlightData = function () {
                     price2El.innerHTML = "Price: $" + minPrice2;
                     price3El.innerHTML = "Price: $" + minPrice3;
 
-                    direct1El.innerHTML = "Direct Flight: " + directFlight1;
-                    direct2El.innerHTML = "Direct Flight: " + directFlight2;
-                    direct3El.innerHTML = "Direct Flight: " + directFlight3;
+     
 
 
 
