@@ -40,7 +40,38 @@ var toLocationInputIdEl = document.querySelector("#to-location-input-id");
 
 var outbounddate1El = document.querySelector("#outbounddate1");
 var outbounddate2El = document.querySelector("#outbounddate2");
-var outbounddate3El = document.querySelector("#outbounddate3");
+var outBoundDate3El = document.querySelector("#outbounddate3");
+
+var inbounddate1El = document.querySelector("#inbounddate1");
+var inbounddate2El = document.querySelector("#inbounddate2");
+var inbounddate3El = document.querySelector("#inbounddate3");
+
+var origin1El = document.querySelector("#origin1");
+var origin2El = document.querySelector("#origin2");
+var origin3El = document.querySelector("#origin3");
+
+var destination1El = document.querySelector("#destination1");
+var destination2El = document.querySelector("#destination2");
+var destination3El = document.querySelector("#destination3");
+
+var airlinecode1El = document.querySelector("#airlinecode1");
+var airlinecode2El = document.querySelector("#airlinecode2");
+var airlinecode3El = document.querySelector("#airlinecode3");
+
+var price1El = document.querySelector("#price1");
+var price2El = document.querySelector("#price2");
+var price3El = document.querySelector("#price3");
+
+var direct1El = document.querySelector("#direct1");
+var direct2El = document.querySelector("#direct2");
+var direct3El = document.querySelector("#direct3");
+
+
+
+
+   
+
+
 
 
 var startDateArray = [];
@@ -163,12 +194,12 @@ var getFlightData = function () {
                     console.log(outBoundDate3);
 
                     //set the inBoundDates --> there is no such data returned from the API
-                    var inboundDate1 = formattedEndDate;
-                    console.log(inboundDate1);
-                    var inboundDate2 = formattedEndDate
-                    console.log(inboundDate2)
-                    var inboundDate3 = formattedEndDate
-                    console.log(inboundDate3)
+                    var inboundDate = formattedEndDate;
+                    console.log(inboundDate);
+                    // var inboundDate2 = formattedEndDate;
+                    // console.log(inboundDate2)
+                    // var inboundDate3 = formattedEndDate;
+                    // console.log(inboundDate3)
 
 
 
@@ -259,10 +290,36 @@ var getFlightData = function () {
 
 
                     outbounddate1El.innerHTML = outBoundDate1;
-                    outBoundDate2.innerHTML = outBoundDate2;
-                    outBoundDate3.innerHTML = outBoundDate3;
+                    outbounddate2El.innerHTML = outBoundDate2;
+                    outBoundDate3El.innerHTML = outBoundDate3;
 
-                    
+                    // inbounddate1El.innerHTML = inboundDate;
+                    // inboundDate2El.innerHTML = inboundDate;
+                    // inboundDate3El.innerHTML = inboundDate;
+
+                    origin1El.innerHTML = originCityName;
+                    origin2El.innerHTML = originCityName;
+                    origin3El.innerHTML = originCityName;
+
+                    destination1El.innerHTML = destinationCityName + " " + destinationAirportCode1;
+                    destination2El.innerHTML = destinationCityName + " " + destinationAirportCode2;
+                    destination3El.innerHTML = destinationCityName + " " + destinationAirportCode3;
+
+                    airlinecode1El.innerHTML = carrierName1;
+                    airlinecode2El.innerHTML = carrierName2;
+                    airlinecode3El.innerHTML = carrierName3;
+
+                    price1El.innerHTML = minPrice1;
+                    price2El.innerHTML = minPrice2;
+                    price3El.innerHTML = minPrice3;
+
+                    // direct1El.innerHTML = 
+                    // direct2El.innerHTML = 
+                    // direct3El.innerHTML = 
+
+
+
+
 
 
                 })
