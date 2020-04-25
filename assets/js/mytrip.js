@@ -35,11 +35,20 @@ var saveddirectflighticon3 = document.querySelector("#saved-direct-flight-icon3"
 
 var getFlightsFromMyTrip = function() {
 
+
+
     var startDateFlight1Display = JSON.parse(localStorage.getItem("startDateFlight1"));
-    document.getElementById("saved-outbounddate1").innerHTML = startDateFlight1Display
+
 
         // // Get the data from the localStorage for row #5
         // $("#saved-outbounddate1").val(JSON.parse(localStorage.getItem("startDateFlight1")));
+        var firstOutBoundDate
+        for (var i = 0; i < startDateFlight1Display.length; i++) {
+            firstOutBoundDate = startDateFlight1Display[0];
+            console.log(firstOutBoundDate);
+        }
+
+        document.getElementById("saved-outbounddate1").innerHTML = firstOutBoundDate
 
 }
 
