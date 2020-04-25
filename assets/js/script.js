@@ -83,12 +83,18 @@ var flight1buttonEl = document.querySelector("#flight1button");
 var flight2buttonEl = document.querySelector("#flight2button");
 var flight3buttonEl = document.querySelector("#flight3button");
 
-
-
-
-
-
-
+// Links hotel names to index
+var hotelID1El = document.querySelector("#hotelID1");
+var hotelID2El = document.querySelector("#hotelID2");
+var hotelID3El = document.querySelector("#hotelID3");
+// Link hotel stars to index
+var hotelStars1El = document.querySelector("#hotelStars1");
+var hotelStars2El = document.querySelector("#hotelStars2");
+var hotelStars3El = document.querySelector("#hotelStars3");
+// Links hotel prices to index
+var hotelPrice1 = document.querySelector("#hotelPrice1");
+var hotelPrice1 = document.querySelector("#hotelPrice2");
+var hotelPrice1 = document.querySelector("#hotelPrice3");
 
 //flight 1 arrays for local storage
 var startDateArrayFlight1 = [];
@@ -589,24 +595,24 @@ var getHotelData = function () {
 
 // function to get attraction data
 
-var searchAttractionData = function () {
-    var attractionSearchURL = "https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=YgasmQcKMenqrHdAGUHQgz3JdB9tVnSi&keyword=NewYork"
+// var searchAttractionData = function () {
+//     var attractionSearchURL = "https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=YgasmQcKMenqrHdAGUHQgz3JdB9tVnSi&keyword=NewYork"
 
-    fetch(attractionSearchURL)
-        .then(function (response) {
-            if (response.ok) {
-                response.json().then(function (attractionDataResponse) {
-                    console.log(attractionDataResponse);
-                })
-            }
-            else {
-                alert("Error: " + response.statusText);
-            }
-        })
-        .catch(function (error) {
-            alert("Unable to connect to TicketMaster!");
-        })
-}
+//     fetch(attractionSearchURL)
+//         .then(function (response) {
+//             if (response.ok) {
+//                 response.json().then(function (attractionDataResponse) {
+//                     console.log(attractionDataResponse);
+//                 })
+//             }
+//             else {
+//                 alert("Error: " + response.statusText);
+//             }
+//         })
+//         .catch(function (error) {
+//             alert("Unable to connect to TicketMaster!");
+//         })
+// }
 
 
 
