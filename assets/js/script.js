@@ -196,9 +196,22 @@ var getFlightData = function () {
                 response.json().then(function (jsonResponse) {
                     console.log(jsonResponse);
 
+                    //conditionality to handle an empty response from the API and show a message to the user that different data needs to be entered
+                    quotesArray = []
+                    var quotesArrayCheck = jsonResponse.Quotes[0];
+                    // console.log("quotesArrayCheck" + quotesArrayCheck);
+                    quotesArray.push(quotesArrayCheck);
+                    // console.log(quotesArray);
+
+                    if (quotesArray[0] === undefined) {
+                        alert("Please select a future and different date or city combination.")
+                    }
+
+                    else {
 
 
-                    //get outBoundDates for the Quotes
+                        
+                        //get outBoundDates for the Quotes
                     var outBoundDate1 = jsonResponse.Quotes[0].OutboundLeg.DepartureDate;
                     // console.log(outBoundDate1);
                     var outBoundDate1Formatted = moment(outBoundDate1).format('YYYY-MM-DD');
@@ -383,6 +396,10 @@ var getFlightData = function () {
 
 
 
+                    }
+                    
+
+                    
 
                 })
             }
