@@ -48,14 +48,12 @@ var formSubmitHandler = function (event) {
 
     startDate = startdatepickerinputEl.value.trim();
     console.log("startDate " + startDate);
-    var formattedStartDate = moment(startDate).format('YYYY-MM-DD');
+    formattedStartDate = moment(startDate).format('YYYY-MM-DD');
     console.log("formattedStartDate " + formattedStartDate);
-
     endDate = enddatepickerinputEl.value.trim();
     console.log(endDate);
-    var formattedEndDate = moment(endDate).format('YYYY-MM-DD');
+    formattedEndDate = moment(endDate).format('YYYY-MM-DD');
     console.log("formattedEndDate " + formattedEndDate);
-
     fromLocation = fromLocationInputIdEl.value.trim();
     console.log(fromLocation);
     toLocation = toLocationInputIdEl.value.trim();
@@ -66,11 +64,7 @@ var formSubmitHandler = function (event) {
         //to get the cities with the city name
         getFlightData();
         getHotelData();
-<<<<<<< HEAD
 
-=======
-      
->>>>>>> c43e79309894371df307e1adf5297429801a55cf
 
         // //push selected city name to the cityArray array
         startDateArray.push(startDate, endDate, fromLocation, toLocation);
@@ -81,11 +75,7 @@ var formSubmitHandler = function (event) {
         //to clear the input form field after submit
         startdatepickerinputEl.value = "";
         enddatepickerinputEl.value = "",
-<<<<<<< HEAD
             fromLocationInputIdEl.value = "";
-=======
-        fromLocationInputIdEl.value = "";
->>>>>>> c43e79309894371df307e1adf5297429801a55cf
         toLocationInputIdEl.value = "";
 
     }
@@ -182,7 +172,7 @@ var getHotelData = function () {
 
     // var hotelSearchUrl = "http://engine.hotellook.com/api/v2/lookup.json?query=london&lang=ru&lookFor=both&limit=1&token=065c3b8c9e2bb6252bf699eacc8fd32c";
 
-    var hotelSearchUrl2 = "http://engine.hotellook.com/api/v2/cache.json?location=" + toLocation + "&checkIn=" + startDate + "&checkOut=" + endDate + "&currency=usd&limit=3&token=065c3b8c9e2bb6252bf699eacc8fd32c";
+    var hotelSearchUrl2 = "http://engine.hotellook.com/api/v2/cache.json?location=" + toLocation + "&checkIn=" + formattedStartDate + "&checkOut=" + formattedEndDate + "&currency=usd&limit=3&token=065c3b8c9e2bb6252bf699eacc8fd32c";
 
     fetch(hotelSearchUrl2)
         .then(function (response) {
@@ -226,10 +216,6 @@ var searchAttractionData = function () {
         })
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> c43e79309894371df307e1adf5297429801a55cf
 
 
 
@@ -246,17 +232,8 @@ var searchAttractionData = function () {
 
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> c43e79309894371df307e1adf5297429801a55cf
 // searchAttractionData();
 // getFlightData();
 // getHotelData();
 submitButtonEl.addEventListener("click", formSubmitHandler);
-<<<<<<< HEAD
-console.log(startDate);
-=======
-
-
->>>>>>> c43e79309894371df307e1adf5297429801a55cf
