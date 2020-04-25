@@ -95,13 +95,25 @@ var startDateArrayFlight1 = [];
 var endDateArrayFlight1 = [];
 var fromLocationArrayFlight1 = [];
 var toLocationArrayFlight1 = [];
+var carrierArrayFlight1 = [];
+var priceArrayFlight1 = [];
+var directArrayFlight1 = [];
 // //arrays to store the selected flight data
 // var flight1Array = [];
 // var flight2Array = [];
 // var flight3Array = [];
 
-var formattedEndDate
-var fromLocation
+var formattedEndDate;
+var fromLocation;
+var carrierName1;
+var carrierName2;
+var carrierName3;
+var minPrice1;
+var minPrice2;
+var minPrice3;
+var directFlight1;
+var directFlight2;
+var directFlight3;
 
 
 
@@ -279,19 +291,19 @@ var getFlightData = function () {
 
 
                     //get the 3 quote min prices from the jsonResponse
-                    var minPrice1 = jsonResponse.Quotes[0].MinPrice;
+                    minPrice1 = jsonResponse.Quotes[0].MinPrice;
                     // console.log("$" + minPrice1);
-                    var minPrice2 = jsonResponse.Quotes[1].MinPrice;
+                    minPrice2 = jsonResponse.Quotes[1].MinPrice;
                     // console.log("$" + minPrice2);
-                    var minPrice3 = jsonResponse.Quotes[2].MinPrice;
+                    minPrice3 = jsonResponse.Quotes[2].MinPrice;
                     // console.log("$" + minPrice3);
 
 
 
                     //match up the carrier ID with the Carrier Name
-                    var carrierName1;
-                    var carrierName2;
-                    var carrierName3;
+                    carrierName1;
+                    carrierName2;
+                    carrierName3;
 
                     for (var i = 0; i < jsonResponse.Carriers.length; i++) {
                         var carriers = jsonResponse.Carriers[i]
@@ -312,7 +324,7 @@ var getFlightData = function () {
 
 
                     //get direct flight data
-                    var directFlight1 = jsonResponse.Quotes[0].Direct;
+                    directFlight1 = jsonResponse.Quotes[0].Direct;
                     // console.log(directFlight1);
 
                     //conditionality to show and hide checkbox based on the flight being direct or not
@@ -323,7 +335,7 @@ var getFlightData = function () {
                         directFlightIconEl1.setAttribute("src", "./assets/images/unchecked-checkbox.png");
                     }
 
-                    var directFlight2 = jsonResponse.Quotes[1].Direct;
+                    directFlight2 = jsonResponse.Quotes[1].Direct;
                     // console.log(directFlight2);
                     if (directFlight2) {
                         directFlightIconEl2.setAttribute("src", "./assets/images/checked_checkbox.png");
@@ -332,7 +344,7 @@ var getFlightData = function () {
                         directFlightIconEl2.setAttribute("src", "./assets/images/unchecked-checkbox.png");
                     }
 
-                    var directFlight3 = jsonResponse.Quotes[2].Direct;
+                    directFlight3 = jsonResponse.Quotes[2].Direct;
                     // console.log(directFlight3);
                     if (directFlight3) {
                         directFlightIconEl3.setAttribute("src", "./assets/images/checked_checkbox.png");
@@ -424,6 +436,16 @@ var saveFlight1ToMyTrip = function(event) {
     toLocationArrayFlight1.push(toLocation);
     //set the toLocation to the localStorage
     localStorage.setItem("toLocationFlight1", JSON.stringify(toLocationArrayFlight1));
+
+
+    carrierArrayFlight1.push(carrierName1)
+    localStorage.setItem("carrierFlight1", JSON.stringify(carrierArrayFlight1));
+
+    priceArrayFlight1.push(minPrice1);
+    localStorage.setItem("priceFlight1", JSON.stringify(priceArrayFlight1));
+
+    directArrayFlight1.push(directFlight1);
+    localStorage.setItem("directFlight1", JSON.stringify(directFlight1));
 }
 
 
