@@ -40,6 +40,8 @@ var savedFlightCard1El = document.querySelector("#saved-flight-card-1");
 var savedFlightCard2El = document.querySelector("#saved-flight-card-2");
 var savedFlightCard3El = document.querySelector("#saved-flight-card-3");
 
+var flightRowIdEl = document.querySelector("#row-id");
+
 
 //function to reload the data onto the page from the localStorage and show it on the My Trips page
 var getFlight1FromMyTrip = function() {
@@ -128,10 +130,14 @@ var getFlight2FromMyTrip = function() {
 
     //get items from locaStorage for each item above
         var startDateFlight2DisplayItem
-        for (var i = 0; i < startDateFlight2Display.length; i++) {
-            startDateFlight2DisplayItem = startDateFlight2Display[0];
-            console.log(startDateFlight2DisplayItem);
+
+        if (startDateFlight2Display.length !== null ) {
+            for (var i = 0; i < startDateFlight2Display.length; i++) {
+                startDateFlight2DisplayItem = startDateFlight2Display[0];
+                console.log(startDateFlight2DisplayItem);
+            }  
         }
+        
 
         var endDateFlight2DisplayItem
         for (var i = 0; i < endDateFlight2Display.length; i++) {
@@ -299,6 +305,14 @@ var removeFlight3FromMyTrip = function() {
     // savedFlightCard3.classList.add("hidden");
 }
 
+
+
+// var removeFlightCard1Element = function (savedFlightCard1El){
+//     document.getElementById(savedFlightCard1El);
+//     flightRowIdEl.removeChild(savedFlightCard1El);
+// }
+
+    
 
 
 
