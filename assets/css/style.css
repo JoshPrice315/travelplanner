@@ -64,3 +64,8 @@ footer {
     background-size: cover;
     background-position: center;
   }
+
+
+.hidden {
+    visibility: hidden;
+}

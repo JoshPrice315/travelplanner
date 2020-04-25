@@ -45,9 +45,9 @@ var enddatepickerinputEl = document.querySelector("#datepicker-end-id");
 var fromLocationInputIdEl = document.querySelector("#from-location-input-id");
 var toLocationInputIdEl = document.querySelector("#to-location-input-id");
 
-var outbounddate1El = document.querySelector("#outbounddate1");
-var outbounddate2El = document.querySelector("#outbounddate2");
-var outBoundDate3El = document.querySelector("#outbounddate3");
+var outboundDate1El = document.querySelector("#outbounddate1");
+var outboundDate2El = document.querySelector("#outbounddate2");
+var outboundDate3El = document.querySelector("#outbounddate3");
 
 var inbounddate1El = document.querySelector("#inbounddate1");
 var inbounddate2El = document.querySelector("#inbounddate2");
@@ -76,6 +76,12 @@ var direct3El = document.querySelector("#direct3");
 var directFlightIconEl1 = document.querySelector("#direct-flight-icon1")
 var directFlightIconEl2 = document.querySelector("#direct-flight-icon2")
 var directFlightIconEl3 = document.querySelector("#direct-flight-icon3")
+
+var showHiddenEl = document.querySelector("#hidden");
+
+var flight1buttonEl = document.querySelector("#flight1button");
+var flight2buttonEl = document.querySelector("#flight2button");
+var flight3buttonEl = document.querySelector("#flight3button");
 
 
 
@@ -133,30 +139,6 @@ var formSubmitHandler = function (event) {
         getHotelData();
 
 
-        // //push selected startDate into the startDateArray 
-        startDateArray.push(formattedStartDate);
-        //set the startDate to the localStorage
-        localStorage.setItem("Start Date", JSON.stringify(startDateArray));
-
-
-        // //push selected endDate into the endDateArray 
-        endDateArray.push(formattedEndDate);
-        //set the endDate to the localStorage
-        localStorage.setItem("End Date", JSON.stringify(endDateArray));
-
-
-        //push selected fromLocation into the fromLocationArray 
-        fromLocationArray.push(fromLocation);
-        //set the fromLocation to the localStorage
-        localStorage.setItem("From Location", JSON.stringify(fromLocationArray));
-
-
-        //push selected toLocation into the toLocationArray 
-        toLocationArray.push(toLocation);
-        //set the toLocation to the localStorage
-        localStorage.setItem("To Location", JSON.stringify(toLocationArray));
-
-
 
         //to clear the input form field after submit
         startdatepickerinputEl.value = "";
@@ -166,7 +148,7 @@ var formSubmitHandler = function (event) {
 
     }
     else {
-        alert("Please enter a Start Date, End Date, From and To Location in order to search.")
+        alert("Please enter a Start Date, End Date, From and To Location (City Code in Capital Letters) in order to search.")
     }
     // console.log(event);
 }
@@ -196,9 +178,22 @@ var getFlightData = function () {
                 response.json().then(function (jsonResponse) {
                     console.log(jsonResponse);
 
+                    //conditionality to handle an empty response from the API and show a message to the user that different data needs to be entered
+                    quotesArray = []
+                    var quotesArrayCheck = jsonResponse.Quotes[0];
+                    // console.log("quotesArrayCheck" + quotesArrayCheck);
+                    quotesArray.push(quotesArrayCheck);
+                    // console.log(quotesArray);
+
+                    if (quotesArray[0] === undefined) {
+                        alert("Please select a future and different date or city combination.")
+                    }
+
+                    else {
 
 
-                    //get outBoundDates for the Quotes
+
+                        //get outBoundDates for the Quotes
                     var outBoundDate1 = jsonResponse.Quotes[0].OutboundLeg.DepartureDate;
                     // console.log(outBoundDate1);
                     var outBoundDate1Formatted = moment(outBoundDate1).format('YYYY-MM-DD');
@@ -215,17 +210,6 @@ var getFlightData = function () {
                     // console.log("outBoundDate3Formatted " + outBoundDate3Formatted);
 
                 
-
-
-
-                    //set the inBoundDates --> there is no such data returned from the API
-                    // inboundDate1 = formattedEndDate;
-                    // console.log(inboundDate1);
-                    // inboundDate2 = formattedEndDate;
-                    // console.log(inboundDate2)
-                    // inboundDate3 = formattedEndDate;
-                    // console.log(inboundDate3)
-
 
 
                     //get inboundDates for the Quotes
@@ -264,26 +248,26 @@ var getFlightData = function () {
 
                     for (var i = 0; i < jsonResponse.Places.length; i++) {
                         var destinationAirportCodes = jsonResponse.Places[i]
-                        // console.log(destinationAirportCodes);
+                        console.log(destinationAirportCodes);
                         if (destinationID1 === destinationAirportCodes.PlaceId) {
                             destinationAirportCode1 = destinationAirportCodes.IataCode;
                             console.log("destinationAirportCode1 " + destinationAirportCode1);
-                            // if (destinationAirportCode1 == "undefined") {
-                            //     destinationAirportCode1 == ""
+                            // if (destinationAirportCode1 === "undefined") {
+                            //     destinationAirportCode1 === ""
                             // }
                         }
                         else if (destinationID2 === destinationAirportCodes.PlaceId) {
                             destinationAirportCode2 = destinationAirportCodes.IataCode;
                             console.log("destinationAirportCode2 " + destinationAirportCode2);
-                            // if (destinationAirportCode2 == "undefined") {
-                            //     destinationAirportCode2 == ""
+                            // if (destinationAirportCode2 === "undefined") {
+                            //     destinationAirportCode2 === ""
                             // }
                         }
                         else if (destinationID3 === destinationAirportCodes.PlaceId) {
                             destinationAirportCode3 = destinationAirportCodes.IataCode;
                             console.log("destinationAirportCode3 " + destinationAirportCode3);
-                            // if (destinationAirportCode3 == "undefined") {
-                            //     destinationAirportCode3 == ""
+                            // if (destinationAirportCode3 === "undefined") {
+                            //     destinationAirportCode3 === ""
                             // }
                         }
                     }
@@ -324,42 +308,47 @@ var getFlightData = function () {
 
                     //get direct flight data
                     var directFlight1 = jsonResponse.Quotes[0].Direct;
-                    console.log(directFlight1);
+                    // console.log(directFlight1);
+
+                    //conditionality to show and hide checkbox based on the flight being direct or not
                     if (directFlight1) {
                         directFlightIconEl1.setAttribute("src", "./assets/images/checked_checkbox.png");
                     }
                     else {
-                        direct1El.innerHTML = "Direct Flight: No" ;
+                        directFlightIconEl1.setAttribute("src", "./assets/images/unchecked-checkbox.png");
                     }
+
                     var directFlight2 = jsonResponse.Quotes[1].Direct;
-                    console.log(directFlight2);
+                    // console.log(directFlight2);
                     if (directFlight2) {
                         directFlightIconEl2.setAttribute("src", "./assets/images/checked_checkbox.png");
                     }
                     else {
-                        direct2El.innerHTML = "Direct Flight: No" ;
+                        directFlightIconEl2.setAttribute("src", "./assets/images/unchecked-checkbox.png");
                     }
+
                     var directFlight3 = jsonResponse.Quotes[2].Direct;
-                    console.log(directFlight3);
+                    // console.log(directFlight3);
                     if (directFlight3) {
                         directFlightIconEl3.setAttribute("src", "./assets/images/checked_checkbox.png");
                     }
                     else {
-                        direct3El.innerHTML = "Direct Flight: No" ;
+                        directFlightIconEl3.setAttribute("src", "./assets/images/unchecked-checkbox.png");
                     }
+
  
                     direct1El.innerHTML = "Direct Flight: ";
                     direct2El.innerHTML = "Direct Flight: ";
                     direct3El.innerHTML = "Direct Flight: ";
 
 
-                    outbounddate1El.innerHTML = "Outbound: " + outBoundDate1Formatted;
-                    outbounddate2El.innerHTML = "Outbound: " + outBoundDate2Formatted;
-                    outBoundDate3El.innerHTML = "Outbound: " + outBoundDate3Formatted;
+                    outboundDate1El.innerHTML = "Outbound: " + outBoundDate1Formatted;
+                    outboundDate2El.innerHTML = "Outbound: " + outBoundDate2Formatted;
+                    outboundDate3El.innerHTML = "Outbound: " + outBoundDate3Formatted;
 
-                    // inbounddate1El.innerHTML = "Inbound: " + formattedEndDate;
-                    // inboundDate2El.innerHTML = "Inbound: " + formattedEndDate;
-                    // inboundDate3El.innerHTML = "Inbound: " + formattedEndDate;
+                    inbounddate1El.innerHTML = "Inbound: " + formattedEndDate;
+                    inbounddate2El.innerHTML = "Inbound: " + formattedEndDate;
+                    inbounddate3El.innerHTML = "Inbound: " + formattedEndDate;
 
                     origin1El.innerHTML = "Origin: " + originCityName + " " + "(" + fromLocation + ")";
                     origin2El.innerHTML = "Origin: " + originCityName + " " + "(" + fromLocation + ")";
@@ -379,10 +368,18 @@ var getFlightData = function () {
 
      
 
+                    //this will remove the class that was defaulted from the HTML file so that the data placeholders show up
+                    showHiddenEl.classList.remove("hidden");
 
 
 
 
+
+
+                    }
+                    
+
+                    
 
                 })
             }
@@ -393,6 +390,34 @@ var getFlightData = function () {
         .catch(function (error) {
             alert("Unable to connect to the SkyScanner!")
         })
+}
+
+
+
+var saveFlight1ToMyTrip = function(event) {
+    console.log(event);
+    //push selected startDate into the startDateArray 
+    startDateArray.push(formattedStartDate);
+    //set the startDate to the localStorage
+    localStorage.setItem("Start Date", JSON.stringify(startDateArray));
+
+
+    // //push selected endDate into the endDateArray 
+    endDateArray.push(formattedEndDate);
+    //set the endDate to the localStorage
+    localStorage.setItem("End Date", JSON.stringify(endDateArray));
+
+
+    //push selected fromLocation into the fromLocationArray 
+    fromLocationArray.push(fromLocation);
+    //set the fromLocation to the localStorage
+    localStorage.setItem("From Location", JSON.stringify(fromLocationArray));
+
+
+    //push selected toLocation into the toLocationArray 
+    toLocationArray.push(toLocation);
+    //set the toLocation to the localStorage
+    localStorage.setItem("To Location", JSON.stringify(toLocationArray));
 }
 
 
@@ -468,3 +493,5 @@ var searchAttractionData = function () {
 // getFlightData();
 // getHotelData();
 submitButtonEl.addEventListener("click", formSubmitHandler);
+
+flight1buttonEl.addEventListener("click", saveFlight1ToMyTrip)
