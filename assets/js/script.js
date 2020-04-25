@@ -45,9 +45,9 @@ var enddatepickerinputEl = document.querySelector("#datepicker-end-id");
 var fromLocationInputIdEl = document.querySelector("#from-location-input-id");
 var toLocationInputIdEl = document.querySelector("#to-location-input-id");
 
-var outbounddate1El = document.querySelector("#outbounddate1");
-var outbounddate2El = document.querySelector("#outbounddate2");
-var outBoundDate3El = document.querySelector("#outbounddate3");
+var outboundDate1El = document.querySelector("#outbounddate1");
+var outboundDate2El = document.querySelector("#outbounddate2");
+var outboundDate3El = document.querySelector("#outbounddate3");
 
 var inbounddate1El = document.querySelector("#inbounddate1");
 var inbounddate2El = document.querySelector("#inbounddate2");
@@ -166,7 +166,7 @@ var formSubmitHandler = function (event) {
 
     }
     else {
-        alert("Please enter a Start Date, End Date, From and To Location in order to search.")
+        alert("Please enter a Start Date, End Date, From and To Location (City Code in Capital Letters) in order to search.")
     }
     // console.log(event);
 }
@@ -210,7 +210,7 @@ var getFlightData = function () {
                     else {
 
 
-                        
+
                         //get outBoundDates for the Quotes
                     var outBoundDate1 = jsonResponse.Quotes[0].OutboundLeg.DepartureDate;
                     // console.log(outBoundDate1);
@@ -231,7 +231,7 @@ var getFlightData = function () {
 
 
 
-                    //set the inBoundDates --> there is no such data returned from the API
+                    // set the inBoundDates --> there is no such data returned from the API
                     // inboundDate1 = formattedEndDate;
                     // console.log(inboundDate1);
                     // inboundDate2 = formattedEndDate;
@@ -262,11 +262,11 @@ var getFlightData = function () {
 
                     //get places(airports codes)
                     var destinationID1 = jsonResponse.Quotes[0].OutboundLeg.DestinationId;
-                    console.log(destinationID1);
+                    // console.log(destinationID1);
                     var destinationID2 = jsonResponse.Quotes[1].OutboundLeg.DestinationId;
-                    console.log(destinationID2);
+                    // console.log(destinationID2);
                     var destinationID3 = jsonResponse.Quotes[2].OutboundLeg.DestinationId;
-                    console.log(destinationID3);
+                    // console.log(destinationID3);
 
 
 
@@ -337,7 +337,7 @@ var getFlightData = function () {
 
                     //get direct flight data
                     var directFlight1 = jsonResponse.Quotes[0].Direct;
-                    console.log(directFlight1);
+                    // console.log(directFlight1);
                     if (directFlight1) {
                         directFlightIconEl1.setAttribute("src", "./assets/images/checked_checkbox.png");
                     }
@@ -345,7 +345,7 @@ var getFlightData = function () {
                         direct1El.innerHTML = "Direct Flight: No" ;
                     }
                     var directFlight2 = jsonResponse.Quotes[1].Direct;
-                    console.log(directFlight2);
+                    // console.log(directFlight2);
                     if (directFlight2) {
                         directFlightIconEl2.setAttribute("src", "./assets/images/checked_checkbox.png");
                     }
@@ -353,26 +353,27 @@ var getFlightData = function () {
                         direct2El.innerHTML = "Direct Flight: No" ;
                     }
                     var directFlight3 = jsonResponse.Quotes[2].Direct;
-                    console.log(directFlight3);
+                    // console.log(directFlight3);
                     if (directFlight3) {
                         directFlightIconEl3.setAttribute("src", "./assets/images/checked_checkbox.png");
                     }
                     else {
                         direct3El.innerHTML = "Direct Flight: No" ;
                     }
+
  
                     direct1El.innerHTML = "Direct Flight: ";
                     direct2El.innerHTML = "Direct Flight: ";
                     direct3El.innerHTML = "Direct Flight: ";
 
 
-                    outbounddate1El.innerHTML = "Outbound: " + outBoundDate1Formatted;
-                    outbounddate2El.innerHTML = "Outbound: " + outBoundDate2Formatted;
-                    outBoundDate3El.innerHTML = "Outbound: " + outBoundDate3Formatted;
+                    outboundDate1El.innerHTML = "Outbound: " + outBoundDate1Formatted;
+                    outboundDate2El.innerHTML = "Outbound: " + outBoundDate2Formatted;
+                    outboundDate3El.innerHTML = "Outbound: " + outBoundDate3Formatted;
 
-                    // inbounddate1El.innerHTML = "Inbound: " + formattedEndDate;
-                    // inboundDate2El.innerHTML = "Inbound: " + formattedEndDate;
-                    // inboundDate3El.innerHTML = "Inbound: " + formattedEndDate;
+                    inbounddate1El.innerHTML = "Inbound: " + formattedEndDate;
+                    inbounddate2El.innerHTML = "Inbound: " + formattedEndDate;
+                    inbounddate3El.innerHTML = "Inbound: " + formattedEndDate;
 
                     origin1El.innerHTML = "Origin: " + originCityName + " " + "(" + fromLocation + ")";
                     origin2El.innerHTML = "Origin: " + originCityName + " " + "(" + fromLocation + ")";
