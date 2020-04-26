@@ -20,6 +20,7 @@ THEN I am able to view my saved flights and hotels
 WHEN I click the minus icon of a fight or hotel card
 THEN I am removing my saved flights or hotels 
 
+
 ## Deployment
 This website is available live on: [GitHub.io](https://izabelacloud.github.io/Travel-Planner/)
 

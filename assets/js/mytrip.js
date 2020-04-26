@@ -4,11 +4,6 @@ $(document).ready(function () {
     $('.sidenav').sidenav();
 });
 
-// Carousel 
-$('.carousel.carousel-slider').carousel({
-    indicators: true
-});
-
 // variables to target the ids of the elements
 var savedoutbounddate1El = document.querySelector("#saved-outbounddate1");
 var savedoutbounddate2El = document.querySelector("#saved-outbounddate2");

@@ -31,9 +31,17 @@ $(document).ready(function () {
 });
 
 // Carousel 
+$(document).ready(function() {
+    $('.carousel.carousel-slider').carousel();
+        setInterval(function(){
+            $('.carousel.carousel-slider').carousel("next");
+
+        }, 4000);   
+});
+
 $('.carousel.carousel-slider').carousel({
     indicators: true
-});
+  });
 
 
 
@@ -102,6 +110,11 @@ var hotelPrice1El = document.querySelector("#hotelPrice1");
 var hotelPrice2El = document.querySelector("#hotelPrice2");
 var hotelPrice3El = document.querySelector("#hotelPrice3");
 
+// Hotel buttons
+var hotel1buttonEl = document.querySelector("#hotel1button");
+var hotel2buttonEl = document.querySelector("#hotel2button");
+var hotel3buttonEl = document.querySelector("#hotel3button");
+
 //flight 1 arrays for local storage
 var startDateArrayFlight1 = [];
 var endDateArrayFlight1 = [];
@@ -130,6 +143,21 @@ var carrierArrayFlight3 = [];
 var priceArrayFlight3 = [];
 var directArrayFlight3 = [];
 
+// Hotel 1 arrays for local storage 
+var nameArrayHotel1 = [];
+var starsArrayHotel1 = [];
+var priceArrayHotel1 = [];
+
+// Hotel 2 arrays for local storage 
+var nameArrayHotel2 = [];
+var starsArrayHotel2 = [];
+var priceArrayHotel2 = [];
+
+// Hotel 3 arrays for local storage 
+var nameArrayHotel3 = [];
+var starsArrayHotel3 = [];
+var priceArrayHotel3 = [];
+
 
 var formattedEndDate;
 var fromLocation;
@@ -142,9 +170,6 @@ var minPrice3;
 var directFlight1;
 var directFlight2;
 var directFlight3;
-
-
-
 
 
 //this function passes the input data to the function 
@@ -203,6 +228,8 @@ var formSubmitHandler = function (event) {
 
     }
     // console.log(event);
+
+    
 }
 
 
@@ -630,6 +657,55 @@ var getHotelData = function () {
         })
 }
 
+//function to save Flight 1 data on button click to localStorage
+var saveHotel1ToMyTrip = function (event) {
+    console.log(event);
+
+      //push name info into the nameArray and then save to localStorage
+      nameArrayHotel1.push(hotelID1);
+      localStorage.setItem("HotelName1", JSON.stringify(nameArrayHotel1));
+  
+      //push star info into the starArray and then save to localStorage
+      starsArrayHotel1.push(hotelStars1);
+      localStorage.setItem("HotelStars1", JSON.stringify(starsArrayHotel1));
+  
+      //push hotel price into the priceArray and then save to localStorage
+      priceArrayHotel1.push(hotelPrice1);
+      localStorage.setItem("HotelPrice1", JSON.stringify(priceArrayHotel1));
+}
+
+//function to save Flight 2 data on button click to localStorage
+var saveHotel2ToMyTrip = function (event) {
+    console.log(event);
+      //push name info into the nameArray and then save to localStorage
+      nameArrayHotel2.push(hotelID2);
+      localStorage.setItem("HotelName1", JSON.stringify(nameArrayHotel2));
+  
+      //push star info into the starArray and then save to localStorage
+      starsArrayHotel2.push(hotelStars2);
+      localStorage.setItem("HotelStars2", JSON.stringify(starsArrayHotel2));
+  
+      //push hotel price into the priceArray and then save to localStorage
+      priceArrayHotel2.push(hotelPrice2);
+      localStorage.setItem("HotelPrice2", JSON.stringify(priceArrayHotel2));
+}
+
+//function to save Flight 3 data on button click to localStorage
+var saveHotel3ToMyTrip = function (event) {
+    console.log(event);
+      //push name info into the nameArray and then save to localStorage
+      nameArrayHotel3.push(hotelID3);
+      localStorage.setItem("HotelName3", JSON.stringify(nameArrayHotel3));
+  
+      //push star info into the starArray and then save to localStorage
+      starsArrayHotel3.push(hotelStars3);
+      localStorage.setItem("HotelStars3", JSON.stringify(starsArrayHotel3));
+  
+      //push hotel price into the priceArray and then save to localStorage
+      priceArrayHotel3.push(hotelPrice3);
+      localStorage.setItem("HotelPrice3", JSON.stringify(priceArrayHotel3));
+}
+
 // function to get attraction data
 
 // var searchAttractionData = function () {
@@ -676,3 +752,10 @@ flight1buttonEl.addEventListener("click", saveFlight1ToMyTrip)
 flight2buttonEl.addEventListener("click", saveFlight2ToMyTrip)
 //event listener for flight 3 button so that it saves data to local storage for the 3rd flight
 flight3buttonEl.addEventListener("click", saveFlight3ToMyTrip)
+
+//event listener for hotel 1 button so that it saves data to local storage for the 1st hotel
+hotel1buttonEl.addEventListener("click", saveHotel1ToMyTrip)
+//event listener for hotel 2 button so that it saves data to local storage for the 2nd hotel
+hotel2buttonEl.addEventListener("click", saveHotel2ToMyTrip)
+//event listener for hotel 3 button so that it saves data to local storage for the 3rd hotel
+hotel3buttonEl.addEventListener("click", saveHotel3ToMyTrip)
