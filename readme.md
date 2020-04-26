@@ -18,7 +18,15 @@ THEN I am able to view my saved flights and hotels
 WHEN I click the minus icon of a fight or hotel card
 THEN I am removing my saved flights or hotels 
 
-# Screenshot 
+## Deployment
+This website is available live on: [GitHub.io](https://izabelacloud.github.io/Travel-Planner/)
+
+## Versioning
+We use GitHub (https://github.com/) for versioning. For the versions available, see the [Travel Planner](https://github.com/izabelacloud/Travel-Planner).
+
+## Website Preview
+
+![Travel Planner](TBD)
 
 # API Resources
 Sky Scanner and Hotel Look
