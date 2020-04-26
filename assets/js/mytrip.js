@@ -69,6 +69,9 @@ var getFlight1FromMyTrip = function() {
 
     if (startDateFlight1Display == "") {
 
+    //adding class to remove the element from the page once the data is deleted from local storage
+    savedFlightCard1El.classList.add("hidden");
+
     }
     else {
             //get items from locaStorage for each item above
@@ -151,6 +154,9 @@ var getFlight2FromMyTrip = function() {
     //get items from locaStorage for each item above
 
     if (startDateFlight2Display == "") {
+
+    //adding class to remove the element from the page once the data is deleted from local storage
+    savedFlightCard2El.classList.add("hidden");
         
     }
     else {
@@ -223,6 +229,8 @@ var getFlight3FromMyTrip = function() {
     var directFlight3Display = JSON.parse(localStorage.getItem("directFlight3")) || "";
 
     if(startDateFlight3Display == "") {
+    //adding class to remove the element from the page once the data is deleted from local storage
+    savedFlightCard3El.classList.add("hidden");
 
     }
     else {
