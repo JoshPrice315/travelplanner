@@ -272,8 +272,8 @@ var removeFlight1FromMyTrip = function() {
     localStorage.removeItem("priceFlight1");
     localStorage.removeItem("directFlight1");
 
-
-    // savedFlightCard1.classList.add("hidden");
+    //adding class to remove the element from the page once the data is deleted from local storage
+    savedFlightCard1El.classList.add("hidden");
 
 }
 
@@ -288,7 +288,8 @@ var removeFlight2FromMyTrip = function() {
     localStorage.removeItem("priceFlight2");
     localStorage.removeItem("directFlight2");
 
-    // savedFlightCard2.classList.add("hidden");
+    //adding class to remove the element from the page once the data is deleted from local storage
+    savedFlightCard2El.classList.add("hidden");
 }
 
 //function to remove items from localStorage on button click for the third flight
@@ -302,21 +303,11 @@ var removeFlight3FromMyTrip = function() {
     localStorage.removeItem("priceFlight3");
     localStorage.removeItem("directFlight3");
 
-    // savedFlightCard3.classList.add("hidden");
+    //adding class to remove the element from the page once the data is deleted from local storage
+    savedFlightCard3El.classList.add("hidden");
 }
 
 
-
-// var removeFlightCard1Element = function (savedFlightCard1El){
-//     document.getElementById(savedFlightCard1El);
-//     flightRowIdEl.removeChild(savedFlightCard1El);
-// }
-
-// function removeItem(savedFlightCard1El){
-//     var itemToRemove = document.getElementById(savedFlightCard1El);
-//     itemToRemove.parentNode.removeChild(itemToRemove);
-// }
-    
 
 
 
