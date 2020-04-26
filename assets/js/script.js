@@ -43,6 +43,8 @@ $('.carousel.carousel-slider').carousel({
     indicators: true
   });
 
+
+
 //global variables
 
 //input form elements
@@ -216,23 +218,14 @@ var formSubmitHandler = function (event) {
 
     }
     else {
-        // alert("Please enter a Start Date, End Date, From and To Location (City Code in Capital Letters) in order to search.");
-        // Materialize.toast('I am a toast!', 4000)
-        MaterialDialog.alert(
-            'Please enter a Start Date, End Date, From and To Location (City Code in Capital Letters) in order to search.', // Alert Body (Acepts html tags)
-            {
-                title:'Warning!', // Modal title
-                buttons:{ // Receive buttons (Alert only use close buttons)
-                    close:{
-                        text:'Ok', //Text of close button
-                        className:'dark-blue', // Class of the close button
-                        // callback:function(){ // Function for modal click
-                        //     // alert("hello")
-                        // }
-                    }
-                }
-            }
-        );
+ 
+
+        $(document).ready(function(){
+            $('#data-entry-modal').modal();
+            $('#data-entry-modal').modal('open'); 
+         });
+
+
     }
     // console.log(event);
 
@@ -272,7 +265,11 @@ var getFlightData = function () {
                     // console.log(quotesArray);
 
                     if (quotesArray[0] === undefined) {
-                        alert("Please select a different date or city combination.")
+
+                            $(document).ready(function(){
+                                $('#city-date-modal').modal();
+                                $('#city-date-modal').modal('open'); 
+                            });
                     }
 
                     else {
@@ -476,7 +473,12 @@ var getFlightData = function () {
             }
         })
         .catch(function (error) {
-            alert("Unable to connect to the SkyScanner!")
+
+            $(document).ready(function(){
+                $('#flight-error-modal').modal();
+                $('#flight-error-modal').modal('open'); 
+            });
+
         })
 }
 
@@ -648,7 +650,10 @@ var getHotelData = function () {
             }
         })
         .catch(function (error) {
-            alert("Unable to connect to HotelLook!");
+            $(document).ready(function(){
+                $('#hotel-error-modal').modal();
+                $('#hotel-error-modal').modal('open'); 
+            });
         })
 }
 

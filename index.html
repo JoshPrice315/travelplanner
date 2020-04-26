@@ -189,6 +189,55 @@
 
 </div>
 
+<!--Modals-->
+
+<!--Modal to check for the data entry-->
+<div id="data-entry-modal" class="modal">
+    <div class="modal-content">
+      <h4>Warning!</h4>
+      <p>Please enter a Start Date, End Date, From and To Location (City Code in Capital Letters) in order to search.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+    </div>
+</div>
+
+<!--Modal to check for the city and date combination -->
+<div id="city-date-modal" class="modal">
+    <div class="modal-content">
+      <h4>Warning!</h4>
+      <p>Please select a different date or city combination.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+    </div>
+</div>
+
+<!--Modal to show error when the SkyScanner API cannot connect -->
+<div id="flight-error-modal" class="modal">
+    <div class="modal-content">
+      <h4>Alert!</h4>
+      <p>Unable to connect to the SkyScanner!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+    </div>
+</div>
+
+<!--Modal to show error when the Hotel Look API cannot connect -->
+<div id="hotel-error-modal" class="modal">
+    <div class="modal-content">
+      <h4>Alert!</h4>
+      <p>Unable to connect to HotelLook!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+    </div>
+</div>
+
+
+
+
 
 </main>
 
@@ -205,7 +254,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="assets/js/material-dialog-v1.1.1/material-dialog.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
