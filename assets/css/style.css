@@ -60,6 +60,9 @@ footer {
 
 .hero {
     background-image: url("https://images.pexels.com/photos/2007401/pexels-photo-2007401.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-image: url("https://www.bottger.com/wp-content/uploads/2018/06/hot-air-balloon-sunrise-picture-1500x609.jpg");
+    /* background-image: url("https://img.theculturetrip.com/768x/wp-content/uploads/2017/11/sunrise-hot-air-balloon-at-sunrise-in-bagan.jpg"); */
+    background-image: url("https://cdn.suwalls.com/wallpapers/nature/flying-a-hot-air-balloon-at-sunset-46598-1920x1200.jpg");
     height: 600px;
     background-size: cover;
     background-position: center;

@@ -187,7 +187,23 @@ var formSubmitHandler = function (event) {
 
     }
     else {
-        alert("Please enter a Start Date, End Date, From and To Location (City Code in Capital Letters) in order to search.")
+        // alert("Please enter a Start Date, End Date, From and To Location (City Code in Capital Letters) in order to search.");
+        // Materialize.toast('I am a toast!', 4000)
+        MaterialDialog.alert(
+            'Please enter a Start Date, End Date, From and To Location (City Code in Capital Letters) in order to search.', // Alert Body (Acepts html tags)
+            {
+                title:'Warning!', // Modal title
+                buttons:{ // Receive buttons (Alert only use close buttons)
+                    close:{
+                        text:'Ok', //Text of close button
+                        className:'dark-blue', // Class of the close button
+                        // callback:function(){ // Function for modal click
+                        //     // alert("hello")
+                        // }
+                    }
+                }
+            }
+        );
     }
     // console.log(event);
 }
