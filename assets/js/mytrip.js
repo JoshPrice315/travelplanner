@@ -58,71 +58,77 @@ var getFlight1FromMyTrip = function() {
 
 
     //parse items from localStorage for Flight 1
-    var startDateFlight1Display = JSON.parse(localStorage.getItem("startDateFlight1")) || [];
-    var endDateFlight1Display = JSON.parse(localStorage.getItem("endDateFlight1")) || [];
-    var fromLocationFlight1Display = JSON.parse(localStorage.getItem("fromLocationFlight1")) || [];
-    var toLocationFlight1Display = JSON.parse(localStorage.getItem("toLocationFlight1")) || [];
-    var carrierFlight1Display = JSON.parse(localStorage.getItem("carrierFlight1")) || [];
-    var priceFlight1Display = JSON.parse(localStorage.getItem("priceFlight1")) || [];
-    var directFlight1Display = JSON.parse(localStorage.getItem("directFlight1")) || [];
+    var startDateFlight1Display = JSON.parse(localStorage.getItem("startDateFlight1")) || "";
+    var endDateFlight1Display = JSON.parse(localStorage.getItem("endDateFlight1")) || "";
+    var fromLocationFlight1Display = JSON.parse(localStorage.getItem("fromLocationFlight1")) || "";
+    var toLocationFlight1Display = JSON.parse(localStorage.getItem("toLocationFlight1")) || "";
+    var carrierFlight1Display = JSON.parse(localStorage.getItem("carrierFlight1")) || "";
+    var priceFlight1Display = JSON.parse(localStorage.getItem("priceFlight1")) || "";
+    var directFlight1Display = JSON.parse(localStorage.getItem("directFlight1")) || "";
 
 
-    //get items from locaStorage for each item above
+    if (startDateFlight1Display == "") {
 
-    var startDateFlight1DisplayItem
-    for (var i = 0; i < startDateFlight1Display.length; i++) {
-        startDateFlight1DisplayItem = startDateFlight1Display[0];
-        // console.log(startDateFlight1DisplayItem);
     }
+    else {
+            //get items from locaStorage for each item above
+        var startDateFlight1DisplayItem
+        for (var i = 0; i < startDateFlight1Display.length; i++) {
+                startDateFlight1DisplayItem = startDateFlight1Display[0];
+                // console.log(startDateFlight1DisplayItem);
+        }
 
-    var endDateFlight1DisplayItem
-    for (var i = 0; i < endDateFlight1Display.length; i++) {
-        endDateFlight1DisplayItem = endDateFlight1Display[0];
-        // console.log(endDateFlight1DisplayItem);
+
+        var endDateFlight1DisplayItem
+        for (var i = 0; i < endDateFlight1Display.length; i++) {
+            endDateFlight1DisplayItem = endDateFlight1Display[0];
+            // console.log(endDateFlight1DisplayItem);
+        }
+
+        var fromLocationFlight1DisplayItem
+        for (var i = 0; i < fromLocationFlight1Display.length; i++) {
+            fromLocationFlight1DisplayItem = fromLocationFlight1Display[0];
+            // console.log(fromLocationFlight1DisplayItem);
+        }
+
+        var toLocationFlight1DisplayItem
+        for (var i = 0; i < toLocationFlight1Display.length; i++) {
+            toLocationFlight1DisplayItem = toLocationFlight1Display[0];
+            // console.log(toLocationFlight1DisplayItem);
+        }
+
+        var carrierFlight1DisplayItem
+        for (var i = 0; i < carrierFlight1Display.length; i++) {
+            carrierFlight1DisplayItem = carrierFlight1Display[0];
+            // console.log(carrierFlight1DisplayItem);
+        }
+
+        var priceFlight1DisplayItem
+        for (var i = 0; i < priceFlight1Display.length; i++) {
+            priceFlight1DisplayItem = priceFlight1Display[0];
+            // console.log(priceFlight1DisplayItem);
+        }
+
+        var directFlight1DisplayItem
+        for (var i = 0; i < directFlight1Display.length; i++) {
+            directFlight1DisplayItem = directFlight1Display[0];
+            // console.log(directFlight1DisplayItem);
+        }
+            
+
+
+
+
+        document.getElementById("saved-outbounddate1").innerHTML = "Outbound: " + startDateFlight1DisplayItem;
+        document.getElementById("saved-inbounddate1").innerHTML = "Inbound: " + endDateFlight1DisplayItem;
+        document.getElementById("saved-origin1").innerHTML = "Origin: " + fromLocationFlight1DisplayItem;
+        document.getElementById("saved-destination1").innerHTML = "Destination: " + toLocationFlight1DisplayItem;
+        document.getElementById("saved-airlinecode1").innerHTML = "Carrier: " + carrierFlight1DisplayItem;
+        document.getElementById("saved-price1").innerHTML = "Price: $" + priceFlight1DisplayItem;
+        document.getElementById("saved-direct1").innerHTML = "Direct Flight: " + directFlight1DisplayItem;
+
     }
-
-    var fromLocationFlight1DisplayItem
-    for (var i = 0; i < fromLocationFlight1Display.length; i++) {
-        fromLocationFlight1DisplayItem = fromLocationFlight1Display[0];
-        // console.log(fromLocationFlight1DisplayItem);
-    }
-
-    var toLocationFlight1DisplayItem
-    for (var i = 0; i < toLocationFlight1Display.length; i++) {
-        toLocationFlight1DisplayItem = toLocationFlight1Display[0];
-        // console.log(toLocationFlight1DisplayItem);
-    }
-
-    var carrierFlight1DisplayItem
-    for (var i = 0; i < carrierFlight1Display.length; i++) {
-        carrierFlight1DisplayItem = carrierFlight1Display[0];
-        // console.log(carrierFlight1DisplayItem);
-    }
-
-    var priceFlight1DisplayItem
-    for (var i = 0; i < priceFlight1Display.length; i++) {
-        priceFlight1DisplayItem = priceFlight1Display[0];
-        // console.log(priceFlight1DisplayItem);
-    }
-
-    var directFlight1DisplayItem
-    for (var i = 0; i < directFlight1Display.length; i++) {
-        directFlight1DisplayItem = directFlight1Display[0];
-        // console.log(directFlight1DisplayItem);
-    }
-        
-
-
-
-
-    document.getElementById("saved-outbounddate1").innerHTML = "Outbound: " + startDateFlight1DisplayItem;
-    document.getElementById("saved-inbounddate1").innerHTML = "Inbound: " + endDateFlight1DisplayItem;
-    document.getElementById("saved-origin1").innerHTML = "Origin: " + fromLocationFlight1DisplayItem;
-    document.getElementById("saved-destination1").innerHTML = "Destination: " + toLocationFlight1DisplayItem;
-    document.getElementById("saved-airlinecode1").innerHTML = "Carrier: " + carrierFlight1DisplayItem;
-    document.getElementById("saved-price1").innerHTML = "Price: $" + priceFlight1DisplayItem;
-    document.getElementById("saved-direct1").innerHTML = "Direct Flight: " + directFlight1DisplayItem;
-
+    
 }
 
 
@@ -132,23 +138,27 @@ var getFlight2FromMyTrip = function() {
 
     //parse items from localStorage for Flight 1
 
-    var startDateFlight2Display = JSON.parse(localStorage.getItem("startDateFlight2")) || [];
-    var endDateFlight2Display = JSON.parse(localStorage.getItem("endDateFlight2")) || [];
-    var fromLocationFlight2Display = JSON.parse(localStorage.getItem("fromLocationFlight2")) || [];
-    var toLocationFlight2Display = JSON.parse(localStorage.getItem("toLocationFlight2")) || [];
-    var carrierFlight2Display = JSON.parse(localStorage.getItem("carrierFlight2")) || [];
-    var priceFlight2Display = JSON.parse(localStorage.getItem("priceFlight2")) || [];
-    var directFlight2Display = JSON.parse(localStorage.getItem("directFlight2")) || [];
+    var startDateFlight2Display = JSON.parse(localStorage.getItem("startDateFlight2")) || "";
+    var endDateFlight2Display = JSON.parse(localStorage.getItem("endDateFlight2")) || "";
+    var fromLocationFlight2Display = JSON.parse(localStorage.getItem("fromLocationFlight2")) || "";
+    var toLocationFlight2Display = JSON.parse(localStorage.getItem("toLocationFlight2")) || "";
+    var carrierFlight2Display = JSON.parse(localStorage.getItem("carrierFlight2")) || "";
+    var priceFlight2Display = JSON.parse(localStorage.getItem("priceFlight2")) || "";
+    var directFlight2Display = JSON.parse(localStorage.getItem("directFlight2")) || "";
+    
 
 
     //get items from locaStorage for each item above
-        var startDateFlight2DisplayItem
 
-
-        for (var i = 0; i < startDateFlight2Display.length ; i++) {
+    if (startDateFlight2Display == "") {
+        
+    }
+    else {
+                var startDateFlight2DisplayItem
+         for (var i = 0; i < startDateFlight2Display.length; i++) {
             startDateFlight2DisplayItem = startDateFlight2Display[0];
             // console.log(startDateFlight2DisplayItem);
-        }  
+        } 
 
         var endDateFlight2DisplayItem
         for (var i = 0; i < endDateFlight2Display.length; i++) {
@@ -185,17 +195,16 @@ var getFlight2FromMyTrip = function() {
             directFlight2DisplayItem = directFlight2Display[0];
             // console.log(directFlight2DisplayItem);
         }
-    
 
+        document.getElementById("saved-outbounddate2").innerHTML = "Outbound: " + startDateFlight2DisplayItem;
+        document.getElementById("saved-inbounddate2").innerHTML = "Inbound: " + endDateFlight2DisplayItem;
+        document.getElementById("saved-origin2").innerHTML = "Origin: " + fromLocationFlight2DisplayItem;
+        document.getElementById("saved-destination2").innerHTML = "Destination: " + toLocationFlight2DisplayItem;
+        document.getElementById("saved-airlinecode2").innerHTML = "Carrier: " + carrierFlight2DisplayItem;
+        document.getElementById("saved-price2").innerHTML = "Price: $" + priceFlight2DisplayItem;
+        document.getElementById("saved-direct2").innerHTML = "Direct Flight: " + directFlight2DisplayItem;
 
-
-    document.getElementById("saved-outbounddate2").innerHTML = "Outbound: " + startDateFlight2DisplayItem;
-    document.getElementById("saved-inbounddate2").innerHTML = "Inbound: " + endDateFlight2DisplayItem;
-    document.getElementById("saved-origin2").innerHTML = "Origin: " + fromLocationFlight2DisplayItem;
-    document.getElementById("saved-destination2").innerHTML = "Destination: " + toLocationFlight2DisplayItem;
-    document.getElementById("saved-airlinecode2").innerHTML = "Carrier: " + carrierFlight2DisplayItem;
-    document.getElementById("saved-price2").innerHTML = "Price: $" + priceFlight2DisplayItem;
-    document.getElementById("saved-direct2").innerHTML = "Direct Flight: " + directFlight2DisplayItem;
+    }
 
 }
 
@@ -205,16 +214,19 @@ var getFlight3FromMyTrip = function() {
 
 
     //parse items from localStorage for Flight 1
-    var startDateFlight3Display = JSON.parse(localStorage.getItem("startDateFlight3")) || [];
-    var endDateFlight3Display = JSON.parse(localStorage.getItem("endDateFlight3")) || [];
-    var fromLocationFlight3Display = JSON.parse(localStorage.getItem("fromLocationFlight3")) || [];
-    var toLocationFlight3Display = JSON.parse(localStorage.getItem("toLocationFlight3")) || [];
-    var carrierFlight3Display = JSON.parse(localStorage.getItem("carrierFlight3")) || [];
-    var priceFlight3Display = JSON.parse(localStorage.getItem("priceFlight3")) || [];
-    var directFlight3Display = JSON.parse(localStorage.getItem("directFlight3")) || [];
+    var startDateFlight3Display = JSON.parse(localStorage.getItem("startDateFlight3")) || "";
+    var endDateFlight3Display = JSON.parse(localStorage.getItem("endDateFlight3")) || "";
+    var fromLocationFlight3Display = JSON.parse(localStorage.getItem("fromLocationFlight3")) || "";
+    var toLocationFlight3Display = JSON.parse(localStorage.getItem("toLocationFlight3")) || "";
+    var carrierFlight3Display = JSON.parse(localStorage.getItem("carrierFlight3")) || "";
+    var priceFlight3Display = JSON.parse(localStorage.getItem("priceFlight3")) || "";
+    var directFlight3Display = JSON.parse(localStorage.getItem("directFlight3")) || "";
 
+    if(startDateFlight3Display == "") {
 
-    //get items from locaStorage for each item above
+    }
+    else {
+        //get items from locaStorage for each item above
         var startDateFlight3DisplayItem
         for (var i = 0; i < startDateFlight3Display.length; i++) {
             startDateFlight3DisplayItem = startDateFlight3Display[0];
@@ -260,13 +272,15 @@ var getFlight3FromMyTrip = function() {
 
 
 
-    document.getElementById("saved-outbounddate3").innerHTML = "Outbound: " + startDateFlight3DisplayItem;
-    document.getElementById("saved-inbounddate3").innerHTML = "Inbound: " + endDateFlight3DisplayItem;
-    document.getElementById("saved-origin3").innerHTML = "Origin: " + fromLocationFlight3DisplayItem ;
-    document.getElementById("saved-destination3").innerHTML = "Destination: " + toLocationFlight3DisplayItem;
-    document.getElementById("saved-airlinecode3").innerHTML = "Carrier: " + carrierFlight3DisplayItem;
-    document.getElementById("saved-price3").innerHTML = "Price: $" + priceFlight3DisplayItem;
-    document.getElementById("saved-direct3").innerHTML = "Direct Flight: " + directFlight3DisplayItem;
+        document.getElementById("saved-outbounddate3").innerHTML = "Outbound: " + startDateFlight3DisplayItem;
+        document.getElementById("saved-inbounddate3").innerHTML = "Inbound: " + endDateFlight3DisplayItem;
+        document.getElementById("saved-origin3").innerHTML = "Origin: " + fromLocationFlight3DisplayItem ;
+        document.getElementById("saved-destination3").innerHTML = "Destination: " + toLocationFlight3DisplayItem;
+        document.getElementById("saved-airlinecode3").innerHTML = "Carrier: " + carrierFlight3DisplayItem;
+        document.getElementById("saved-price3").innerHTML = "Price: $" + priceFlight3DisplayItem;
+        document.getElementById("saved-direct3").innerHTML = "Direct Flight: " + directFlight3DisplayItem;
+
+    }
 
 }
 
