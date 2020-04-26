@@ -1,9 +1,11 @@
-# User Story 
+# Travel Planner
+
+## User Story 
 AS A traveler 
 I WANT to plan out my flight and hotel to the city I am traveling to
 SO THAT I have proper travel arrangements
 
-# Acceptance Criteria 
+## Acceptance Criteria 
 GIVEN a search feature with inputs of start date, end date, from, and to city inputs.
 WHEN I search for above inputs
 THEN I am presented with three recommended flight and hotel information 
@@ -28,8 +30,8 @@ We use GitHub (https://github.com/) for versioning. For the versions available, 
 
 ![Travel Planner](TBD)
 
-# API Resources
+## API Resources
 Sky Scanner and Hotel Look
 
-# Application Created By: 
+## Application Created By: 
 Application created by Izabela Petrovicova, Josh Price, and Nicole Wallace
