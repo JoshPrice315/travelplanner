@@ -21,6 +21,7 @@
             <li><a href="mytrips.html" class="waves-effect waves-light btn #424242 grey darken-3">My Trip</a></li>
         </ul>
     </div>
+</nav>
     
       <!-- Mobile Nav -->
       <ul class="sidenav" id="mobile-demo">
@@ -28,11 +29,20 @@
             <li><a href="#hotels">Hotels</a></li>
             <li><a href="mytrips.html" class="waves-effect waves-light btn #424242 grey darken-3">My Trip</a></li>
       </ul>
- </nav>
 
  <main>
-<!--  Image -->
-<section class="hero"></section>
+<!-- Hero Image 
+<section class="hero"></section>-->
+<div class="carousel carousel-slider">
+    <a class="carousel-item" href="#one!"><img src="./assets/images/caroimg1.jpg"></a>
+    <a class="carousel-item" href="#two!"><img src="./assets/images/caroimg2.jpg"></a>
+    <a class="carousel-item" href="#three!"><img src="./assets/images/caroimg3.jpg"></a>
+    <a class="carousel-item" href="#four!"><img src="./assets/images/caroimg4.jpg"></a>
+  </div>
+
+<!-- Greeting -->
+<h2 class="welcome">Welcome to Travel Planner!</h2>
+<h4 class="message">Choose your trip details below</h4>
 
 <!-- Inputs -->
 <div class="container-fluid"> 
@@ -85,6 +95,7 @@
                 <span class="card-title">Flight #1</span>
                     <div id="flightinfo1div"> 
                         <a class="btn-floating halfway-fab waves-effect waves-light #01579b light-blue darken-4"><i class="material-icons flight-1-btn" id="flight1button" type="submit">add</i></a>
+                        <!-- <a class="btn" onclick="Materialize.toast('I am a toast', 4000)">Toast!</a> -->
                         <h6 id="outbounddate1">Outbound: </h6>
                         <h6 id="inbounddate1">Inbound: </h6>
                         <h6 id="origin1">Origin: </h6>
@@ -177,6 +188,68 @@
   
 
 </div>
+
+<!--Modals-->
+
+<!--Modal to check for the data entry-->
+<div id="data-entry-modal" class="modal">
+    <div class="modal-content">
+      <h4>Warning!</h4>
+      <p>Please enter a Start Date, End Date, From and To Location (City Code in Capital Letters) in order to search.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close btn waves-effect waves-light #01579b light-blue darken-4">Ok</a>
+    </div>
+</div>
+
+<!--Modal to check for the city and date combination -->
+<div id="city-date-modal" class="modal">
+    <div class="modal-content">
+      <h4>Warning!</h4>
+      <p>Please select a different date or city combination.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close btn waves-effect waves-light #01579b light-blue darken-4">Ok</a>
+    </div>
+</div>
+
+<!--Modal to show error when the SkyScanner API cannot connect -->
+<div id="flight-error-modal" class="modal">
+    <div class="modal-content">
+      <h4>Alert!</h4>
+      <p>Unable to connect to the SkyScanner!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close btn waves-effect waves-light #01579b light-blue darken-4">Ok</a>
+    </div>
+</div>
+
+<!--Modal to show error when the Hotel Look API cannot connect -->
+<div id="hotel-error-modal" class="modal">
+    <div class="modal-content">
+      <h4>Alert!</h4>
+      <p>Unable to connect to HotelLook!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close btn waves-effect waves-light #01579b light-blue darken-4">Ok</a>
+    </div>
+</div>
+
+<!--Modal to show generic error -->
+<div id="generic-error-modal" class="modal">
+    <div class="modal-content">
+      <h4>Error!</h4>
+      <p>Please see the console for more details!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+    </div>
+</div>
+
+
+
+
+
 </main>
 
 <!---- Footer -->
@@ -185,6 +258,7 @@
     © 2020 Powered by SkyScanner & Hotel Look. Application created by Izabela Petrovicova, Josh Price, and Nicole Wallace 
     </div>
 </footer>
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>

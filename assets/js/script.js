@@ -30,6 +30,20 @@ $(document).ready(function () {
     $('.sidenav').sidenav();
 });
 
+// Carousel 
+$(document).ready(function() {
+    $('.carousel.carousel-slider').carousel();
+        setInterval(function(){
+            $('.carousel.carousel-slider').carousel("next");
+
+        }, 4000);   
+});
+
+$('.carousel.carousel-slider').carousel({
+    indicators: true
+  });
+
+
 
 //global variables
 
@@ -96,6 +110,11 @@ var hotelPrice1El = document.querySelector("#hotelPrice1");
 var hotelPrice2El = document.querySelector("#hotelPrice2");
 var hotelPrice3El = document.querySelector("#hotelPrice3");
 
+// Hotel buttons
+var hotel1buttonEl = document.querySelector("#hotel1button");
+var hotel2buttonEl = document.querySelector("#hotel2button");
+var hotel3buttonEl = document.querySelector("#hotel3button");
+
 //flight 1 arrays for local storage
 var startDateArrayFlight1 = [];
 var endDateArrayFlight1 = [];
@@ -124,6 +143,21 @@ var carrierArrayFlight3 = [];
 var priceArrayFlight3 = [];
 var directArrayFlight3 = [];
 
+// Hotel 1 arrays for local storage 
+var nameArrayHotel1 = [];
+var starsArrayHotel1 = [];
+var priceArrayHotel1 = [];
+
+// Hotel 2 arrays for local storage 
+var nameArrayHotel2 = [];
+var starsArrayHotel2 = [];
+var priceArrayHotel2 = [];
+
+// Hotel 3 arrays for local storage 
+var nameArrayHotel3 = [];
+var starsArrayHotel3 = [];
+var priceArrayHotel3 = [];
+
 
 var formattedEndDate;
 var fromLocation;
@@ -137,8 +171,21 @@ var directFlight1;
 var directFlight2;
 var directFlight3;
 
+var hotelID1;
+var hotelID2;
+var hotelID3;
 
+var hotel1Name;
+var hotel2Name;
+var hotel3Name;
 
+var hotelStars1;
+var hotelStars2;
+var hotelStars3;
+
+var hotelPrice1;
+var hotelPrice2;
+var hotelPrice3;
 
 
 //this function passes the input data to the function 
@@ -151,7 +198,7 @@ var formSubmitHandler = function (event) {
 
     //format the startDate field into the format that API needs
     formattedStartDate = moment(startDate).format('YYYY-MM-DD');
-    console.log("formattedStartDate " + formattedStartDate);
+    // console.log("formattedStartDate " + formattedStartDate);
 
     //get the value from the endDate field
     endDate = enddatepickerinputEl.value.trim();
@@ -159,15 +206,15 @@ var formSubmitHandler = function (event) {
 
     //format the endDate field into the format that API needs    
     formattedEndDate = moment(endDate).format('YYYY-MM-DD');
-    console.log("formattedEndDate " + formattedEndDate);
+    // console.log("formattedEndDate " + formattedEndDate);
 
     //get the value of the fromLocation
     fromLocation = fromLocationInputIdEl.value.trim();
-    console.log(fromLocation);
+    // console.log(fromLocation);
 
     //get the value of the toLocation 
     toLocation = toLocationInputIdEl.value.trim();
-    console.log(toLocation);
+    // console.log(toLocation);
 
 
 
@@ -182,14 +229,23 @@ var formSubmitHandler = function (event) {
         //to clear the input form field after submit
         startdatepickerinputEl.value = "";
         enddatepickerinputEl.value = "",
-            fromLocationInputIdEl.value = "";
+        fromLocationInputIdEl.value = "";
         toLocationInputIdEl.value = "";
 
     }
     else {
-        alert("Please enter a Start Date, End Date, From and To Location (City Code in Capital Letters) in order to search.")
+ 
+
+        $(document).ready(function(){
+            $('#data-entry-modal').modal();
+            $('#data-entry-modal').modal('open'); 
+         });
+
+
     }
     // console.log(event);
+
+    
 }
 
 
@@ -225,7 +281,11 @@ var getFlightData = function () {
                     // console.log(quotesArray);
 
                     if (quotesArray[0] === undefined) {
-                        alert("Please select a different date or city combination.")
+
+                            $(document).ready(function(){
+                                $('#city-date-modal').modal();
+                                $('#city-date-modal').modal('open'); 
+                            });
                     }
 
                     else {
@@ -239,12 +299,12 @@ var getFlightData = function () {
                         // console.log("outBoundDate1Formatted " + outBoundDate1Formatted);
 
                         var outBoundDate2 = jsonResponse.Quotes[1].OutboundLeg.DepartureDate;
-                        console.log(outBoundDate2);
+                        // console.log(outBoundDate2);
                         var outBoundDate2Formatted = moment(outBoundDate2).format('YYYY-MM-DD');
                         // console.log("outBoundDate2Formatted " + outBoundDate2Formatted);
 
                         var outBoundDate3 = jsonResponse.Quotes[2].OutboundLeg.DepartureDate;
-                        console.log(outBoundDate3);
+                        // console.log(outBoundDate3);
                         var outBoundDate3Formatted = moment(outBoundDate3).format('YYYY-MM-DD');
                         // console.log("outBoundDate3Formatted " + outBoundDate3Formatted);
 
@@ -272,11 +332,11 @@ var getFlightData = function () {
 
                         //get places(airports codes)
                         var destinationID1 = jsonResponse.Quotes[0].OutboundLeg.DestinationId;
-                        console.log(destinationID1);
+                        // console.log(destinationID1);
                         var destinationID2 = jsonResponse.Quotes[1].OutboundLeg.DestinationId;
-                        console.log(destinationID2);
+                        // console.log(destinationID2);
                         var destinationID3 = jsonResponse.Quotes[2].OutboundLeg.DestinationId;
-                        console.log(destinationID3);
+                        // console.log(destinationID3);
 
 
 
@@ -287,27 +347,21 @@ var getFlightData = function () {
 
                         for (var i = 0; i < jsonResponse.Places.length; i++) {
                             var destinationAirportCodes = jsonResponse.Places[i]
-                            console.log(destinationAirportCodes);
+                            // console.log(destinationAirportCodes);
                             if (destinationID1 === destinationAirportCodes.PlaceId) {
                                 destinationAirportCode1 = destinationAirportCodes.IataCode;
-                                console.log("destinationAirportCode1 " + destinationAirportCode1);
-                                // if (destinationAirportCode1 === "undefined") {
-                                //     destinationAirportCode1 === ""
-                                // }
+                                // console.log("destinationAirportCode1 " + destinationAirportCode1);
+
                             }
                             else if (destinationID2 === destinationAirportCodes.PlaceId) {
                                 destinationAirportCode2 = destinationAirportCodes.IataCode;
-                                console.log("destinationAirportCode2 " + destinationAirportCode2);
-                                // if (destinationAirportCode2 === "undefined") {
-                                //     destinationAirportCode2 === ""
-                                // }
+                                // console.log("destinationAirportCode2 " + destinationAirportCode2);
+
                             }
                             else if (destinationID3 === destinationAirportCodes.PlaceId) {
                                 destinationAirportCode3 = destinationAirportCodes.IataCode;
-                                console.log("destinationAirportCode3 " + destinationAirportCode3);
-                                // if (destinationAirportCode3 === "undefined") {
-                                //     destinationAirportCode3 === ""
-                                // }
+                                // console.log("destinationAirportCode3 " + destinationAirportCode3);
+
                             }
                         }
 
@@ -413,23 +467,25 @@ var getFlightData = function () {
                         showHiddenEl.classList.remove("hidden");
 
 
-
-
-
-
                     }
-
-
-
 
                 })
             }
             else {
-                alert("Error: " + response.statusText);
+
+                $(document).ready(function(){
+                    $('#generic-error-modal').modal();
+                    $('#generic-error-modal').modal('open'); 
+                });
             }
         })
         .catch(function (error) {
-            alert("Unable to connect to the SkyScanner!")
+
+            $(document).ready(function(){
+                $('#flight-error-modal').modal();
+                $('#flight-error-modal').modal('open'); 
+            });
+
         })
 }
 
@@ -567,24 +623,26 @@ var getHotelData = function () {
             if (response.ok) {
                 response.json().then(function (jsonResponse) {
                     console.log(jsonResponse);
-                    var hotelID1 = jsonResponse[0].hotelName;
-                    var hotelID2 = jsonResponse[1].hotelName;
-                    var hotelID3 = jsonResponse[2].hotelName;
-                    console.log(hotelID1, hotelID2, hotelID3);
+                    hotelID1 = jsonResponse[0].hotelName;
+                    hotelID2 = jsonResponse[1].hotelName;
+                    hotelID3 = jsonResponse[2].hotelName;
+                    console.log(hotelID1);
+                    console.log(hotelID2);
+                    console.log(hotelID3);
 
-                    var hotelStars1 = jsonResponse[0].stars;
-                    var hotelStars2 = jsonResponse[1].stars;
-                    var hotelStars3 = jsonResponse[2].stars;
+                    hotelStars1 = jsonResponse[0].stars;
+                    hotelStars2 = jsonResponse[1].stars;
+                    hotelStars3 = jsonResponse[2].stars;
                     console.log(hotelStars1, hotelStars2, hotelStars3);
 
-                    var hotelPrice1 = jsonResponse[0].priceAvg;
-                    var hotelPrice2 = jsonResponse[1].priceAvg;
-                    var hotelPrice3 = jsonResponse[2].priceAvg;
+                    hotelPrice1 = jsonResponse[0].priceAvg;
+                    hotelPrice2 = jsonResponse[1].priceAvg;
+                    hotelPrice3 = jsonResponse[2].priceAvg;
                     console.log(hotelPrice1, hotelPrice2, hotelPrice3);
 
-                    hotelID1El.innerHTML = "Hotel Name: " + hotelID1;
-                    hotelID2El.innerHTML = "Hotel Name: " + hotelID2;
-                    hotelID3El.innerHTML = "Hotel Name: " + hotelID3;
+                    hotelID1El.innerHTML = "Hotel Name: " + hotel1Name;
+                    hotelID2El.innerHTML = "Hotel Name: " + hotel2Name;
+                    hotelID3El.innerHTML = "Hotel Name: " + hotel3Name;
 
                     hotelStars1El.innerHTML = "Stars: " + hotelStars1;
                     hotelStars2El.innerHTML = "Stars: " + hotelStars2;
@@ -597,13 +655,23 @@ var getHotelData = function () {
                 })
             }
             else {
-                alert("Error: " + response.statusText);
+
+                $(document).ready(function(){
+                    $('#generic-error-modal').modal();
+                    $('#generic-error-modal').modal('open'); 
+                });
             }
         })
         .catch(function (error) {
-            alert("Unable to connect to HotelLook!");
+            $(document).ready(function(){
+                $('#hotel-error-modal').modal();
+                $('#hotel-error-modal').modal('open'); 
+            });
         })
 }
+
+
+
 
 var saveHotel1ToMyTrip = function (event) {
     //push hotel name into the hotelArrayName1
@@ -623,7 +691,6 @@ var saveHotel1ToMyTrip = function (event) {
 }
 var saveHotel2ToMyTrip = function (event) {
 
-<<<<<<< HEAD
     //push hotel name into the hotelArrayName2
     hotelArrayName2.push(hotelID2);
     // set the hotel name to the localStorage
@@ -651,53 +718,6 @@ var saveHotel3ToMyTrip = function (event) {
     // set the hotel name to the localStorage
     localStorage.setItem("hotelArryPrice3", JSON.stringify(hotelArryPrice3));
 }
-=======
-// var searchAttractionData = function () {
-//     var attractionSearchURL = "https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=YgasmQcKMenqrHdAGUHQgz3JdB9tVnSi&keyword=NewYork"
-
-//     fetch(attractionSearchURL)
-//         .then(function (response) {
-//             if (response.ok) {
-//                 response.json().then(function (attractionDataResponse) {
-//                     console.log(attractionDataResponse);
-//                 })
-//             }
-//             else {
-//                 alert("Error: " + response.statusText);
-//             }
-//         })
-//         .catch(function (error) {
-//             alert("Unable to connect to TicketMaster!");
-//         })
-// }
->>>>>>> bbe7609e3a6cdd54bab924dfe53d9d7432b8c25e
-
-
-
-// function to get attraction data
-
-// var searchAttractionData = function () {
-//     var attractionSearchURL = "https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=YgasmQcKMenqrHdAGUHQgz3JdB9tVnSi&keyword=NewYork"
-
-//     fetch(attractionSearchURL)
-//         .then(function (response) {
-//             if (response.ok) {
-//                 response.json().then(function (attractionDataResponse) {
-//                     console.log(attractionDataResponse);
-//                 })
-//             }
-//             else {
-//                 alert("Error: " + response.statusText);
-//             }
-//         })
-//         .catch(function (error) {
-//             alert("Unable to connect to TicketMaster!");
-//         })
-// }
-
-
-
-
 
 
 
@@ -720,3 +740,10 @@ flight1buttonEl.addEventListener("click", saveFlight1ToMyTrip)
 flight2buttonEl.addEventListener("click", saveFlight2ToMyTrip)
 //event listener for flight 3 button so that it saves data to local storage for the 3rd flight
 flight3buttonEl.addEventListener("click", saveFlight3ToMyTrip)
+
+//event listener for hotel 1 button so that it saves data to local storage for the 1st hotel
+hotel1buttonEl.addEventListener("click", saveHotel1ToMyTrip)
+//event listener for hotel 2 button so that it saves data to local storage for the 2nd hotel
+hotel2buttonEl.addEventListener("click", saveHotel2ToMyTrip)
+//event listener for hotel 3 button so that it saves data to local storage for the 3rd hotel
+hotel3buttonEl.addEventListener("click", saveHotel3ToMyTrip)
