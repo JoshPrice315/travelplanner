@@ -623,6 +623,7 @@ var saveHotel1ToMyTrip = function (event) {
 }
 var saveHotel2ToMyTrip = function (event) {
 
+<<<<<<< HEAD
     //push hotel name into the hotelArrayName2
     hotelArrayName2.push(hotelID2);
     // set the hotel name to the localStorage
@@ -650,6 +651,26 @@ var saveHotel3ToMyTrip = function (event) {
     // set the hotel name to the localStorage
     localStorage.setItem("hotelArryPrice3", JSON.stringify(hotelArryPrice3));
 }
+=======
+// var searchAttractionData = function () {
+//     var attractionSearchURL = "https://app.ticketmaster.com/discovery/v2/attractions.json?apikey=YgasmQcKMenqrHdAGUHQgz3JdB9tVnSi&keyword=NewYork"
+
+//     fetch(attractionSearchURL)
+//         .then(function (response) {
+//             if (response.ok) {
+//                 response.json().then(function (attractionDataResponse) {
+//                     console.log(attractionDataResponse);
+//                 })
+//             }
+//             else {
+//                 alert("Error: " + response.statusText);
+//             }
+//         })
+//         .catch(function (error) {
+//             alert("Unable to connect to TicketMaster!");
+//         })
+// }
+>>>>>>> bbe7609e3a6cdd54bab924dfe53d9d7432b8c25e
 
 
 
