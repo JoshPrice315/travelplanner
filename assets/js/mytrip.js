@@ -361,9 +361,9 @@ var removeFlight3FromMyTrip = function() {
 
 var getHotel1FromMyTrip = function () {
     // parse items from localStorage for Hotel 1
-    var hotelName1Display = JSON.parse(localStorage.getItem("hotelArryName1"));
-    var hotelStars1Display = JSON.parse(localStorage.getItem("hotelArrayStars1"));
-    var hotelPrice1Display = JSON.parse(localStorage.getitem("hotelArryPrice1"));
+    var hotelName1Display = JSON.parse(localStorage.getItem("nameArrayHotel1"));
+    var hotelStars1Display = JSON.parse(localStorage.getItem("starsArrayHotel1"));
+    var hotelPrice1Display = JSON.parse(localStorage.getItem("priceArrayHotel1"));
 
     // get items from localStorage for each item above
 
@@ -384,7 +384,7 @@ var getHotel1FromMyTrip = function () {
 
     document.getElementById("saved-hotel-name1").innerHTML = "Hotel Name: " + hotelName1DisplayItem;
     document.getElementById("saved-hotel-stars1").innerHTML = "Stars: " + hotelStars1DisplayItem;
-    document.getElementById("saved-hotel-price").innerHTML = "Price for stay: " + hotelPrice1DisplayItem;
+    document.getElementById("saved-hotel-price1").innerHTML = "Price for stay: " + hotelPrice1DisplayItem;
 }
 
 
@@ -394,6 +394,7 @@ var getHotel1FromMyTrip = function () {
 getFlight1FromMyTrip();
 getFlight2FromMyTrip();
 getFlight3FromMyTrip();
+getHotel1FromMyTrip();
 
 
 //event listener for flight 1 button so that it removes data to local storage for the 1st flight

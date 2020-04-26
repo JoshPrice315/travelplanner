@@ -677,46 +677,46 @@ var saveHotel1ToMyTrip = function (event) {
     //push hotel name into the hotelArrayName1
     nameArrayHotel1.push(hotelID1);
     // set the hotel name to the localStorage
-    localStorage.setItem("hotelArryName1", JSON.stringify(nameArrayHotel1));
+    localStorage.setItem("nameArrayHotel1", JSON.stringify(nameArrayHotel1));
 
     // push hotel stars into the hotelArrayStars1
     starsArrayHotel1.push(hotelStars1);
     // set the hotel stars to the localStorage
-    localStorage.setItem("hotelArrayStars1", JSON.stringify(starsArrayHotel1));
+    localStorage.setItem("starsArrayHotel1", JSON.stringify(starsArrayHotel1));
 
     // push hotel price into the hotelArrayPrice1
     priceArrayHotel1.push("$" + hotelPrice1);
     // set the hotel name to the localStorage
-    localStorage.setItem("hotelArryPrice1", JSON.stringify(priceArrayHotel1));
+    localStorage.setItem("priceArrayHotel1", JSON.stringify(priceArrayHotel1));
 }
 var saveHotel2ToMyTrip = function (event) {
 
     //push hotel name into the hotelArrayName2
     nameArrayHotel2.push(hotelID2);
     // set the hotel name to the localStorage
-    localStorage.setItem("hotelArryName2", JSON.stringify(nameArrayHotel2));
+    localStorage.setItem("nameArrayHotel2", JSON.stringify(nameArrayHotel2));
 
 
     starsArrayHotel2.push(hotelStars2);
-    localStorage.setItem("hotelArrayStars2", JSON.stringify(starsArrayHotel2));
+    localStorage.setItem("starsArrayHotel2", JSON.stringify(starsArrayHotel2));
 
     priceArrayHotel2.push("$" + hotelPrice2);
     // set the hotel name to the localStorage
-    localStorage.setItem("hotelArryPrice2", JSON.stringify(priceArrayHotel1));
+    localStorage.setItem("priceArrayHotel2", JSON.stringify(priceArrayHotel2));
 }
 
 var saveHotel3ToMyTrip = function (event) {
     //push hotel name into the hotelArrayName3
     nameArrayHotel3.push(hotelID3);
     //set the hotel name to the localStorage
-    localStorage.setItem("hotelArryName3", JSON.stringify(nameArrayHotel3));
+    localStorage.setItem("nameArrayHotel3", JSON.stringify(nameArrayHotel3));
 
-    starsArrayHotel2.push(hotelStars3);
-    localStorage.setItem("hotelArrayStars3", JSON.stringify(starsArrayHotel3));
+    starsArrayHotel3.push(hotelStars3);
+    localStorage.setItem("starsArrayHotel3", JSON.stringify(starsArrayHotel3));
 
-    priceArrayHotel2.push("$" + hotelPrice3);
+    priceArrayHotel3.push("$" + hotelPrice3);
     // set the hotel name to the localStorage
-    localStorage.setItem("hotelArryPrice3", JSON.stringify(priceArrayHotel2));
+    localStorage.setItem("priceArrayHotel3", JSON.stringify(priceArrayHotel3));
 }
 
 
