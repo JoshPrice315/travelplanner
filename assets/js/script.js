@@ -605,6 +605,53 @@ var getHotelData = function () {
         })
 }
 
+// function to save Hotel 1 data on button click to localStorage
+var saveHotel1ToMyTrip = function (event) {
+    // console.log(event);
+
+    // HOTEL NAMES
+    //push hotel name into the hotelArrayName1
+    hotelArrayName1.push(hotelID1);
+    // set the hotel name to the localStorage
+    localStorage.setItem("hotelArryName1", JSON.stringify(hotelArrayName1));
+
+    //push hotel name into the hotelArrayName2
+    hotelArrayName2.push(hotelID2);
+    // set the hotel name to the localStorage
+    localStorage.setItem("hotelArryName2", JSON.stringify(hotelArrayName2));
+
+    //push hotel name into the hotelArrayName3
+    hotelArrayName3.push(hotelID3);
+    //set the hotel name to the localStorage
+    localStorage.setItem("hotelArryName3", JSON.stringify(hotelArrayName3));
+
+    // HOTEL STARS
+    hotelArrayStars1.push(hotelStars1);
+    localStorage.setItem("hotelArrayStars1", JSON.stringify(hotelArrayStars1));
+
+    hotelArrayStars2.push(hotelStars2);
+    localStorage.setItem("hotelArrayStars2", JSON.stringify(hotelArrayStars2));
+
+    hotelArrayStars3.push(hotelStars3);
+    localStorage.setItem("hotelArrayStars3", JSON.stringify(hotelArrayStars3));
+
+    // HOTEL PRICES
+    // push hotel price
+    hotelArrayPrice1.push("$" + hotelPrice1);
+    // set the hotel name to the localStorage
+    localStorage.setItem("hotelArryPrice1", JSON.stringify(hotelArryPrice1));
+
+    hotelArrayPrice2.push("$" + hotelPrice2);
+    // set the hotel name to the localStorage
+    localStorage.setItem("hotelArryPrice2", JSON.stringify(hotelArryPrice2));
+
+    hotelArrayPrice3.push("$" + hotelPrice3);
+    // set the hotel name to the localStorage
+    localStorage.setItem("hotelArryPrice3", JSON.stringify(hotelArryPrice3));
+
+
+}
+
 // function to get attraction data
 
 var searchAttractionData = function () {
