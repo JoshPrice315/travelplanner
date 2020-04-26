@@ -48,6 +48,26 @@ var savedFlightCard3El = document.querySelector("#saved-flight-card-3");
 var flightRowIdEl = document.querySelector("#row-id");
 
 
+
+//changes from Josh
+// hotel save variables 
+var savedHotelName1El = document.querySelector("#saved-hotel-name1");
+var savedHotelName2El = document.querySelector("#saved-hotel-name2");
+var savedHotelName3El = document.querySelector("#saved-hotel-name3");
+
+var savedHotelStars1El = document.querySelector("#saved-hotel-stars1");
+var savedHotelStars2El = document.querySelector("#saved-hotel-stars2");
+var savedHotelStars3El = document.querySelector("#saved-hotel-stars3");
+
+var savedHotelPrice1El = document.querySelector("#saved-hotel-price1");
+var savedHotelPrice2El = document.querySelector("#saved-hotel-price2");
+var savedHotelPrice3El = document.querySelector("#saved-hotel-price3");
+
+
+
+
+
+
 //function to reload the data onto the page from the localStorage and show it on the My Trips page
 var getFlight1FromMyTrip = function() {
 
@@ -333,6 +353,38 @@ var removeFlight3FromMyTrip = function() {
 
     //adding class to remove the element from the page once the data is deleted from local storage
     savedFlightCard3El.classList.add("hidden");
+}
+
+
+
+//functions from Josh
+
+var getHotel1FromMyTrip = function () {
+    // parse items from localStorage for Hotel 1
+    var hotelName1Display = JSON.parse(localStorage.getItem("hotelArryName1"));
+    var hotelStars1Display = JSON.parse(localStorage.getItem("hotelArrayStars1"));
+    var hotelPrice1Display = JSON.parse(localStorage.getitem("hotelArryPrice1"));
+
+    // get items from localStorage for each item above
+
+    var hotelName1DisplayItem
+    for (var i = 0; i < hotelName1Display.length; i++) {
+        hotelName1DisplayItem = hotelName1Display[0];
+    }
+
+    var hotelStars1DisplayItem
+    for (var i = 0; i < hotelStars1Display.length; i++) {
+        hotelStars1DisplayItem = hotelStars1Display[0];
+    }
+
+    var hotelPrice1DisplayItem
+    for (var i = 0; i < hotelPrice1Display.length; i++) {
+        hotelPrice1DisplayItem = hotelPrice1Display[0];
+    }
+
+    document.getElementById("saved-hotel-name1").innerHTML = "Hotel Name: " + hotelName1DisplayItem;
+    document.getElementById("saved-hotel-stars1").innerHTML = "Stars: " + hotelStars1DisplayItem;
+    document.getElementById("saved-hotel-price").innerHTML = "Price for stay: " + hotelPrice1DisplayItem;
 }
 
 
