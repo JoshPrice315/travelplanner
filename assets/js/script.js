@@ -469,7 +469,11 @@ var getFlightData = function () {
                 })
             }
             else {
-                alert("Error: " + response.statusText);
+                
+                $(document).ready(function(){
+                    $('#generic-error-modal').modal();
+                    $('#generic-error-modal').modal('open'); 
+                });
             }
         })
         .catch(function (error) {
@@ -646,7 +650,11 @@ var getHotelData = function () {
                 })
             }
             else {
-                alert("Error: " + response.statusText);
+
+                $(document).ready(function(){
+                    $('#generic-error-modal').modal();
+                    $('#generic-error-modal').modal('open'); 
+                });
             }
         })
         .catch(function (error) {
@@ -720,6 +728,10 @@ var saveHotel3ToMyTrip = function (event) {
 //             }
 //             else {
 //                 alert("Error: " + response.statusText);
+                    // $(document).ready(function(){
+                    //     $('#generic-error-modal').modal();
+                    //     $('#generic-error-modal').modal('open'); 
+                    // });
 //             }
 //         })
 //         .catch(function (error) {
