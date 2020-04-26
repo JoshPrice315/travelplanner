@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-
+​
 <body>
 <!-- Navigation -->
 <nav>
@@ -25,95 +25,126 @@
             <li><a href="index.html" class="waves-effect waves-light btn #424242 grey darken-3">Go To Travel Planner</a></li>
         </ul>
 </nav>
-
+​
 <main>
 <!-- Hero Image -->
 <section class="hero"></section>
-
+​
 <!-- Body Cards --> 
-<div class="container-fluid" id="hide"> 
+<div class="container-fluid"> 
     <!-- Flight Card -->
-    <div class="row" id="flights">
-        <ul class="collection with-header">
-            <li class="collection-header #01579b light-blue darken-4 white-text"><h4 class="hotel-title"><i class="material-icons left">flight</i>Your Saved Flights</h4></li>
+    <div class="row" id="title">
+        <h4 class="flight-title #01579b light-blue darken-4 white-text"><i class="material-icons left">flight</i>Your Saved Flights</h2>
+    </div>
 
-            <li class="collection-item" id="savedFlight-1">
-                <div>
-                    <h5>Saved Flight #1</h5>
-                    <h6 id="saved-outbounddate1">Outbound: </h6>
-                    <h6 id="saved-inbounddate1">Inbound: </h6>
-                    <h6 id="saved-origin1">Origin: </h6>
-                    <h6 id="saved-destination1">Destination: </h6>
-                    <h6 id="saved-airlinecode1">Airline: </h6>      
-                    <h6 id="saved-price1">Price: </h6>   
-                    <h6 id="saved-direct1">Direct Flight: </h6>  
-                    <img id="saved-direct-flight-icon1">     
+    <div class="row" id="row-id">
+        <div class="col s12 m6 l4" >
+          <div class="card" id="saved-flight-card-1" >
+                <span class="card-title">Saved Flight #1</span>
+                    <div id="savedFlight-1"> 
+                        <a class="btn-floating halfway-fab waves-effect waves-light #01579b light-blue darken-4"><i class="material-icons savedFlight-1-btn" id="removeFlight1button" type="submit">clear</i></a>
+                        <h6 id="saved-outbounddate1"> </h6>
+                        <h6 id="saved-inbounddate1"> </h6>
+                        <h6 id="saved-origin1"> </h6>
+                        <h6 id="saved-destination1"> </h6>
+                        <h6 id="saved-airlinecode1"> </h6>      
+                        <h6 id="saved-price1"> </h6>   
+                        <h6 id="saved-direct1"> </h6>  
+                        <img id="direct-flight-icon1">    
+                    </div>
+            </div>
+        </div>
 
-                    <a href="#!" class="secondary-content">
-                        <i class="material-icons" id="savedFlight-1-btn">clear</i>
-                    </a>
-                </div>
-            </li>
+        <div class="col s12 m6 l4" >
+            <div class="card" id="saved-flight-card-2" >
+                  <span class="card-title">Saved Flight #2</span>
+                      <div id="savedFlight-2"> 
+                          <a class="btn-floating halfway-fab waves-effect waves-light #01579b light-blue darken-4"><i class="material-icons savedFlight-2-btn" id="removeFlight2button" type="submit">clear</i></a>
+                          <h6 id="saved-outbounddate2"> </h6>
+                          <h6 id="saved-inbounddate2"> </h6>
+                          <h6 id="saved-origin2"> </h6>
+                          <h6 id="saved-destination2"> </h6>
+                          <h6 id="saved-airlinecode2"> </h6>      
+                          <h6 id="saved-price2"></h6>   
+                          <h6 id="saved-direct2"> </h6>  
+                          <img id="direct-flight-icon2">    
+                      </div>
+              </div>
+          </div>
 
-            <li class="collection-item" id="savedFlight-2">
-                <div>
-                    <h5>Saved Flight #2</h5>
-                    <h6 id="saved-outbounddate1">Outbound: </h6>
-                    <h6 id="saved-inbounddate1">Inbound: </h6>
-                    <h6 id="saved-origin1">Origin: </h6>
-                    <h6 id="saved-destination1">Destination: </h6>
-                    <h6 id="saved-airlinecode1">Airline: </h6>      
-                    <h6 id="saved-price1">Price: </h6>   
-                    <h6 id="saved-direct1">Direct Flight: </h6>  
-                    <img id="saved-direct-flight-icon1">  
+          <div class="col s12 m6 l4" >
+            <div class="card" id="saved-flight-card-3">
+                  <span class="card-title">Saved Flight #3</span>
+                      <div id="savedFlight-3"> 
+                          <a class="btn-floating halfway-fab waves-effect waves-light #01579b light-blue darken-4"><i class="material-icons savedFlight-3-btn" id="removeFlight3button" type="submit">clear</i></a>
+                          <h6 id="saved-outbounddate3"> </h6>
+                          <h6 id="saved-inbounddate3"> </h6>
+                          <h6 id="saved-origin3"> </h6>
+                          <h6 id="saved-destination3"> </h6>
+                          <h6 id="saved-airlinecode3"> </h6>      
+                          <h6 id="saved-price3"> </h6>   
+                          <h6 id="saved-direct3"> </h6>  
+                          <img id="direct-flight-icon3">    
+                      </div>
+              </div>
+          </div>      
+    </div>
 
-                    <a href="#!" class="secondary-content">
-                        <i class="material-icons" id="savedFlight-2-btn">clear</i>
-                    </a>
-                </div>
-            </li>
-
-            <li class="collection-item" id="savedFlight-3">
-                <div>
-                    <h5>Saved Flight #3</h5>
-                    <h6 id="saved-outbounddate1">Outbound: </h6>
-                    <h6 id="saved-inbounddate1">Inbound: </h6>
-                    <h6 id="saved-origin1">Origin: </h6>
-                    <h6 id="saved-destination1">Destination: </h6>
-                    <h6 id="saved-airlinecode1">Airline: </h6>      
-                    <h6 id="saved-price1">Price: </h6>   
-                    <h6 id="saved-direct1">Direct Flight: </h6>  
-                    <img id="saved-direct-flight-icon1">  
-
-                    <a href="#!" class="secondary-content">
-                        <i class="material-icons" id="savedFlight-3-btn">clear</i>
-                    </a>
-                </div>
-            </li>
-
-        </ul>
-    <div>
     
     <!-- Hotel Card -->
-    <div class="row" id="hotels">
-        <ul class="collection with-header">
-            <li class="collection-header #01579b light-blue darken-4 white-text"><h4 class="flight-title"><i class="material-icons left">hotel</i>Your Saved Hotels</h2>
-            <li class="collection-item" id="savedHotel-1"><div>Saved Hotel #1<a href="#!" class="secondary-content"><i class="material-icons" id="savedFlight-1-btn">clear</i></a></div></li>
-            <li class="collection-item" id="savedHotel-2"><div>Saved Hotel #2<a href="#!" class="secondary-content"><i class="material-icons" id="savedFlight-2-btn">clear</i></a></div></li>
-            <li class="collection-item" id="savedHotel-3"><div>Saved Hotel #3<a href="#!" class="secondary-content"><i class="material-icons" id="savedFlight-3-btn">clear</i></a></div></li>
-        </ul>
-    <div>
+    <div class="row" id="title">
+        <h4 class="hotel-title #01579b light-blue darken-4 white-text"><i class="material-icons left">hotel</i>Your Saved Hotels</h2>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m6 l4">
+            <div class="card">
+                  <span class="card-title">Hotel #1</span>
+                    <div id="hotelinfo1div">
+                        <a class="btn-floating halfway-fab waves-effect waves-light #01579b light-blue darken-4"><i class="material-icons savedHotel-1-btn" id="savedHotel1button" type="submit">clear</i></a>
+                        <h6 id="savedHotelID1">Hotel Name:</h6>
+                        <h6 id="savedHotelStars1">Stars:</h6>
+                        <h6 id="savedHotelPrice1">Price for stay:</h6>
+                    </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+            <div class="card">
+                  <span class="card-title">Hotel #2</span>
+                    <div id="hotelinfo2div">
+                        <a class="btn-floating halfway-fab waves-effect waves-light #01579b light-blue darken-4"><i class="material-icons savedHotel-2-btn" id="savedHotel2button" type="submit">clear</i></a>
+                        <h6 id="savedHotelID2">Hotel Name:</h6>
+                        <h6 id="savedHotelStars2">Stars:</h6>
+                        <h6 id="savedHotelPrice2">Price:</h6>
+                    </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l4">
+            <div class="card">
+                  <span class="card-title">Hotel #3</span>
+                    <div id="hotelinfo3div">
+                        <a class="btn-floating halfway-fab waves-effect waves-light #01579b light-blue darken-4"><i class="material-icons savedHotel-3-btn" id="savedHotel3button" type="submit">clear</i></a>
+                        <h6 id="savedHotelID3">Hotel Name:</h6>
+                        <h6 id="savedHotelStars3">Stars:</h6>
+                        <h6 id="savedHotelPrice3">Price:</h6>
+                    </div>
+            </div>
+        </div>
+    </div> 
+
 <div>
 </main>
-
+​
 <footer class="page-footer #01579b light-blue darken-4">
     <div class="container">
     © 2020 Powered by SkyScanner & Hotel Look. Application created by Izabela Petrovicova, Josh Price, and Nicole Wallace 
     </div>
 </footer>
-
-
-
+​
+​
+​
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
