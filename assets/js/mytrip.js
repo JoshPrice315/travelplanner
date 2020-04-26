@@ -58,13 +58,13 @@ var getFlight1FromMyTrip = function() {
 
 
     //parse items from localStorage for Flight 1
-    var startDateFlight1Display = JSON.parse(localStorage.getItem("startDateFlight1"));
-    var endDateFlight1Display = JSON.parse(localStorage.getItem("endDateFlight1"));
-    var fromLocationFlight1Display = JSON.parse(localStorage.getItem("fromLocationFlight1"));
-    var toLocationFlight1Display = JSON.parse(localStorage.getItem("toLocationFlight1"));
-    var carrierFlight1Display = JSON.parse(localStorage.getItem("carrierFlight1"));
-    var priceFlight1Display = JSON.parse(localStorage.getItem("priceFlight1"));
-    var directFlight1Display = JSON.parse(localStorage.getItem("directFlight1"));
+    var startDateFlight1Display = JSON.parse(localStorage.getItem("startDateFlight1")) || [];
+    var endDateFlight1Display = JSON.parse(localStorage.getItem("endDateFlight1")) || [];
+    var fromLocationFlight1Display = JSON.parse(localStorage.getItem("fromLocationFlight1")) || [];
+    var toLocationFlight1Display = JSON.parse(localStorage.getItem("toLocationFlight1")) || [];
+    var carrierFlight1Display = JSON.parse(localStorage.getItem("carrierFlight1")) || [];
+    var priceFlight1Display = JSON.parse(localStorage.getItem("priceFlight1")) || [];
+    var directFlight1Display = JSON.parse(localStorage.getItem("directFlight1")) || [];
 
 
     //get items from locaStorage for each item above
@@ -131,20 +131,21 @@ var getFlight2FromMyTrip = function() {
 
 
     //parse items from localStorage for Flight 1
-    var startDateFlight2Display = JSON.parse(localStorage.getItem("startDateFlight2"));
-    var endDateFlight2Display = JSON.parse(localStorage.getItem("endDateFlight2"));
-    var fromLocationFlight2Display = JSON.parse(localStorage.getItem("fromLocationFlight2"));
-    var toLocationFlight2Display = JSON.parse(localStorage.getItem("toLocationFlight2"));
-    var carrierFlight2Display = JSON.parse(localStorage.getItem("carrierFlight2"));
-    var priceFlight2Display = JSON.parse(localStorage.getItem("priceFlight2"));
-    var directFlight2Display = JSON.parse(localStorage.getItem("directFlight2"));
+
+    var startDateFlight2Display = JSON.parse(localStorage.getItem("startDateFlight2")) || [];
+    var endDateFlight2Display = JSON.parse(localStorage.getItem("endDateFlight2")) || [];
+    var fromLocationFlight2Display = JSON.parse(localStorage.getItem("fromLocationFlight2")) || [];
+    var toLocationFlight2Display = JSON.parse(localStorage.getItem("toLocationFlight2")) || [];
+    var carrierFlight2Display = JSON.parse(localStorage.getItem("carrierFlight2")) || [];
+    var priceFlight2Display = JSON.parse(localStorage.getItem("priceFlight2")) || [];
+    var directFlight2Display = JSON.parse(localStorage.getItem("directFlight2")) || [];
 
 
     //get items from locaStorage for each item above
         var startDateFlight2DisplayItem
 
 
-        for (var i = 0; i < startDateFlight2Display.length; i++) {
+        for (var i = 0; i < startDateFlight2Display.length ; i++) {
             startDateFlight2DisplayItem = startDateFlight2Display[0];
             // console.log(startDateFlight2DisplayItem);
         }  
@@ -204,13 +205,13 @@ var getFlight3FromMyTrip = function() {
 
 
     //parse items from localStorage for Flight 1
-    var startDateFlight3Display = JSON.parse(localStorage.getItem("startDateFlight3"));
-    var endDateFlight3Display = JSON.parse(localStorage.getItem("endDateFlight3"));
-    var fromLocationFlight3Display = JSON.parse(localStorage.getItem("fromLocationFlight3"));
-    var toLocationFlight3Display = JSON.parse(localStorage.getItem("toLocationFlight3"));
-    var carrierFlight3Display = JSON.parse(localStorage.getItem("carrierFlight3"));
-    var priceFlight3Display = JSON.parse(localStorage.getItem("priceFlight3"));
-    var directFlight3Display = JSON.parse(localStorage.getItem("directFlight3"));
+    var startDateFlight3Display = JSON.parse(localStorage.getItem("startDateFlight3")) || [];
+    var endDateFlight3Display = JSON.parse(localStorage.getItem("endDateFlight3")) || [];
+    var fromLocationFlight3Display = JSON.parse(localStorage.getItem("fromLocationFlight3")) || [];
+    var toLocationFlight3Display = JSON.parse(localStorage.getItem("toLocationFlight3")) || [];
+    var carrierFlight3Display = JSON.parse(localStorage.getItem("carrierFlight3")) || [];
+    var priceFlight3Display = JSON.parse(localStorage.getItem("priceFlight3")) || [];
+    var directFlight3Display = JSON.parse(localStorage.getItem("directFlight3")) || [];
 
 
     //get items from locaStorage for each item above
