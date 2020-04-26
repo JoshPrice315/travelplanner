@@ -30,6 +30,10 @@ $(document).ready(function () {
     $('.sidenav').sidenav();
 });
 
+// Carousel 
+$('.carousel.carousel-slider').carousel({
+    indicators: true
+});
 
 //global variables
 
