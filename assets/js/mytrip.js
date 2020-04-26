@@ -42,9 +42,50 @@ var savedFlightCard3El = document.querySelector("#saved-flight-card-3");
 
 var flightRowIdEl = document.querySelector("#row-id");
 
+// hotel save variables 
+var savedHotelName1El = document.querySelector("#saved-hotel-name1");
+var savedHotelName2El = document.querySelector("#saved-hotel-name2");
+var savedHotelName3El = document.querySelector("#saved-hotel-name3");
+
+var savedHotelStars1El = document.querySelector("#saved-hotel-stars1");
+var savedHotelStars2El = document.querySelector("#saved-hotel-stars2");
+var savedHotelStars3El = document.querySelector("#saved-hotel-stars3");
+
+var savedHotelPrice1El = document.querySelector("#saved-hotel-price1");
+var savedHotelPrice2El = document.querySelector("#saved-hotel-price2");
+var savedHotelPrice3El = document.querySelector("#saved-hotel-price3");
+
+var getHotel1FromMyTrip = function () {
+    // parse items from localStorage for Hotel 1
+    var hotelName1Display = JSON.parse(localStorage.getItem("hotelArryName1"));
+    var hotelStars1Display = JSON.parse(localStorage.getItem("hotelArrayStars1"));
+    var hotelPrice1Display = JSON.parse(localStorage.getitem("hotelArryPrice1"));
+
+    // get items from localStorage for each item above
+
+    var hotelName1DisplayItem
+    for (var i = 0; i < hotelName1Display.length; i++) {
+        hotelName1DisplayItem = hotelName1Display[0];
+    }
+
+    var hotelStars1DisplayItem
+    for (var i = 0; i < hotelStars1Display.length; i++) {
+        hotelStars1DisplayItem = hotelStars1Display[0];
+    }
+
+    var hotelPrice1DisplayItem
+    for (var i = 0; i < hotelPrice1Display.length; i++) {
+        hotelPrice1DisplayItem = hotelPrice1Display[0];
+    }
+
+    document.getElementById("saved-hotel-name1").innerHTML = "Hotel Name: " + hotelName1DisplayItem;
+    document.getElementById("saved-hotel-stars1").innerHTML = "Stars: " + hotelStars1DisplayItem;
+    document.getElementById("saved-hotel-price").innerHTML = "Price for stay: " + hotelPrice1DisplayItem;
+}
+
 
 //function to reload the data onto the page from the localStorage and show it on the My Trips page
-var getFlight1FromMyTrip = function() {
+var getFlight1FromMyTrip = function () {
 
 
     //parse items from localStorage for Flight 1
@@ -100,10 +141,6 @@ var getFlight1FromMyTrip = function() {
         directFlight1DisplayItem = directFlight1Display[0];
         // console.log(directFlight1DisplayItem);
     }
-        
-
-
-
 
     document.getElementById("saved-outbounddate1").innerHTML = "Outbound: " + startDateFlight1DisplayItem;
     document.getElementById("saved-inbounddate1").innerHTML = "Inbound: " + endDateFlight1DisplayItem;
@@ -117,7 +154,7 @@ var getFlight1FromMyTrip = function() {
 
 
 //function to reload the data for the second trip onto the page from the localStorage and show it on the My Trips page
-var getFlight2FromMyTrip = function() {
+var getFlight2FromMyTrip = function () {
 
 
     //parse items from localStorage for Flight 1
@@ -131,50 +168,50 @@ var getFlight2FromMyTrip = function() {
 
 
     //get items from locaStorage for each item above
-        var startDateFlight2DisplayItem
+    var startDateFlight2DisplayItem
 
 
-        for (var i = 0; i < startDateFlight2Display.length; i++) {
-            startDateFlight2DisplayItem = startDateFlight2Display[0];
-            // console.log(startDateFlight2DisplayItem);
-        }  
+    for (var i = 0; i < startDateFlight2Display.length; i++) {
+        startDateFlight2DisplayItem = startDateFlight2Display[0];
+        // console.log(startDateFlight2DisplayItem);
+    }
 
-        var endDateFlight2DisplayItem
-        for (var i = 0; i < endDateFlight2Display.length; i++) {
-            endDateFlight2DisplayItem = endDateFlight2Display[0];
-            // console.log(endDateFlight2DisplayItem);
-        }
+    var endDateFlight2DisplayItem
+    for (var i = 0; i < endDateFlight2Display.length; i++) {
+        endDateFlight2DisplayItem = endDateFlight2Display[0];
+        // console.log(endDateFlight2DisplayItem);
+    }
 
-        var fromLocationFlight2DisplayItem
-        for (var i = 0; i < fromLocationFlight2Display.length; i++) {
-            fromLocationFlight2DisplayItem = fromLocationFlight2Display[0];
-            // console.log(fromLocationFlight2DisplayItem);
-        }
+    var fromLocationFlight2DisplayItem
+    for (var i = 0; i < fromLocationFlight2Display.length; i++) {
+        fromLocationFlight2DisplayItem = fromLocationFlight2Display[0];
+        // console.log(fromLocationFlight2DisplayItem);
+    }
 
-        var toLocationFlight2DisplayItem
-        for (var i = 0; i < toLocationFlight2Display.length; i++) {
-            toLocationFlight2DisplayItem = toLocationFlight2Display[0];
-            // console.log(toLocationFlight2DisplayItem);
-        }
+    var toLocationFlight2DisplayItem
+    for (var i = 0; i < toLocationFlight2Display.length; i++) {
+        toLocationFlight2DisplayItem = toLocationFlight2Display[0];
+        // console.log(toLocationFlight2DisplayItem);
+    }
 
-        var carrierFlight2DisplayItem
-        for (var i = 0; i < carrierFlight2Display.length; i++) {
-            carrierFlight2DisplayItem = carrierFlight2Display[0];
-            // console.log(carrierFlight2DisplayItem);
-        }
+    var carrierFlight2DisplayItem
+    for (var i = 0; i < carrierFlight2Display.length; i++) {
+        carrierFlight2DisplayItem = carrierFlight2Display[0];
+        // console.log(carrierFlight2DisplayItem);
+    }
 
-        var priceFlight2DisplayItem
-        for (var i = 0; i < priceFlight2Display.length; i++) {
-            priceFlight2DisplayItem = priceFlight2Display[0];
-            // console.log(priceFlight2DisplayItem);
-        }
+    var priceFlight2DisplayItem
+    for (var i = 0; i < priceFlight2Display.length; i++) {
+        priceFlight2DisplayItem = priceFlight2Display[0];
+        // console.log(priceFlight2DisplayItem);
+    }
 
-        var directFlight2DisplayItem
-        for (var i = 0; i < directFlight2Display.length; i++) {
-            directFlight2DisplayItem = directFlight2Display[0];
-            // console.log(directFlight2DisplayItem);
-        }
-    
+    var directFlight2DisplayItem
+    for (var i = 0; i < directFlight2Display.length; i++) {
+        directFlight2DisplayItem = directFlight2Display[0];
+        // console.log(directFlight2DisplayItem);
+    }
+
 
 
 
@@ -190,7 +227,7 @@ var getFlight2FromMyTrip = function() {
 
 
 //function to reload the data for the third trip onto the page from the localStorage and show it on the My Trips page
-var getFlight3FromMyTrip = function() {
+var getFlight3FromMyTrip = function () {
 
 
     //parse items from localStorage for Flight 1
@@ -204,54 +241,54 @@ var getFlight3FromMyTrip = function() {
 
 
     //get items from locaStorage for each item above
-        var startDateFlight3DisplayItem
-        for (var i = 0; i < startDateFlight3Display.length; i++) {
-            startDateFlight3DisplayItem = startDateFlight3Display[0];
-            // console.log(startDateFlight3DisplayItem);
-        }
+    var startDateFlight3DisplayItem
+    for (var i = 0; i < startDateFlight3Display.length; i++) {
+        startDateFlight3DisplayItem = startDateFlight3Display[0];
+        // console.log(startDateFlight3DisplayItem);
+    }
 
-        var endDateFlight3DisplayItem
-        for (var i = 0; i < endDateFlight3Display.length; i++) {
-            endDateFlight3DisplayItem = endDateFlight3Display[0];
-            // console.log(endDateFlight3DisplayItem);
-        }
+    var endDateFlight3DisplayItem
+    for (var i = 0; i < endDateFlight3Display.length; i++) {
+        endDateFlight3DisplayItem = endDateFlight3Display[0];
+        // console.log(endDateFlight3DisplayItem);
+    }
 
-        var fromLocationFlight3DisplayItem
-        for (var i = 0; i < fromLocationFlight3Display.length; i++) {
-            fromLocationFlight3DisplayItem = fromLocationFlight3Display[0];
-            // console.log(fromLocationFlight3DisplayItem);
-        }
+    var fromLocationFlight3DisplayItem
+    for (var i = 0; i < fromLocationFlight3Display.length; i++) {
+        fromLocationFlight3DisplayItem = fromLocationFlight3Display[0];
+        // console.log(fromLocationFlight3DisplayItem);
+    }
 
-        var toLocationFlight3DisplayItem
-        for (var i = 0; i < toLocationFlight3Display.length; i++) {
-            toLocationFlight3DisplayItem = toLocationFlight3Display[0];
-            // console.log(toLocationFlight3DisplayItem);
-        }
+    var toLocationFlight3DisplayItem
+    for (var i = 0; i < toLocationFlight3Display.length; i++) {
+        toLocationFlight3DisplayItem = toLocationFlight3Display[0];
+        // console.log(toLocationFlight3DisplayItem);
+    }
 
-        var carrierFlight3DisplayItem
-        for (var i = 0; i < carrierFlight3Display.length; i++) {
-            carrierFlight3DisplayItem = carrierFlight3Display[0];
-            // console.log(carrierFlight3DisplayItem);
-        }
+    var carrierFlight3DisplayItem
+    for (var i = 0; i < carrierFlight3Display.length; i++) {
+        carrierFlight3DisplayItem = carrierFlight3Display[0];
+        // console.log(carrierFlight3DisplayItem);
+    }
 
-        var priceFlight3DisplayItem
-        for (var i = 0; i < priceFlight3Display.length; i++) {
-            priceFlight3DisplayItem = priceFlight3Display[0];
-            // console.log(priceFlight2DisplayItem);
-        }
+    var priceFlight3DisplayItem
+    for (var i = 0; i < priceFlight3Display.length; i++) {
+        priceFlight3DisplayItem = priceFlight3Display[0];
+        // console.log(priceFlight2DisplayItem);
+    }
 
-        var directFlight3DisplayItem
-        for (var i = 0; i < directFlight3Display.length; i++) {
-            directFlight3DisplayItem = directFlight3Display[0];
-            // console.log(directFlight2DisplayItem);
-        }
+    var directFlight3DisplayItem
+    for (var i = 0; i < directFlight3Display.length; i++) {
+        directFlight3DisplayItem = directFlight3Display[0];
+        // console.log(directFlight2DisplayItem);
+    }
 
 
 
 
     document.getElementById("saved-outbounddate3").innerHTML = "Outbound: " + startDateFlight3DisplayItem;
     document.getElementById("saved-inbounddate3").innerHTML = "Inbound: " + endDateFlight3DisplayItem;
-    document.getElementById("saved-origin3").innerHTML = "Origin: " + fromLocationFlight3DisplayItem ;
+    document.getElementById("saved-origin3").innerHTML = "Origin: " + fromLocationFlight3DisplayItem;
     document.getElementById("saved-destination3").innerHTML = "Destination: " + toLocationFlight3DisplayItem;
     document.getElementById("saved-airlinecode3").innerHTML = "Carrier: " + carrierFlight3DisplayItem;
     document.getElementById("saved-price3").innerHTML = "Price: $" + priceFlight3DisplayItem;
@@ -262,7 +299,7 @@ var getFlight3FromMyTrip = function() {
 
 
 //function to remove items from localStorage on button click for the first flight
-var removeFlight1FromMyTrip = function() {
+var removeFlight1FromMyTrip = function () {
     //remove items from localStorage for Flight 1
     localStorage.removeItem("startDateFlight1");
     localStorage.removeItem("endDateFlight1");
@@ -278,7 +315,7 @@ var removeFlight1FromMyTrip = function() {
 }
 
 //function to remove items from localStorage on button click for the second flight
-var removeFlight2FromMyTrip = function() {
+var removeFlight2FromMyTrip = function () {
     //remove items from localStorage for Flight 1
     localStorage.removeItem("startDateFlight2");
     localStorage.removeItem("endDateFlight2");
@@ -293,7 +330,7 @@ var removeFlight2FromMyTrip = function() {
 }
 
 //function to remove items from localStorage on button click for the third flight
-var removeFlight3FromMyTrip = function() {
+var removeFlight3FromMyTrip = function () {
     //remove items from localStorage for Flight 1
     localStorage.removeItem("startDateFlight3");
     localStorage.removeItem("endDateFlight3");
