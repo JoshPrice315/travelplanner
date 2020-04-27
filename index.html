@@ -14,10 +14,8 @@
 <nav>
     <div class="nav-wrapper #01579b light-blue darken-4">
         <a href="index.html" class="brand-logo">Travel Planner</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons" id="menu-icon">menu</i></a>
         <ul class="right hide-on-med-and-down">
-            <li><a href="#flights">Flights</a></li>
-            <li><a href="#hotels">Hotels</a></li>
             <li><a href="mytrips.html" class="waves-effect waves-light btn #424242 grey darken-3">My Trip</a></li>
         </ul>
     </div>
@@ -25,19 +23,17 @@
     
       <!-- Mobile Nav -->
       <ul class="sidenav" id="mobile-demo">
-            <li><a href="#flights">Flights</a></li>
-            <li><a href="#hotels">Hotels</a></li>
             <li><a href="mytrips.html" class="waves-effect waves-light btn #424242 grey darken-3">My Trip</a></li>
       </ul>
 
  <main>
-<!-- Hero Image 
-<section class="hero"></section>-->
+<!-- Hero Image -->
 <div class="carousel carousel-slider">
-    <a class="carousel-item" href="#one!"><img src="./assets/images/caroimg1.jpg"></a>
-    <a class="carousel-item" href="#two!"><img src="./assets/images/caroimg2.jpg"></a>
-    <a class="carousel-item" href="#three!"><img src="./assets/images/caroimg3.jpg"></a>
-    <a class="carousel-item" href="#four!"><img src="./assets/images/caroimg4.jpg"></a>
+    <a class="carousel-item"><img src="./assets/images/caro1v2.jpg"></a>
+    <a class="carousel-item"><img src="./assets/images/caro2v2.jpg"></a>
+    <a class="carousel-item"><img src="./assets/images/caroimg3.jpg"></a>
+    <a class="carousel-item"><img src="./assets/images/caroimg4.jpg"></a>
+    <a class="carousel-item"><img src="./assets/images/caroimg0.jpg"></a>
   </div>
 
 <!-- Greeting -->
@@ -48,31 +44,31 @@
 <div class="container-fluid"> 
     <!-- Start Date / End Date Input -->
     <div class="row" id="valueinputform">
-        <form class="col s2" >
+        <form class="col s12 m6 l2" >
             <div class="dates">
             <label for="datepicker-start">Start Date</label>
             <input type="text" class="datepicker-start" id="datepicker-start-id">
             </div>
         </form> 
 
-        <form class="col s2" id="enddateinputform">
+        <form class="col s12 m6 l2" id="enddateinputform">
             <div class="dates">
             <label for="datepicker-end">End Date</label>
             <input type="text" class="datepicker-end" id="datepicker-end-id">
             </div>
         </form>
-        <div class="input-field col s3">
+        <div class="input-field col s12 m6 l3">
             <i class="material-icons prefix">add_location</i>
             <input type="text" class="current" id="from-location-input-id">
             <label for="icon_from_location">From</label>
         </div>   
 
-        <div class="input-field col s3">
+        <div class="input-field col s12 m6 l3">
             <i class="material-icons prefix">add_location</i>
             <input  type="text" class="destination" id="to-location-input-id">
             <label for="icon_to_location">To</label>
         </div>
-        <div class="input-field col s2">
+        <div class="input-field col s12 m6 l2">
                 <button class="btn waves-effect waves-light #01579b light-blue darken-4" type="submit" id="search-button">Search
                 <i class="material-icons right">done</i>
               </button>
@@ -89,8 +85,8 @@
         <h4 class="flight-title #01579b light-blue darken-4 white-text"><i class="material-icons left">flight</i>Your Recommended Flights</h2>
     </div>
 
-    <div class="row">
-        <div class="col s12 m6 l4">
+    <div class="row" id="flights">
+        <div class="col s12 m12 l4">
           <div class="card">
                 <span class="card-title">Flight #1</span>
                     <div id="flightinfo1div"> 
@@ -108,7 +104,7 @@
             </div>
         </div>
     
-        <div class="col s12 m6 l4">
+        <div class="col s12 m12 l4">
             <div class="card">
                 <span class="card-title">Flight #2</span>
                     <div id="flightinfo2div">
@@ -125,7 +121,7 @@
             </div>
         </div>
    
-        <div class="col s12 m6 l4">
+        <div class="col s12 m12 l4">
             <div class="card">
                 <span class="card-title">Flight #3</span>
                     <div id="flightinfo3div">
@@ -148,8 +144,8 @@
         <h4 class="hotel-title #01579b light-blue darken-4 white-text"><i class="material-icons left">hotel</i>Your Recommended Hotels</h2>
     </div>
 
-    <div class="row">
-        <div class="col s12 m6 l4">
+    <div class="row" id="hotels">
+        <div class="col s12 m12 l4">
             <div class="card">
                   <span class="card-title">Hotel #1</span>
                     <div id="hotelinfo1div">
@@ -161,7 +157,7 @@
             </div>
         </div>
 
-        <div class="col s12 m6 l4">
+        <div class="col s12 m12 l4">
             <div class="card">
                   <span class="card-title">Hotel #2</span>
                     <div id="hotelinfo2div">
@@ -173,7 +169,7 @@
             </div>
         </div>
 
-        <div class="col s12 m6 l4">
+        <div class="col s12 m12 l4">
             <div class="card">
                   <span class="card-title">Hotel #3</span>
                     <div id="hotelinfo3div">
