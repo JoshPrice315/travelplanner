@@ -37,13 +37,12 @@ $(document).ready(function() {
             $('.carousel.carousel-slider').carousel("next");
 
         }, 4000);   
+
+        $('.carousel.carousel-slider').carousel({
+            indicators: true,
+            fullWidth: true
+          });
 });
-
-$('.carousel.carousel-slider').carousel({
-    indicators: true
-  });
-
-
 
 //global variables
 
