@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,256 +12,275 @@
 
 <body>
     <!-- Navigation -->
-<nav>
-    <div class="nav-wrapper #01579b light-blue darken-4">
-        <a href="index.html" class="brand-logo">Travel Planner</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons" id="menu-icon">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-            <li><a href="mytrips.html" class="waves-effect waves-light btn #424242 grey darken-3">My Trip</a></li>
-        </ul>
-    </div>
-</nav>
-    
-      <!-- Mobile Nav -->
-      <ul class="sidenav" id="mobile-demo">
-            <li><a href="mytrips.html" class="waves-effect waves-light btn #424242 grey darken-3">My Trip</a></li>
-      </ul>
-
- <main>
-<!-- Hero Image -->
-<div class="carousel carousel-slider">
-    <a class="carousel-item"><img src="./assets/images/caro1v2.jpg"></a>
-    <a class="carousel-item"><img src="./assets/images/caro2v2.jpg"></a>
-    <a class="carousel-item"><img src="./assets/images/caroimg3.jpg"></a>
-    <a class="carousel-item"><img src="./assets/images/caroimg4.jpg"></a>
-    <a class="carousel-item"><img src="./assets/images/caroimg0.jpg"></a>
-  </div>
-
-<!-- Greeting -->
-<h2 class="welcome">Welcome to Travel Planner!</h2>
-<h4 class="message">Choose your trip details below</h4>
-
-<!-- Inputs -->
-<div class="container-fluid"> 
-    <!-- Start Date / End Date Input -->
-    <div class="row" id="valueinputform">
-        <form class="col s12 m6 l2" >
-            <div class="dates">
-            <label for="datepicker-start">Start Date</label>
-            <input type="text" class="datepicker-start" id="datepicker-start-id">
-            </div>
-        </form> 
-
-        <form class="col s12 m6 l2" id="enddateinputform">
-            <div class="dates">
-            <label for="datepicker-end">End Date</label>
-            <input type="text" class="datepicker-end" id="datepicker-end-id">
-            </div>
-        </form>
-        <div class="input-field col s12 m6 l3">
-            <i class="material-icons prefix">add_location</i>
-            <input type="text" class="current" id="from-location-input-id">
-            <label for="icon_from_location">From</label>
-        </div>   
-
-        <div class="input-field col s12 m6 l3">
-            <i class="material-icons prefix">add_location</i>
-            <input  type="text" class="destination" id="to-location-input-id">
-            <label for="icon_to_location">To</label>
+    <nav>
+        <div class="nav-wrapper #01579b light-blue darken-4">
+            <a href="index.html" class="brand-logo">Travel Planner</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons"
+                    id="menu-icon">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="mytrips.html" class="waves-effect waves-light btn #424242 grey darken-3">My Trip</a></li>
+            </ul>
         </div>
-        <div class="input-field col s12 m6 l2">
-                <button class="btn waves-effect waves-light #01579b light-blue darken-4" type="submit" id="search-button">Search
-                <i class="material-icons right">done</i>
-              </button>
-        </div>    
+    </nav>
 
+    <!-- Mobile Nav -->
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="mytrips.html" class="waves-effect waves-light btn #424242 grey darken-3">My Trip</a></li>
+    </ul>
 
-    </div>
-</div>
+    <main>
+        <!-- Hero Image -->
+        <div class="carousel carousel-slider">
+            <a class="carousel-item"><img src="./assets/images/caro1v2.jpg"></a>
+            <a class="carousel-item"><img src="./assets/images/caro2v2.jpg"></a>
+            <a class="carousel-item"><img src="./assets/images/caroimg3.jpg"></a>
+            <a class="carousel-item"><img src="./assets/images/caroimg4.jpg"></a>
+            <a class="carousel-item"><img src="./assets/images/caroimg0.jpg"></a>
+        </div>
 
-<!-- Body Cards --> 
-<div class="container-fluid hidden" id="hidden"> 
-    <!-- Flight Card -->
-    <div class="row" id="title">
-        <h4 class="flight-title #01579b light-blue darken-4 white-text"><i class="material-icons left">flight</i>Your Recommended Flights</h2>
-    </div>
+        <!-- Greeting -->
+        <h2 class="welcome">Welcome to Travel Planner!</h2>
+        <h4 class="message">Choose your trip details below</h4>
 
-    <div class="row" id="flights">
-        <div class="col s12 m12 l4">
-          <div class="card">
-                <span class="card-title">Flight #1</span>
-                    <div id="flightinfo1div"> 
-                        <a class="btn-floating halfway-fab waves-effect waves-light #01579b light-blue darken-4"><i class="material-icons flight-1-btn" id="flight1button" type="submit">add</i></a>
-                        <!-- <a class="btn" onclick="Materialize.toast('I am a toast', 4000)">Toast!</a> -->
-                        <h6 id="outbounddate1">Outbound: </h6>
-                        <h6 id="inbounddate1">Inbound: </h6>
-                        <h6 id="origin1">Origin: </h6>
-                        <h6 id="destination1">Destination: </h6>
-                        <h6 id="airlinecode1">Airline: </h6>      
-                        <h6 id="price1">Price: </h6>   
-                        <h6 id="direct1">Direct Flight: </h6>  
-                        <img id="direct-flight-icon1">    
+        <!-- Inputs -->
+        <div class="container-fluid">
+            <!-- Start Date / End Date Input -->
+            <div class="row" id="valueinputform">
+                <form class="col s12 m6 l2">
+                    <div class="dates">
+                        <label for="datepicker-start">Start Date</label>
+                        <input type="text" class="datepicker-start" id="datepicker-start-id">
                     </div>
-            </div>
-        </div>
-    
-        <div class="col s12 m12 l4">
-            <div class="card">
-                <span class="card-title">Flight #2</span>
-                    <div id="flightinfo2div">
-                        <a class="btn-floating halfway-fab waves-effect waves-light #01579b light-blue darken-4"><i class="material-icons flight-2-btn" id="flight2button" type="submit">add</i></a>
-                        <h6 id="outbounddate2">Outbound: </h6>
-                        <h6 id="inbounddate2">Inbound: </h6>
-                        <h6 id="origin2">Origin: </h6>
-                        <h6 id="destination2">Destination: </h6>
-                        <h6 id="airlinecode2">Airline: </h6>      
-                        <h6 id="price2">Price: </h6>  
-                        <h6 id="direct2">Direct Flight: </h6>  
-                        <img id="direct-flight-icon2">   
-                     </div>
-            </div>
-        </div>
-   
-        <div class="col s12 m12 l4">
-            <div class="card">
-                <span class="card-title">Flight #3</span>
-                    <div id="flightinfo3div">
-                        <a class="btn-floating halfway-fab waves-effect waves-light #01579b light-blue darken-4"><i class="material-icons flight-3-btn" id="flight3button" type="submit">add</i></a>
-                        <h6 id="outbounddate3">Outbound: </h6>
-                        <h6 id="inbounddate3">Inbound: </h6>
-                        <h6 id="origin3">Origin: </h6>
-                        <h6 id="destination3">Destination: </h6>
-                        <h6 id="airlinecode3">Airline: </h6>      
-                        <h6 id="price3">Price: </h6>  
-                        <h6 id="direct3">Direct Flight: </h6> 
-                        <img id="direct-flight-icon3">      
+                </form>
+
+                <form class="col s12 m6 l2" id="enddateinputform">
+                    <div class="dates">
+                        <label for="datepicker-end">End Date</label>
+                        <input type="text" class="datepicker-end" id="datepicker-end-id">
                     </div>
-            </div>        
-        </div>
-    </div>
+                </form>
+                <div class="input-field col s12 m6 l3">
+                    <i class="material-icons prefix">add_location</i>
+                    <input type="text" class="current" id="from-location-input-id">
+                    <label for="icon_from_location">From</label>
+                </div>
 
-<!-- Hotel Card -->
-    <div class="row" id="title">
-        <h4 class="hotel-title #01579b light-blue darken-4 white-text"><i class="material-icons left">hotel</i>Your Recommended Hotels</h2>
-    </div>
+                <div class="input-field col s12 m6 l3">
+                    <i class="material-icons prefix">add_location</i>
+                    <input type="text" class="destination" id="to-location-input-id">
+                    <label for="icon_to_location">To</label>
+                </div>
+                <div class="input-field col s12 m6 l2">
+                    <button class="btn waves-effect waves-light #01579b light-blue darken-4" type="submit"
+                        id="search-button">Search
+                        <i class="material-icons right">done</i>
+                    </button>
+                </div>
 
-    <div class="row" id="hotels">
-        <div class="col s12 m12 l4">
-            <div class="card">
-                  <span class="card-title">Hotel #1</span>
-                    <div id="hotelinfo1div">
-                        <a class="btn-floating halfway-fab waves-effect waves-light #01579b light-blue darken-4"><i class="material-icons hotel-1-btn" id="hotel1button" type="submit">add</i></a>
-                        <h6 id="hotelID1">Hotel Name:</h6>
-                        <h6 id="hotelStars1">Stars:</h6>
-                        <h6 id="hotelPrice1">Price for stay:</h6>
-                    </div>
+
             </div>
         </div>
 
-        <div class="col s12 m12 l4">
-            <div class="card">
-                  <span class="card-title">Hotel #2</span>
-                    <div id="hotelinfo2div">
-                        <a class="btn-floating halfway-fab waves-effect waves-light #01579b light-blue darken-4"><i class="material-icons hotel-2-btn" id="hotel2button" type="submit">add</i></a>
-                        <h6 id="hotelID2">Hotel Name:</h6>
-                        <h6 id="hotelStars2">Stars:</h6>
-                        <h6 id="hotelPrice2">Price:</h6>
+        <!-- Body Cards -->
+        <div class="container-fluid hidden" id="hidden">
+            <!-- Flight Card -->
+            <div class="row" id="title">
+                <h4 class="flight-title #01579b light-blue darken-4 white-text"><i
+                        class="material-icons left">flight</i>Your Recommended Flights</h2>
+            </div>
+
+            <div class="row" id="flights">
+                <div class="col s12 m12 l4">
+                    <div class="card">
+                        <span class="card-title">Flight #1</span>
+                        <div id="flightinfo1div">
+                            <a class="btn-floating halfway-fab waves-effect waves-light #01579b light-blue darken-4"><i
+                                    class="material-icons flight-1-btn" id="flight1button" type="submit">add</i></a>
+                            <!-- <a class="btn" onclick="Materialize.toast('I am a toast', 4000)">Toast!</a> -->
+                            <h6 id="outbounddate1">Outbound: </h6>
+                            <h6 id="inbounddate1">Inbound: </h6>
+                            <h6 id="origin1">Origin: </h6>
+                            <h6 id="destination1">Destination: </h6>
+                            <h6 id="airlinecode1">Airline: </h6>
+                            <h6 id="price1">Price: </h6>
+                            <h6 id="direct1">Direct Flight: </h6>
+                            <img id="direct-flight-icon1">
+                        </div>
                     </div>
+                </div>
+
+                <div class="col s12 m12 l4">
+                    <div class="card">
+                        <span class="card-title">Flight #2</span>
+                        <div id="flightinfo2div">
+                            <a class="btn-floating halfway-fab waves-effect waves-light #01579b light-blue darken-4"><i
+                                    class="material-icons flight-2-btn" id="flight2button" type="submit">add</i></a>
+                            <h6 id="outbounddate2">Outbound: </h6>
+                            <h6 id="inbounddate2">Inbound: </h6>
+                            <h6 id="origin2">Origin: </h6>
+                            <h6 id="destination2">Destination: </h6>
+                            <h6 id="airlinecode2">Airline: </h6>
+                            <h6 id="price2">Price: </h6>
+                            <h6 id="direct2">Direct Flight: </h6>
+                            <img id="direct-flight-icon2">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s12 m12 l4">
+                    <div class="card">
+                        <span class="card-title">Flight #3</span>
+                        <div id="flightinfo3div">
+                            <a class="btn-floating halfway-fab waves-effect waves-light #01579b light-blue darken-4"><i
+                                    class="material-icons flight-3-btn" id="flight3button" type="submit">add</i></a>
+                            <h6 id="outbounddate3">Outbound: </h6>
+                            <h6 id="inbounddate3">Inbound: </h6>
+                            <h6 id="origin3">Origin: </h6>
+                            <h6 id="destination3">Destination: </h6>
+                            <h6 id="airlinecode3">Airline: </h6>
+                            <h6 id="price3">Price: </h6>
+                            <h6 id="direct3">Direct Flight: </h6>
+                            <img id="direct-flight-icon3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel Card -->
+            <div class="row" id="title">
+                <h4 class="hotel-title #01579b light-blue darken-4 white-text"><i
+                        class="material-icons left">hotel</i>Your Recommended Hotels</h2>
+            </div>
+
+            <div class="row" id="hotels">
+                <div class="col s12 m12 l4">
+                    <div class="card">
+                        <span class="card-title">Hotel #1</span>
+                        <div id="hotelinfo1div">
+                            <a class="btn-floating halfway-fab waves-effect waves-light #01579b light-blue darken-4"><i
+                                    class="material-icons hotel-1-btn" id="hotel1button" type="submit">add</i>
+                            </a>
+                            <h6 id="hotelID1">Hotel Name:</h6>
+                            <h6 id="hotelStars1">Stars:</h6>
+                            <h6 id="hotelPrice1">Price:</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s12 m12 l4">
+                    <div class="card">
+                        <span class="card-title">Hotel #2</span>
+                        <div id="hotelinfo2div">
+                            <a class="btn-floating halfway-fab waves-effect waves-light #01579b light-blue darken-4"><i
+                                    class="material-icons hotel-2-btn" id="hotel2button" type="submit">add</i></a>
+                            <h6 id="hotelID2">Hotel Name:</h6>
+                            <h6 id="hotelStars2">Stars:</h6>
+                            <h6 id="hotelPrice2">Price:</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s12 m12 l4">
+                    <div class="card">
+                        <span class="card-title">Hotel #3</span>
+                        <div id="hotelinfo3div">
+                            <a class="btn-floating halfway-fab waves-effect waves-light #01579b light-blue darken-4"><i
+                                    class="material-icons hotel-3-btn" id="hotel3button" type="submit">add</i></a>
+                            <h6 id="hotelID3">Hotel Name:</h6>
+                            <h6 id="hotelStars3">Stars:</h6>
+                            <h6 id="hotelPrice3">Price:</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!--Modals-->
+
+        <!--Modal to check for the data entry-->
+        <div id="data-entry-modal" class="modal">
+            <div class="modal-content">
+                <h4>Warning!</h4>
+                <p>Please enter a Start Date, End Date, From and To Location (City Code in Capital Letters) in order to
+                    search.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!"
+                    class="modal-action modal-close btn waves-effect waves-light #01579b light-blue darken-4">Ok</a>
             </div>
         </div>
 
-        <div class="col s12 m12 l4">
-            <div class="card">
-                  <span class="card-title">Hotel #3</span>
-                    <div id="hotelinfo3div">
-                        <a class="btn-floating halfway-fab waves-effect waves-light #01579b light-blue darken-4"><i class="material-icons hotel-3-btn" id="hotel3button" type="submit">add</i></a>
-                        <h6 id="hotelID3">Hotel Name:</h6>
-                        <h6 id="hotelStars3">Stars:</h6>
-                        <h6 id="hotelPrice3">Price:</h6>
-                    </div>
+        <!--Modal to check for the city and date combination -->
+        <div id="city-date-modal" class="modal">
+            <div class="modal-content">
+                <h4>Warning!</h4>
+                <p>Please select a different date or city combination.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!"
+                    class="modal-action modal-close btn waves-effect waves-light #01579b light-blue darken-4">Ok</a>
             </div>
         </div>
-    </div>  
-  
 
-</div>
+        <!--Modal to show error when the SkyScanner API cannot connect -->
+        <div id="flight-error-modal" class="modal">
+            <div class="modal-content">
+                <h4>Alert!</h4>
+                <p>Unable to connect to the SkyScanner!</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!"
+                    class="modal-action modal-close btn waves-effect waves-light #01579b light-blue darken-4">Ok</a>
+            </div>
+        </div>
 
-<!--Modals-->
+        <!--Modal to show error when the Hotel Look API cannot connect -->
+        <div id="hotel-error-modal" class="modal">
+            <div class="modal-content">
+                <h4>Alert!</h4>
+                <p>Unable to connect to HotelLook!</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!"
+                    class="modal-action modal-close btn waves-effect waves-light #01579b light-blue darken-4">Ok</a>
+            </div>
+        </div>
 
-<!--Modal to check for the data entry-->
-<div id="data-entry-modal" class="modal">
-    <div class="modal-content">
-      <h4>Warning!</h4>
-      <p>Please enter a Start Date, End Date, From and To Location (City Code in Capital Letters) in order to search.</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close btn waves-effect waves-light #01579b light-blue darken-4">Ok</a>
-    </div>
-</div>
-
-<!--Modal to check for the city and date combination -->
-<div id="city-date-modal" class="modal">
-    <div class="modal-content">
-      <h4>Warning!</h4>
-      <p>Please select a different date or city combination.</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close btn waves-effect waves-light #01579b light-blue darken-4">Ok</a>
-    </div>
-</div>
-
-<!--Modal to show error when the SkyScanner API cannot connect -->
-<div id="flight-error-modal" class="modal">
-    <div class="modal-content">
-      <h4>Alert!</h4>
-      <p>Unable to connect to the SkyScanner!</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close btn waves-effect waves-light #01579b light-blue darken-4">Ok</a>
-    </div>
-</div>
-
-<!--Modal to show error when the Hotel Look API cannot connect -->
-<div id="hotel-error-modal" class="modal">
-    <div class="modal-content">
-      <h4>Alert!</h4>
-      <p>Unable to connect to HotelLook!</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close btn waves-effect waves-light #01579b light-blue darken-4">Ok</a>
-    </div>
-</div>
-
-<!--Modal to show generic error -->
-<div id="generic-error-modal" class="modal">
-    <div class="modal-content">
-      <h4>Error!</h4>
-      <p>Please see the console for more details!</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
-    </div>
-</div>
+        <!--Modal to show generic error -->
+        <div id="generic-error-modal" class="modal">
+            <div class="modal-content">
+                <h4>Error!</h4>
+                <p>Please see the console for more details!</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+            </div>
+        </div>
 
 
 
 
 
-</main>
+    </main>
 
-<!---- Footer -->
-<footer class="page-footer #01579b light-blue darken-4">
-    <div class="container">
-    © 2020 Powered by SkyScanner & Hotel Look. Application created by Izabela Petrovicova, Josh Price, and Nicole Wallace 
-    </div>
-</footer>
+    <!---- Footer -->
+    <footer class="page-footer #01579b light-blue darken-4">
+        <div class="container">
+            © 2020 Powered by SkyScanner & Hotel Look. Application created by Izabela Petrovicova, Josh Price, and
+            Nicole Wallace
+        </div>
+    </footer>
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
