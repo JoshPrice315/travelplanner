@@ -48,7 +48,6 @@ var savedFlightCard3El = document.querySelector("#saved-flight-card-3");
 var flightRowIdEl = document.querySelector("#row-id");
 
 
-
 //changes from Josh
 // hotel save variables 
 var savedHotelName1El = document.querySelector("#saved-hotel-name1");
@@ -64,12 +63,20 @@ var savedHotelPrice2El = document.querySelector("#saved-hotel-price2");
 var savedHotelPrice3El = document.querySelector("#saved-hotel-price3");
 
 
+var removeHotel1buttonEl = document.querySelector("#removeHotel1button");
+var removeHotel2buttonEl = document.querySelector("#removeHotel2button");
+var removeHotel3buttonEl = document.querySelector("#removeHotel3button");
 
+var savedHotelCard1El = document.querySelector("#saved-hotel-card-1");
+var savedHotelCard2El = document.querySelector("#saved-hotel-card-2");
+var savedHotelCard3El = document.querySelector("#saved-hotel-card-3");
+
+// var hotelRowIdEl = document.querySelector("#row-id");
 
 
 
 //function to reload the data onto the page from the localStorage and show it on the My Trips page
-var getFlight1FromMyTrip = function() {
+var getFlight1FromMyTrip = function () {
 
 
     //parse items from localStorage for Flight 1
@@ -84,16 +91,16 @@ var getFlight1FromMyTrip = function() {
 
     if (startDateFlight1Display == "") {
 
-    //adding class to remove the element from the page once the data is deleted from local storage
-    savedFlightCard1El.classList.add("hidden");
+        //adding class to remove the element from the page once the data is deleted from local storage
+        savedFlightCard1El.classList.add("hidden");
 
     }
     else {
-            //get items from locaStorage for each item above
+        //get items from locaStorage for each item above
         var startDateFlight1DisplayItem
         for (var i = 0; i < startDateFlight1Display.length; i++) {
-                startDateFlight1DisplayItem = startDateFlight1Display[0];
-                // console.log(startDateFlight1DisplayItem);
+            startDateFlight1DisplayItem = startDateFlight1Display[0];
+            // console.log(startDateFlight1DisplayItem);
         }
 
 
@@ -132,7 +139,7 @@ var getFlight1FromMyTrip = function() {
             directFlight1DisplayItem = directFlight1Display[0];
             // console.log(directFlight1DisplayItem);
         }
-            
+
 
 
 
@@ -146,12 +153,12 @@ var getFlight1FromMyTrip = function() {
         document.getElementById("saved-direct1").innerHTML = "Direct Flight: " + directFlight1DisplayItem;
 
     }
-    
+
 }
 
 
 //function to reload the data for the second trip onto the page from the localStorage and show it on the My Trips page
-var getFlight2FromMyTrip = function() {
+var getFlight2FromMyTrip = function () {
 
 
     //parse items from localStorage for Flight 1
@@ -163,23 +170,23 @@ var getFlight2FromMyTrip = function() {
     var carrierFlight2Display = JSON.parse(localStorage.getItem("carrierFlight2")) || "";
     var priceFlight2Display = JSON.parse(localStorage.getItem("priceFlight2")) || "";
     var directFlight2Display = JSON.parse(localStorage.getItem("directFlight2")) || "";
-    
+
 
 
     //get items from locaStorage for each item above
 
     if (startDateFlight2Display == "") {
 
-    //adding class to remove the element from the page once the data is deleted from local storage
-    savedFlightCard2El.classList.add("hidden");
-        
+        //adding class to remove the element from the page once the data is deleted from local storage
+        savedFlightCard2El.classList.add("hidden");
+
     }
     else {
-                var startDateFlight2DisplayItem
-         for (var i = 0; i < startDateFlight2Display.length; i++) {
+        var startDateFlight2DisplayItem
+        for (var i = 0; i < startDateFlight2Display.length; i++) {
             startDateFlight2DisplayItem = startDateFlight2Display[0];
             // console.log(startDateFlight2DisplayItem);
-        } 
+        }
 
         var endDateFlight2DisplayItem
         for (var i = 0; i < endDateFlight2Display.length; i++) {
@@ -231,7 +238,7 @@ var getFlight2FromMyTrip = function() {
 
 
 //function to reload the data for the third trip onto the page from the localStorage and show it on the My Trips page
-var getFlight3FromMyTrip = function() {
+var getFlight3FromMyTrip = function () {
 
 
     //parse items from localStorage for Flight 1
@@ -243,9 +250,9 @@ var getFlight3FromMyTrip = function() {
     var priceFlight3Display = JSON.parse(localStorage.getItem("priceFlight3")) || "";
     var directFlight3Display = JSON.parse(localStorage.getItem("directFlight3")) || "";
 
-    if(startDateFlight3Display == "") {
-    //adding class to remove the element from the page once the data is deleted from local storage
-    savedFlightCard3El.classList.add("hidden");
+    if (startDateFlight3Display == "") {
+        //adding class to remove the element from the page once the data is deleted from local storage
+        savedFlightCard3El.classList.add("hidden");
 
     }
     else {
@@ -297,7 +304,7 @@ var getFlight3FromMyTrip = function() {
 
         document.getElementById("saved-outbounddate3").innerHTML = "Outbound: " + startDateFlight3DisplayItem;
         document.getElementById("saved-inbounddate3").innerHTML = "Inbound: " + endDateFlight3DisplayItem;
-        document.getElementById("saved-origin3").innerHTML = "Origin: " + fromLocationFlight3DisplayItem ;
+        document.getElementById("saved-origin3").innerHTML = "Origin: " + fromLocationFlight3DisplayItem;
         document.getElementById("saved-destination3").innerHTML = "Destination: " + toLocationFlight3DisplayItem;
         document.getElementById("saved-airlinecode3").innerHTML = "Carrier: " + carrierFlight3DisplayItem;
         document.getElementById("saved-price3").innerHTML = "Price: $" + priceFlight3DisplayItem;
@@ -310,7 +317,7 @@ var getFlight3FromMyTrip = function() {
 
 
 //function to remove items from localStorage on button click for the first flight
-var removeFlight1FromMyTrip = function() {
+var removeFlight1FromMyTrip = function () {
     //remove items from localStorage for Flight 1
     localStorage.removeItem("startDateFlight1");
     localStorage.removeItem("endDateFlight1");
@@ -326,7 +333,7 @@ var removeFlight1FromMyTrip = function() {
 }
 
 //function to remove items from localStorage on button click for the second flight
-var removeFlight2FromMyTrip = function() {
+var removeFlight2FromMyTrip = function () {
     //remove items from localStorage for Flight 1
     localStorage.removeItem("startDateFlight2");
     localStorage.removeItem("endDateFlight2");
@@ -341,7 +348,7 @@ var removeFlight2FromMyTrip = function() {
 }
 
 //function to remove items from localStorage on button click for the third flight
-var removeFlight3FromMyTrip = function() {
+var removeFlight3FromMyTrip = function () {
     //remove items from localStorage for Flight 1
     localStorage.removeItem("startDateFlight3");
     localStorage.removeItem("endDateFlight3");
@@ -361,10 +368,14 @@ var removeFlight3FromMyTrip = function() {
 
 var getHotel1FromMyTrip = function () {
     // parse items from localStorage for Hotel 1
-    var hotelName1Display = JSON.parse(localStorage.getItem("nameArrayHotel1"));
-    var hotelStars1Display = JSON.parse(localStorage.getItem("starsArrayHotel1"));
-    var hotelPrice1Display = JSON.parse(localStorage.getItem("priceArrayHotel1"));
+    var hotelName1Display = JSON.parse(localStorage.getItem("nameArrayHotel1")) || "";
+    var hotelStars1Display = JSON.parse(localStorage.getItem("starsArrayHotel1")) || "";
+    var hotelPrice1Display = JSON.parse(localStorage.getItem("priceArrayHotel1")) || "";
 
+    if (hotelName1Display == "") {
+        //adding class to remove the element from the page once the data is deleted from local storage
+        savedHotelCard1El.classList.add("hidden");
+    }
     // get items from localStorage for each item above
 
     var hotelName1DisplayItem
@@ -387,14 +398,109 @@ var getHotel1FromMyTrip = function () {
     document.getElementById("saved-hotel-price1").innerHTML = "Price for stay: " + hotelPrice1DisplayItem;
 }
 
+var getHotel2FromMyTrip = function () {
+    // parse items from localStorage for Hotel 1
+    var hotelName2Display = JSON.parse(localStorage.getItem("nameArrayHotel2")) || "";
+    var hotelStars2Display = JSON.parse(localStorage.getItem("starsArrayHotel2")) || "";
+    var hotelPrice2Display = JSON.parse(localStorage.getItem("priceArrayHotel2")) || "";
 
+    if (hotelName1Display == "") {
+        //adding class to remove the element from the page once the data is deleted from local storage
+        savedHotelCard2El.classList.add("hidden");
+    }
+    // get items from localStorage for each item above
+
+    var hotelName2DisplayItem
+    for (var i = 0; i < hotelName2Display.length; i++) {
+        hotelName2DisplayItem = hotelName2Display[0];
+    }
+
+    var hotelStars2DisplayItem
+    for (var i = 0; i < hotelStars2Display.length; i++) {
+        hotelStars2DisplayItem = hotelStars2Display[0];
+    }
+
+    var hotelPrice2DisplayItem
+    for (var i = 0; i < hotelPrice2Display.length; i++) {
+        hotelPrice2DisplayItem = hotelPrice2Display[0];
+    }
+
+    document.getElementById("saved-hotel-name2").innerHTML = "Hotel Name: " + hotelName2DisplayItem;
+    document.getElementById("saved-hotel-stars2").innerHTML = "Stars: " + hotelStars2DisplayItem;
+    document.getElementById("saved-hotel-price2").innerHTML = "Price for stay: " + hotelPrice2DisplayItem;
+}
+
+var getHotel3FromMyTrip = function () {
+    // parse items from localStorage for Hotel 1
+    var hotelName3Display = JSON.parse(localStorage.getItem("nameArrayHotel3")) || "";
+    var hotelStars3Display = JSON.parse(localStorage.getItem("starsArrayHotel3")) || "";
+    var hotelPrice3Display = JSON.parse(localStorage.getItem("priceArrayHotel3")) || "";
+
+    if (hotelName1Display == "") {
+        //adding class to remove the element from the page once the data is deleted from local storage
+        savedHotelCard3El.classList.add("hidden");
+    }
+    // get items from localStorage for each item above
+
+    var hotelName3DisplayItem
+    for (var i = 0; i < hotelName3Display.length; i++) {
+        hotelName3DisplayItem = hotelName3Display[0];
+    }
+
+    var hotelStars3DisplayItem
+    for (var i = 0; i < hotelStars3Display.length; i++) {
+        hotelStars3DisplayItem = hotelStars3Display[0];
+    }
+
+    var hotelPrice3DisplayItem
+    for (var i = 0; i < hotelPrice3Display.length; i++) {
+        hotelPrice3DisplayItem = hotelPrice3Display[0];
+    }
+
+    document.getElementById("saved-hotel-name3").innerHTML = "Hotel Name: " + hotelName3DisplayItem;
+    document.getElementById("saved-hotel-stars3").innerHTML = "Stars: " + hotelStars3DisplayItem;
+    document.getElementById("saved-hotel-price3").innerHTML = "Price for stay: " + hotelPrice3DisplayItem;
+}
+
+// will remove data from localStorage on button click for the first hotel
+var removeHotel1FromMyTrip = function () {
+    // remove items from localStorage for hotel 1
+    localStorage.removeItem("saved-hotel-name1");
+    localStorage.removeItem("saved-hotel-stars1");
+    localStorage.removeItem("saved-hotel-price1");
+
+    // removes the element from the page once the data is removed from local storage
+    savedFlightCard1El.classList.add("hidden");
+}
+var removeHotel2FromMyTrip = function () {
+    // remove items from localStorage for hotel 2
+    localStorage.removeItem("saved-hotel-name2");
+    localStorage.removeItem("saved-hotel-stars2");
+    localStorage.removeItem("saved-hotel-price2");
+
+    // removes the element from the page once the data is removed from local storage
+    savedFlightCard2El.classList.add("hidden");
+}
+var removeHotel3FromMyTrip = function () {
+    // remove items from localStorage for hotel 3
+    localStorage.removeItem("saved-hotel-name3");
+    localStorage.removeItem("saved-hotel-stars3");
+    localStorage.removeItem("saved-hotel-price3");
+
+    // removes the element from the page once the data is removed from local storage
+    savedFlightCard3El.classList.add("hidden");
+}
 
 
 
 getFlight1FromMyTrip();
 getFlight2FromMyTrip();
 getFlight3FromMyTrip();
+
 getHotel1FromMyTrip();
+getHotel2FromMyTrip();
+getHotel3FromMyTrip();
+
 
 
 //event listener for flight 1 button so that it removes data to local storage for the 1st flight
@@ -404,3 +510,6 @@ removeFlight2buttonEl.addEventListener("click", removeFlight2FromMyTrip)
 // //event listener for flight 3 button so that it removes data to local storage for the 3rd flight
 removeFlight3buttonEl.addEventListener("click", removeFlight3FromMyTrip)
 
+removeHotel1buttonEl.addEventListener("click", removeHotel1FromMyTrip)
+removeHotel2buttonEl.addEventListener("click", removeHotel2FromMyTrip)
+removeHotel3buttonEl.addEventListener("click", removeHotel3FromMyTrip)

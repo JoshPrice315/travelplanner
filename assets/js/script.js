@@ -31,17 +31,17 @@ $(document).ready(function () {
 });
 
 // Carousel 
-$(document).ready(function() {
+$(document).ready(function () {
     $('.carousel.carousel-slider').carousel();
-        setInterval(function(){
-            $('.carousel.carousel-slider').carousel("next");
+    setInterval(function () {
+        $('.carousel.carousel-slider').carousel("next");
 
-        }, 4000);   
+    }, 4000);
 
-        $('.carousel.carousel-slider').carousel({
-            indicators: true,
-            fullWidth: true
-          });
+    $('.carousel.carousel-slider').carousel({
+        indicators: true,
+        fullWidth: true
+    });
 });
 
 //global variables
@@ -228,23 +228,23 @@ var formSubmitHandler = function (event) {
         //to clear the input form field after submit
         startdatepickerinputEl.value = "";
         enddatepickerinputEl.value = "",
-        fromLocationInputIdEl.value = "";
+            fromLocationInputIdEl.value = "";
         toLocationInputIdEl.value = "";
 
     }
     else {
- 
 
-        $(document).ready(function(){
+
+        $(document).ready(function () {
             $('#data-entry-modal').modal();
-            $('#data-entry-modal').modal('open'); 
-         });
+            $('#data-entry-modal').modal('open');
+        });
 
 
     }
     // console.log(event);
 
-    
+
 }
 
 
@@ -281,10 +281,10 @@ var getFlightData = function () {
 
                     if (quotesArray[0] === undefined) {
 
-                            $(document).ready(function(){
-                                $('#city-date-modal').modal();
-                                $('#city-date-modal').modal('open'); 
-                            });
+                        $(document).ready(function () {
+                            $('#city-date-modal').modal();
+                            $('#city-date-modal').modal('open');
+                        });
                     }
 
                     else {
@@ -472,24 +472,24 @@ var getFlightData = function () {
             }
             else {
 
-                $(document).ready(function(){
+                $(document).ready(function () {
                     $('#generic-error-modal').modal();
-                    $('#generic-error-modal').modal('open'); 
+                    $('#generic-error-modal').modal('open');
                 });
             }
         })
         .catch(function (error) {
 
-            $(document).ready(function(){
+            $(document).ready(function () {
                 $('#flight-error-modal').modal();
-                $('#flight-error-modal').modal('open'); 
+                $('#flight-error-modal').modal('open');
             });
 
         })
 }
 
 
-//function to save Flight 1 data on button click to localStorage
+//function to Flight 1 data on button click to localStorage
 var saveFlight1ToMyTrip = function (event) {
     // console.log(event);
 
@@ -639,9 +639,9 @@ var getHotelData = function () {
                     hotelPrice3 = jsonResponse[2].priceAvg;
                     console.log(hotelPrice1, hotelPrice2, hotelPrice3);
 
-                    hotelID1El.innerHTML = "Hotel Name: " + hotel1Name;
-                    hotelID2El.innerHTML = "Hotel Name: " + hotel2Name;
-                    hotelID3El.innerHTML = "Hotel Name: " + hotel3Name;
+                    hotelID1El.innerHTML = "Hotel Name: " + hotelID1;
+                    hotelID2El.innerHTML = "Hotel Name: " + hotelID2;
+                    hotelID3El.innerHTML = "Hotel Name: " + hotelID3;
 
                     hotelStars1El.innerHTML = "Stars: " + hotelStars1;
                     hotelStars2El.innerHTML = "Stars: " + hotelStars2;
@@ -655,16 +655,16 @@ var getHotelData = function () {
             }
             else {
 
-                $(document).ready(function(){
+                $(document).ready(function () {
                     $('#generic-error-modal').modal();
-                    $('#generic-error-modal').modal('open'); 
+                    $('#generic-error-modal').modal('open');
                 });
             }
         })
         .catch(function (error) {
-            $(document).ready(function(){
+            $(document).ready(function () {
                 $('#hotel-error-modal').modal();
-                $('#hotel-error-modal').modal('open'); 
+                $('#hotel-error-modal').modal('open');
             });
         })
 }
