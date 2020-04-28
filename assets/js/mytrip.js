@@ -378,24 +378,26 @@ var getHotel1FromMyTrip = function () {
     }
     // get items from localStorage for each item above
 
-    var hotelName1DisplayItem
-    for (var i = 0; i < hotelName1Display.length; i++) {
-        hotelName1DisplayItem = hotelName1Display[0];
-    }
+    else {
+        var hotelName1DisplayItem
+        for (var i = 0; i < hotelName1Display.length; i++) {
+            hotelName1DisplayItem = hotelName1Display[0];
+        }
 
-    var hotelStars1DisplayItem
-    for (var i = 0; i < hotelStars1Display.length; i++) {
-        hotelStars1DisplayItem = hotelStars1Display[0];
-    }
+        var hotelStars1DisplayItem
+        for (var i = 0; i < hotelStars1Display.length; i++) {
+            hotelStars1DisplayItem = hotelStars1Display[0];
+        }
 
-    var hotelPrice1DisplayItem
-    for (var i = 0; i < hotelPrice1Display.length; i++) {
-        hotelPrice1DisplayItem = hotelPrice1Display[0];
-    }
+        var hotelPrice1DisplayItem
+        for (var i = 0; i < hotelPrice1Display.length; i++) {
+            hotelPrice1DisplayItem = hotelPrice1Display[0];
+        }
 
-    document.getElementById("saved-hotel-name1").innerHTML = "Hotel Name: " + hotelName1DisplayItem;
-    document.getElementById("saved-hotel-stars1").innerHTML = "Stars: " + hotelStars1DisplayItem;
-    document.getElementById("saved-hotel-price1").innerHTML = "Price for stay: " + hotelPrice1DisplayItem;
+        document.getElementById("saved-hotel-name1").innerHTML = "Hotel Name: " + hotelName1DisplayItem;
+        document.getElementById("saved-hotel-stars1").innerHTML = "Stars: " + hotelStars1DisplayItem;
+        document.getElementById("saved-hotel-price1").innerHTML = "Price for stay: " + hotelPrice1DisplayItem;
+    }
 }
 
 var getHotel2FromMyTrip = function () {
@@ -404,30 +406,31 @@ var getHotel2FromMyTrip = function () {
     var hotelStars2Display = JSON.parse(localStorage.getItem("starsArrayHotel2")) || "";
     var hotelPrice2Display = JSON.parse(localStorage.getItem("priceArrayHotel2")) || "";
 
-    if (hotelName1Display == "") {
+    if (hotelName2Display == "") {
         //adding class to remove the element from the page once the data is deleted from local storage
         savedHotelCard2El.classList.add("hidden");
     }
     // get items from localStorage for each item above
+    else {
+        var hotelName2DisplayItem
+        for (var i = 0; i < hotelName2Display.length; i++) {
+            hotelName2DisplayItem = hotelName2Display[0];
+        }
 
-    var hotelName2DisplayItem
-    for (var i = 0; i < hotelName2Display.length; i++) {
-        hotelName2DisplayItem = hotelName2Display[0];
+        var hotelStars2DisplayItem
+        for (var i = 0; i < hotelStars2Display.length; i++) {
+            hotelStars2DisplayItem = hotelStars2Display[0];
+        }
+
+        var hotelPrice2DisplayItem
+        for (var i = 0; i < hotelPrice2Display.length; i++) {
+            hotelPrice2DisplayItem = hotelPrice2Display[0];
+        }
+
+        document.getElementById("saved-hotel-name2").innerHTML = "Hotel Name: " + hotelName2DisplayItem;
+        document.getElementById("saved-hotel-stars2").innerHTML = "Stars: " + hotelStars2DisplayItem;
+        document.getElementById("saved-hotel-price2").innerHTML = "Price for stay: " + hotelPrice2DisplayItem;
     }
-
-    var hotelStars2DisplayItem
-    for (var i = 0; i < hotelStars2Display.length; i++) {
-        hotelStars2DisplayItem = hotelStars2Display[0];
-    }
-
-    var hotelPrice2DisplayItem
-    for (var i = 0; i < hotelPrice2Display.length; i++) {
-        hotelPrice2DisplayItem = hotelPrice2Display[0];
-    }
-
-    document.getElementById("saved-hotel-name2").innerHTML = "Hotel Name: " + hotelName2DisplayItem;
-    document.getElementById("saved-hotel-stars2").innerHTML = "Stars: " + hotelStars2DisplayItem;
-    document.getElementById("saved-hotel-price2").innerHTML = "Price for stay: " + hotelPrice2DisplayItem;
 }
 
 var getHotel3FromMyTrip = function () {
@@ -436,30 +439,31 @@ var getHotel3FromMyTrip = function () {
     var hotelStars3Display = JSON.parse(localStorage.getItem("starsArrayHotel3")) || "";
     var hotelPrice3Display = JSON.parse(localStorage.getItem("priceArrayHotel3")) || "";
 
-    if (hotelName1Display == "") {
+    if (hotelName3Display == "") {
         //adding class to remove the element from the page once the data is deleted from local storage
         savedHotelCard3El.classList.add("hidden");
     }
     // get items from localStorage for each item above
+    else {
+        var hotelName3DisplayItem
+        for (var i = 0; i < hotelName3Display.length; i++) {
+            hotelName3DisplayItem = hotelName3Display[0];
+        }
 
-    var hotelName3DisplayItem
-    for (var i = 0; i < hotelName3Display.length; i++) {
-        hotelName3DisplayItem = hotelName3Display[0];
+        var hotelStars3DisplayItem
+        for (var i = 0; i < hotelStars3Display.length; i++) {
+            hotelStars3DisplayItem = hotelStars3Display[0];
+        }
+
+        var hotelPrice3DisplayItem
+        for (var i = 0; i < hotelPrice3Display.length; i++) {
+            hotelPrice3DisplayItem = hotelPrice3Display[0];
+        }
+
+        document.getElementById("saved-hotel-name3").innerHTML = "Hotel Name: " + hotelName3DisplayItem;
+        document.getElementById("saved-hotel-stars3").innerHTML = "Stars: " + hotelStars3DisplayItem;
+        document.getElementById("saved-hotel-price3").innerHTML = "Price for stay: " + hotelPrice3DisplayItem;
     }
-
-    var hotelStars3DisplayItem
-    for (var i = 0; i < hotelStars3Display.length; i++) {
-        hotelStars3DisplayItem = hotelStars3Display[0];
-    }
-
-    var hotelPrice3DisplayItem
-    for (var i = 0; i < hotelPrice3Display.length; i++) {
-        hotelPrice3DisplayItem = hotelPrice3Display[0];
-    }
-
-    document.getElementById("saved-hotel-name3").innerHTML = "Hotel Name: " + hotelName3DisplayItem;
-    document.getElementById("saved-hotel-stars3").innerHTML = "Stars: " + hotelStars3DisplayItem;
-    document.getElementById("saved-hotel-price3").innerHTML = "Price for stay: " + hotelPrice3DisplayItem;
 }
 
 // will remove data from localStorage on button click for the first hotel
