@@ -11,21 +11,19 @@
 
 h2 {
     text-align: center;
-    font-size: 3vw;
+    font-size: 3vw; 
 }
 
 h4 {
     font-size: 2vw;
 }
 
-.container-fluid {
-    justify-content: center;
-    margin: 50px 200px 50px 200px;
+h6, .card-title {
+    font-size: 1vw;
 }
 
-.container-fluid-cards {
-    justify-content: center;
-    margin: 50px 250px;
+.container {
+    padding: 50px;
 }
 
 .brand-logo {
@@ -38,7 +36,7 @@ footer {
   }
 
 .datepicker-date-display {
-    background-color: var(--main-color)
+    background-color: var(--main-color);
 }
    
 .datepicker-cancel, .datepicker-clear, .datepicker-today, .datepicker-done {
@@ -68,7 +66,7 @@ footer {
 
 
 .carousel {
-    height: 750px;
+    height: 500px;
     background-size: cover;
     background-position: center;
   }
@@ -86,27 +84,22 @@ footer {
     text-align: center;
 }
 
-@media screen and (max-width: 780px) {
-.main {
-    width: 80%;
-    padding: 0;
-  }
-
-.carousel {
-    height: 500px;
-    background-size: cover;
-    background-position: center;
-  }
-}
-
 @media screen and (max-width: 480px) {
-.main {
-    width: 100%;
-  }
+    h2 {
+        text-align: center;
+        font-size: 5vw; 
+    }
+    
+    h4 {
+        font-size: 4vw;
+    }
 
-.carousel {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-  }
+    h6 {
+        font-size: 3vw;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
 }
