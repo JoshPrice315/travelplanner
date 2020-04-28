@@ -14,7 +14,7 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-wrapper #01579b light-blue darken-4">
-            <a href="index.html" class="brand-logo">Travel Planner</a>
+            <a href="index.html" class="brand-logo"><span class="logo">Travel Planner</span></a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons"
                     id="menu-icon">menu</i></a>
             <ul class="right hide-on-med-and-down">
@@ -43,34 +43,34 @@
         <h4 class="message">Choose your trip details below</h4>
 
         <!-- Inputs -->
-        <div class="container-fluid">
+        <div class="container">
             <!-- Start Date / End Date Input -->
             <div class="row" id="valueinputform">
-                <form class="col s12 m6 l2">
+                <form class="col s12 m12 l2">
                     <div class="dates">
                         <label for="datepicker-start">Start Date</label>
                         <input type="text" class="datepicker-start" id="datepicker-start-id" required placeholder="Select Date">
                     </div>
                 </form>
 
-                <form class="col s12 m6 l2" id="enddateinputform">
+                <form class="col s12 m12 l2" id="enddateinputform">
                     <div class="dates">
                         <label for="datepicker-end">End Date</label>
                         <input type="text" class="datepicker-end" id="datepicker-end-id" required placeholder="Select Date">
                     </div>
                 </form>
-                <div class="input-field col s12 m6 l3">
+                <div class="input-field col s12 m12 l3">
                     <i class="material-icons prefix">add_location</i>
                     <input type="text" class="current" style="text-transform:uppercase" id="from-location-input-id" name="from-input" maxlength="3" minlength="3" placeholder="From City Code" required>
                     <label for="icon_from_location">From</label>
                 </div>
 
-                <div class="input-field col s12 m6 l3">
+                <div class="input-field col s12 m12 l3">
                     <i class="material-icons prefix">add_location</i>
                     <input type="text" class="destination" style="text-transform:uppercase" id="to-location-input-id" name="to-input" maxlength="3" minlength="3" placeholder="To City Code" required>
                     <label for="icon_to_location">To</label>
                 </div>
-                <div class="input-field col s12 m6 l2">
+                <div class="input-field col s12 m12 l2">
                     <button class="btn waves-effect waves-light #01579b light-blue darken-4" type="submit"
                         id="search-button">Search
                         <i class="material-icons right">done</i>
@@ -82,7 +82,7 @@
         </div>
 
         <!-- Body Cards -->
-        <div class="container-fluid hidden" id="hidden">
+        <div class="container hidden" id="hidden">
             <!-- Flight Card -->
             <div class="row" id="title">
                 <h4 class="flight-title #01579b light-blue darken-4 white-text"><i
@@ -255,7 +255,7 @@
                 <p>Please see the console for more details!</p>
             </div>
             <div class="modal-footer">
-                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+                <a href="#!" class="modal-action modal-close btn waves-effect waves-light #01579b light-blue darken-4">Ok</a>
             </div>
         </div>
 
