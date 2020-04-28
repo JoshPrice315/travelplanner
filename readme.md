@@ -1,11 +1,10 @@
 # Travel Planner
+The Travel planner application is aimed to allow users to search for flights and hotels for their desired dates and cities and allow the users to save the selected flights and hotels to their trip. The the users are further enabled to manage their trips in the My Trip page where they can decide to keep or delete the trip from the list.
 
 ## User Story 
 AS A traveler <br>
 I WANT to plan out my flight and hotel to the city I am traveling to<br>
 SO THAT I have proper travel arrangements<br>
-
-## Acceptance Criteria 
 GIVEN a search feature with inputs of start date, end date, from, and to city inputs.<br>
 WHEN I search for above inputs<br>
 THEN I am presented with three recommended flight and hotel options <br>
