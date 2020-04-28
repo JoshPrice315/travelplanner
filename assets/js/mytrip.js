@@ -469,30 +469,30 @@ var getHotel3FromMyTrip = function () {
 // will remove data from localStorage on button click for the first hotel
 var removeHotel1FromMyTrip = function () {
     // remove items from localStorage for hotel 1
-    localStorage.removeItem("saved-hotel-name1");
-    localStorage.removeItem("saved-hotel-stars1");
-    localStorage.removeItem("saved-hotel-price1");
+    localStorage.removeItem("nameArrayHotel1");
+    localStorage.removeItem("starsArrayHotel1");
+    localStorage.removeItem("priceArrayHotel1");
 
     // removes the element from the page once the data is removed from local storage
-    savedFlightCard1El.classList.add("hidden");
+    savedHotelCard1El.classList.add("hidden");
 }
 var removeHotel2FromMyTrip = function () {
     // remove items from localStorage for hotel 2
-    localStorage.removeItem("saved-hotel-name2");
-    localStorage.removeItem("saved-hotel-stars2");
-    localStorage.removeItem("saved-hotel-price2");
+    localStorage.removeItem("nameArrayHotel2");
+    localStorage.removeItem("starsArrayHotel2");
+    localStorage.removeItem("priceArrayHotel2");
 
     // removes the element from the page once the data is removed from local storage
-    savedFlightCard2El.classList.add("hidden");
+    savedHotelCard2El.classList.add("hidden");
 }
 var removeHotel3FromMyTrip = function () {
     // remove items from localStorage for hotel 3
-    localStorage.removeItem("saved-hotel-name3");
-    localStorage.removeItem("saved-hotel-stars3");
-    localStorage.removeItem("saved-hotel-price3");
+    localStorage.removeItem("nameArrayHotel3");
+    localStorage.removeItem("starsArrayHotel3");
+    localStorage.removeItem("priceArrayHotel3");
 
     // removes the element from the page once the data is removed from local storage
-    savedFlightCard3El.classList.add("hidden");
+    savedHotelCard3El.classList.add("hidden");
 }
 
 
