@@ -303,7 +303,7 @@ var getFlightData = function () {
                         // console.log("outBoundDate2Formatted " + outBoundDate2Formatted);
 
                         var outBoundDate3 = jsonResponse.Quotes[2].OutboundLeg.DepartureDate;
-                        // console.log(outBoundDate3);
+                        // console.log(outBoundDate3);       
                         var outBoundDate3Formatted = moment(outBoundDate3).format('YYYY-MM-DD');
                         // console.log("outBoundDate3Formatted " + outBoundDate3Formatted);
 
@@ -477,6 +477,7 @@ var getFlightData = function () {
                 $(document).ready(function () {
                     $('#generic-error-modal').modal();
                     $('#generic-error-modal').modal('open');
+                    document.getElementById("generic-error-modal-p").innerHTML = "Error: " + response.statusText;
                 });
             }
         })
@@ -658,6 +659,7 @@ var getHotelData = function () {
                 $(document).ready(function () {
                     $('#generic-error-modal').modal();
                     $('#generic-error-modal').modal('open');
+                    document.getElementById("generic-error-modal-p").innerHTML = "Error: " + response.statusText;
                 });
             }
         })
