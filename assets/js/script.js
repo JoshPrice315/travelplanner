@@ -5,13 +5,15 @@ var minDate = new Date();
 $(document).ready(function () {
     $('.datepicker-start').datepicker({
         minDate: minDate,
+        firstDay: 1,
     });
 });
 
 // Calender End   
 $(document).ready(function () {
     $('.datepicker-end').datepicker({
-        minDate: minDate
+        minDate: minDate,
+        firstDay: 1,
     });
 });
 
