@@ -28,7 +28,10 @@ We use GitHub (https://github.com/) for versioning. For the versions available, 
 
 ## Website Preview
 
-![Travel Planner](TBD)
+![Travel Planner - Header](https://github.com/izabelacloud/Travel-Planner/blob/master/assets/images/App1.png?raw=true)
+![Travel Planner - Search Results](https://github.com/izabelacloud/Travel-Planner/blob/master/assets/images/App2.png?raw=true)
+![Travel Planner - My Trips](https://github.com/izabelacloud/Travel-Planner/blob/master/assets/images/App3.png?raw=true)
+
 
 ## API Resources
 [Sky Scanner](https://rapidapi.com/skyscanner/api/skyscanner-flight-search?endpoint=5aa1eab3e4b00687d3574279) and [Hotel Look](https://support.travelpayouts.com/hc/en-us/articles/115000343268-Hotels-data-API#31).
