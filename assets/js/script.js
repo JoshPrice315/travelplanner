@@ -325,10 +325,10 @@ var getFlightData = function () {
 
                         //get 3 carriers from the jsonResponse
                         var carrierID1 = jsonResponse.Quotes[0].OutboundLeg.CarrierIds[0];
-                        var carrierID2 = jsonResponse.Quotes[1].OutboundLeg.CarrierIds[0];
-                        var carrierID3 = jsonResponse.Quotes[2].OutboundLeg.CarrierIds[0];
                         console.log("carrierID1 " + carrierID1);
+                        var carrierID2 = jsonResponse.Quotes[1].OutboundLeg.CarrierIds[0];
                         console.log("carrierID2 " + carrierID2);
+                        var carrierID3 = jsonResponse.Quotes[2].OutboundLeg.CarrierIds[0];
                         console.log("carrierID3 " + carrierID3);
 
 
