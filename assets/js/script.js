@@ -354,12 +354,12 @@ var getFlightData = function () {
                                 console.log("destinationAirportCode1 " + destinationAirportCode1);
 
                             }
-                            else if (destinationID2 === destinationAirportCodes.PlaceId) {
+                            if (destinationID2 === destinationAirportCodes.PlaceId) {
                                 destinationAirportCode2 = destinationAirportCodes.IataCode;
                                 console.log("destinationAirportCode2 " + destinationAirportCode2);
 
                             }
-                            else if (destinationID3 === destinationAirportCodes.PlaceId) {
+                            if (destinationID3 === destinationAirportCodes.PlaceId) {
                                 destinationAirportCode3 = destinationAirportCodes.IataCode;
                                 console.log("destinationAirportCode3 " + destinationAirportCode3);
 
@@ -389,11 +389,11 @@ var getFlightData = function () {
                                 carrierName1 = carriers.Name;
                                 console.log("carrierName1 " + carrierName1);
                             }
-                            else if (carrierID2 === carriers.CarrierId) {
+                            if (carrierID2 === carriers.CarrierId) {
                                 carrierName2 = carriers.Name;
                                 console.log("carrierName2 " + carrierName2);
                             }
-                            else if (carrierID3 === carriers.CarrierId) {
+                            if (carrierID3 === carriers.CarrierId) {
                                 carrierName3 = carriers.Name;
                                 console.log("carrierName3 " + carrierName3);
                             }

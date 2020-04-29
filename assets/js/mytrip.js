@@ -516,11 +516,13 @@ getHotel3FromMyTrip();
 
 //event listener for flight 1 button so that it removes data to local storage for the 1st flight
 removeFlight1buttonEl.addEventListener("click", removeFlight1FromMyTrip)
-// //event listener for flight 2 button so that it removes data to local storage for the 2nd flight
+//event listener for flight 2 button so that it removes data to local storage for the 2nd flight
 removeFlight2buttonEl.addEventListener("click", removeFlight2FromMyTrip)
-// //event listener for flight 3 button so that it removes data to local storage for the 3rd flight
+//event listener for flight 3 button so that it removes data to local storage for the 3rd flight
 removeFlight3buttonEl.addEventListener("click", removeFlight3FromMyTrip)
-
+//event listener for hotel 1 button so that it removes data to local storage for the 1st hotel
 removeHotel1buttonEl.addEventListener("click", removeHotel1FromMyTrip)
+//event listener for hotel 2 button so that it removes data to local storage for the 2nd hotel
 removeHotel2buttonEl.addEventListener("click", removeHotel2FromMyTrip)
+//event listener for hotel 3 button so that it removes data to local storage for the 3rd hotel
 removeHotel3buttonEl.addEventListener("click", removeHotel3FromMyTrip)
