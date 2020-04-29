@@ -309,6 +309,13 @@ var getFlightData = function () {
                         var outBoundDate3Formatted = moment(outBoundDate3).format('YYYY-MM-DD');
                         // console.log("outBoundDate3Formatted " + outBoundDate3Formatted);
 
+                        // if(jsonResponse.Quotes > 1) {
+                        //     var outBoundDate3 = jsonResponse.Quotes[2].OutboundLeg.DepartureDate;
+                        //     // console.log(outBoundDate3);       
+                        //     var outBoundDate3Formatted = moment(outBoundDate3).format('YYYY-MM-DD');
+                        //     // console.log("outBoundDate3Formatted " + outBoundDate3Formatted);
+                        //     }
+
 
 
 
@@ -330,6 +337,7 @@ var getFlightData = function () {
                         console.log("carrierID2 " + carrierID2);
                         var carrierID3 = jsonResponse.Quotes[2].OutboundLeg.CarrierIds[0];
                         console.log("carrierID3 " + carrierID3);
+        
 
 
 
@@ -340,6 +348,8 @@ var getFlightData = function () {
                         console.log("destinationID2 " + destinationID2);
                         var destinationID3 = jsonResponse.Quotes[2].OutboundLeg.DestinationId;
                         console.log("destinationID3 " + destinationID3);
+        
+                        
 
 
 
@@ -374,8 +384,10 @@ var getFlightData = function () {
                         // console.log("$" + minPrice1);
                         minPrice2 = jsonResponse.Quotes[1].MinPrice;
                         // console.log("$" + minPrice2);
+
                         minPrice3 = jsonResponse.Quotes[2].MinPrice;
                         // console.log("$" + minPrice3);
+                        
 
 
 
