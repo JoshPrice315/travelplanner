@@ -31,7 +31,7 @@ We use GitHub (https://github.com/) for versioning. For the versions available, 
 ![Travel Planner](TBD)
 
 ## API Resources
-Sky Scanner [Sky Scanner](https://rapidapi.com/skyscanner/api/skyscanner-flight-search?endpoint=5aa1eab3e4b00687d3574279) and Hotel Look [Hotel Look](https://support.travelpayouts.com/hc/en-us/articles/115000343268-Hotels-data-API#31).
+[Sky Scanner](https://rapidapi.com/skyscanner/api/skyscanner-flight-search?endpoint=5aa1eab3e4b00687d3574279) and [Hotel Look](https://support.travelpayouts.com/hc/en-us/articles/115000343268-Hotels-data-API#31).
 
 ## CSS Framework
 MaterializeCSS [Link](https://materializecss.com/)

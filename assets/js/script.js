@@ -36,7 +36,7 @@ $(document).ready(function () {
     setInterval(function () {
         $('.carousel.carousel-slider').carousel("next");
 
-    }, 4000);
+    }, 5000);
 
     $('.carousel.carousel-slider').carousel({
         indicators: true,
@@ -174,9 +174,9 @@ var hotelID1;
 var hotelID2;
 var hotelID3;
 
-var hotel1Name;
-var hotel2Name;
-var hotel3Name;
+// var hotel1Name;
+// var hotel2Name;
+// var hotel3Name;
 
 var hotelStars1;
 var hotelStars2;
@@ -228,7 +228,7 @@ var formSubmitHandler = function (event) {
         //to clear the input form field after submit
         startdatepickerinputEl.value = "";
         enddatepickerinputEl.value = "",
-            fromLocationInputIdEl.value = "";
+        fromLocationInputIdEl.value = "";
         toLocationInputIdEl.value = "";
 
     }
@@ -325,17 +325,19 @@ var getFlightData = function () {
                         var carrierID1 = jsonResponse.Quotes[0].OutboundLeg.CarrierIds[0];
                         var carrierID2 = jsonResponse.Quotes[1].OutboundLeg.CarrierIds[0];
                         var carrierID3 = jsonResponse.Quotes[2].OutboundLeg.CarrierIds[0];
-                        // console.log(carrierID1, carrierID2, carrierID3);
+                        console.log("carrierID1 " + carrierID1);
+                        console.log("carrierID2 " + carrierID2);
+                        console.log("carrierID3 " + carrierID3);
 
 
 
                         //get places(airports codes)
                         var destinationID1 = jsonResponse.Quotes[0].OutboundLeg.DestinationId;
-                        // console.log(destinationID1);
+                        console.log("destinationID1 " + destinationID1);
                         var destinationID2 = jsonResponse.Quotes[1].OutboundLeg.DestinationId;
-                        // console.log(destinationID2);
+                        console.log("destinationID2 " + destinationID2);
                         var destinationID3 = jsonResponse.Quotes[2].OutboundLeg.DestinationId;
-                        // console.log(destinationID3);
+                        console.log("destinationID3 " + destinationID3);
 
 
 
@@ -346,20 +348,20 @@ var getFlightData = function () {
 
                         for (var i = 0; i < jsonResponse.Places.length; i++) {
                             var destinationAirportCodes = jsonResponse.Places[i]
-                            // console.log(destinationAirportCodes);
+                            console.log(destinationAirportCodes);
                             if (destinationID1 === destinationAirportCodes.PlaceId) {
                                 destinationAirportCode1 = destinationAirportCodes.IataCode;
-                                // console.log("destinationAirportCode1 " + destinationAirportCode1);
+                                console.log("destinationAirportCode1 " + destinationAirportCode1);
 
                             }
                             else if (destinationID2 === destinationAirportCodes.PlaceId) {
                                 destinationAirportCode2 = destinationAirportCodes.IataCode;
-                                // console.log("destinationAirportCode2 " + destinationAirportCode2);
+                                console.log("destinationAirportCode2 " + destinationAirportCode2);
 
                             }
                             else if (destinationID3 === destinationAirportCodes.PlaceId) {
                                 destinationAirportCode3 = destinationAirportCodes.IataCode;
-                                // console.log("destinationAirportCode3 " + destinationAirportCode3);
+                                console.log("destinationAirportCode3 " + destinationAirportCode3);
 
                             }
                         }
@@ -385,15 +387,15 @@ var getFlightData = function () {
                             // console.log(carriers);
                             if (carrierID1 === carriers.CarrierId) {
                                 carrierName1 = carriers.Name;
-                                // console.log(carrierName1);
+                                console.log("carrierName1 " + carrierName1);
                             }
                             else if (carrierID2 === carriers.CarrierId) {
                                 carrierName2 = carriers.Name;
-                                // console.log(carrierName2);
+                                console.log("carrierName2 " + carrierName2);
                             }
                             else if (carrierID3 === carriers.CarrierId) {
                                 carrierName3 = carriers.Name;
-                                // console.log(carrierName3);
+                                console.log("carrierName3 " + carrierName3);
                             }
                         }
 
@@ -625,19 +627,17 @@ var getHotelData = function () {
                     hotelID1 = jsonResponse[0].hotelName;
                     hotelID2 = jsonResponse[1].hotelName;
                     hotelID3 = jsonResponse[2].hotelName;
-                    console.log(hotelID1);
-                    console.log(hotelID2);
-                    console.log(hotelID3);
+                    // console.log(hotelID1, hotelID2, hotelID3);
 
                     hotelStars1 = jsonResponse[0].stars;
                     hotelStars2 = jsonResponse[1].stars;
                     hotelStars3 = jsonResponse[2].stars;
-                    console.log(hotelStars1, hotelStars2, hotelStars3);
+                    // console.log(hotelStars1, hotelStars2, hotelStars3);
 
                     hotelPrice1 = jsonResponse[0].priceAvg;
                     hotelPrice2 = jsonResponse[1].priceAvg;
                     hotelPrice3 = jsonResponse[2].priceAvg;
-                    console.log(hotelPrice1, hotelPrice2, hotelPrice3);
+                    // console.log(hotelPrice1, hotelPrice2, hotelPrice3);
 
                     hotelID1El.innerHTML = "Hotel Name: " + hotelID1;
                     hotelID2El.innerHTML = "Hotel Name: " + hotelID2;
