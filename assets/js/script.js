@@ -174,9 +174,9 @@ var hotelID1;
 var hotelID2;
 var hotelID3;
 
-var hotel1Name;
-var hotel2Name;
-var hotel3Name;
+// var hotel1Name;
+// var hotel2Name;
+// var hotel3Name;
 
 var hotelStars1;
 var hotelStars2;
@@ -625,19 +625,17 @@ var getHotelData = function () {
                     hotelID1 = jsonResponse[0].hotelName;
                     hotelID2 = jsonResponse[1].hotelName;
                     hotelID3 = jsonResponse[2].hotelName;
-                    console.log(hotelID1);
-                    console.log(hotelID2);
-                    console.log(hotelID3);
+                    // console.log(hotelID1, hotelID2, hotelID3);
 
                     hotelStars1 = jsonResponse[0].stars;
                     hotelStars2 = jsonResponse[1].stars;
                     hotelStars3 = jsonResponse[2].stars;
-                    console.log(hotelStars1, hotelStars2, hotelStars3);
+                    // console.log(hotelStars1, hotelStars2, hotelStars3);
 
                     hotelPrice1 = jsonResponse[0].priceAvg;
                     hotelPrice2 = jsonResponse[1].priceAvg;
                     hotelPrice3 = jsonResponse[2].priceAvg;
-                    console.log(hotelPrice1, hotelPrice2, hotelPrice3);
+                    // console.log(hotelPrice1, hotelPrice2, hotelPrice3);
 
                     hotelID1El.innerHTML = "Hotel Name: " + hotelID1;
                     hotelID2El.innerHTML = "Hotel Name: " + hotelID2;
