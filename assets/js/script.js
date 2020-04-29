@@ -325,17 +325,19 @@ var getFlightData = function () {
                         var carrierID1 = jsonResponse.Quotes[0].OutboundLeg.CarrierIds[0];
                         var carrierID2 = jsonResponse.Quotes[1].OutboundLeg.CarrierIds[0];
                         var carrierID3 = jsonResponse.Quotes[2].OutboundLeg.CarrierIds[0];
-                        // console.log(carrierID1, carrierID2, carrierID3);
+                        console.log("carrierID1 " + carrierID1);
+                        console.log("carrierID2 " + carrierID2);
+                        console.log("carrierID3 " + carrierID3);
 
 
 
                         //get places(airports codes)
                         var destinationID1 = jsonResponse.Quotes[0].OutboundLeg.DestinationId;
-                        // console.log(destinationID1);
+                        console.log("destinationID1 " + destinationID1);
                         var destinationID2 = jsonResponse.Quotes[1].OutboundLeg.DestinationId;
-                        // console.log(destinationID2);
+                        console.log("destinationID2 " + destinationID2);
                         var destinationID3 = jsonResponse.Quotes[2].OutboundLeg.DestinationId;
-                        // console.log(destinationID3);
+                        console.log("destinationID3 " + destinationID3);
 
 
 
@@ -346,20 +348,20 @@ var getFlightData = function () {
 
                         for (var i = 0; i < jsonResponse.Places.length; i++) {
                             var destinationAirportCodes = jsonResponse.Places[i]
-                            // console.log(destinationAirportCodes);
+                            console.log(destinationAirportCodes);
                             if (destinationID1 === destinationAirportCodes.PlaceId) {
                                 destinationAirportCode1 = destinationAirportCodes.IataCode;
-                                // console.log("destinationAirportCode1 " + destinationAirportCode1);
+                                console.log("destinationAirportCode1 " + destinationAirportCode1);
 
                             }
                             else if (destinationID2 === destinationAirportCodes.PlaceId) {
                                 destinationAirportCode2 = destinationAirportCodes.IataCode;
-                                // console.log("destinationAirportCode2 " + destinationAirportCode2);
+                                console.log("destinationAirportCode2 " + destinationAirportCode2);
 
                             }
                             else if (destinationID3 === destinationAirportCodes.PlaceId) {
                                 destinationAirportCode3 = destinationAirportCodes.IataCode;
-                                // console.log("destinationAirportCode3 " + destinationAirportCode3);
+                                console.log("destinationAirportCode3 " + destinationAirportCode3);
 
                             }
                         }
@@ -385,15 +387,15 @@ var getFlightData = function () {
                             // console.log(carriers);
                             if (carrierID1 === carriers.CarrierId) {
                                 carrierName1 = carriers.Name;
-                                // console.log(carrierName1);
+                                console.log("carrierName1 " + carrierName1);
                             }
                             else if (carrierID2 === carriers.CarrierId) {
                                 carrierName2 = carriers.Name;
-                                // console.log(carrierName2);
+                                console.log("carrierName2 " + carrierName2);
                             }
                             else if (carrierID3 === carriers.CarrierId) {
                                 carrierName3 = carriers.Name;
-                                // console.log(carrierName3);
+                                console.log("carrierName3 " + carrierName3);
                             }
                         }
 
