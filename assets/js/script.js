@@ -228,7 +228,7 @@ var formSubmitHandler = function (event) {
         //to clear the input form field after submit
         startdatepickerinputEl.value = "";
         enddatepickerinputEl.value = "",
-            fromLocationInputIdEl.value = "";
+        fromLocationInputIdEl.value = "";
         toLocationInputIdEl.value = "";
 
     }

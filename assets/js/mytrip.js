@@ -46,6 +46,7 @@ var savedFlightCard2El = document.querySelector("#saved-flight-card-2");
 var savedFlightCard3El = document.querySelector("#saved-flight-card-3");
 
 var flightRowIdEl = document.querySelector("#row-id");
+var hotelRowIdEl = document.querySelector("#hotel-row-id");
 
 
 //changes from Josh
@@ -328,8 +329,9 @@ var removeFlight1FromMyTrip = function () {
     localStorage.removeItem("directFlight1");
 
     //adding class to remove the element from the page once the data is deleted from local storage
-    savedFlightCard1El.classList.add("hidden");
+    // savedFlightCard1El.classList.add("hidden");
 
+    flightRowIdEl.removeChild(savedFlightCard1El);
 }
 
 //function to remove items from localStorage on button click for the second flight
@@ -344,7 +346,8 @@ var removeFlight2FromMyTrip = function () {
     localStorage.removeItem("directFlight2");
 
     //adding class to remove the element from the page once the data is deleted from local storage
-    savedFlightCard2El.classList.add("hidden");
+    // savedFlightCard2El.classList.add("hidden");
+    flightRowIdEl.removeChild(savedFlightCard2El);
 }
 
 //function to remove items from localStorage on button click for the third flight
@@ -359,7 +362,8 @@ var removeFlight3FromMyTrip = function () {
     localStorage.removeItem("directFlight3");
 
     //adding class to remove the element from the page once the data is deleted from local storage
-    savedFlightCard3El.classList.add("hidden");
+    // savedFlightCard3El.classList.add("hidden");
+    flightRowIdEl.removeChild(savedFlightCard3El);
 }
 
 
@@ -474,7 +478,8 @@ var removeHotel1FromMyTrip = function () {
     localStorage.removeItem("priceArrayHotel1");
 
     // removes the element from the page once the data is removed from local storage
-    savedHotelCard1El.classList.add("hidden");
+    // savedHotelCard1El.classList.add("hidden");
+    hotelRowIdEl.removeChild(savedHotelCard1El);
 }
 var removeHotel2FromMyTrip = function () {
     // remove items from localStorage for hotel 2
@@ -483,7 +488,8 @@ var removeHotel2FromMyTrip = function () {
     localStorage.removeItem("priceArrayHotel2");
 
     // removes the element from the page once the data is removed from local storage
-    savedHotelCard2El.classList.add("hidden");
+    // savedHotelCard2El.classList.add("hidden");
+    hotelRowIdEl.removeChild(savedHotelCard2El);
 }
 var removeHotel3FromMyTrip = function () {
     // remove items from localStorage for hotel 3
@@ -492,7 +498,8 @@ var removeHotel3FromMyTrip = function () {
     localStorage.removeItem("priceArrayHotel3");
 
     // removes the element from the page once the data is removed from local storage
-    savedHotelCard3El.classList.add("hidden");
+    // savedHotelCard3El.classList.add("hidden");
+    hotelRowIdEl.removeChild(savedHotelCard3El);
 }
 
 
