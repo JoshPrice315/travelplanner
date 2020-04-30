@@ -5,13 +5,15 @@ var minDate = new Date();
 $(document).ready(function () {
     $('.datepicker-start').datepicker({
         minDate: minDate,
+        firstDay: 1,
     });
 });
 
 // Calender End   
 $(document).ready(function () {
     $('.datepicker-end').datepicker({
-        minDate: minDate
+        minDate: minDate,
+        firstDay: 1,
     });
 });
 
@@ -57,6 +59,23 @@ var startdatepickerinputEl = document.querySelector("#datepicker-start-id");
 var enddatepickerinputEl = document.querySelector("#datepicker-end-id");
 var fromLocationInputIdEl = document.querySelector("#from-location-input-id");
 var toLocationInputIdEl = document.querySelector("#to-location-input-id");
+
+// As the user enters letters into the input, leave an error message up until there are three characters typed in
+// toLocationInputIdEl.addEventListener("keyup", function(event) {
+//     event.preventDefault();
+
+//     // While the event.target.value.length is not 3
+//     // display error message
+//     console.log(event.target.value);
+
+//     if (event.target.value.length !== 3) {
+//         $(document).ready(function () {
+//             $('#generic-error-modal').modal();
+//             $('#generic-error-modal').modal('open');
+//         });
+
+//     }
+// });
 
 var outboundDate1El = document.querySelector("#outbounddate1");
 var outboundDate2El = document.querySelector("#outbounddate2");
@@ -297,17 +316,21 @@ var getFlightData = function () {
                         var outBoundDate1Formatted = moment(outBoundDate1).format('YYYY-MM-DD');
                         // console.log("outBoundDate1Formatted " + outBoundDate1Formatted);
 
+
+                        if (jsonResponse.Quotes.length > 1) {
                         var outBoundDate2 = jsonResponse.Quotes[1].OutboundLeg.DepartureDate;
                         // console.log(outBoundDate2);
                         var outBoundDate2Formatted = moment(outBoundDate2).format('YYYY-MM-DD');
                         // console.log("outBoundDate2Formatted " + outBoundDate2Formatted);
+                        }
 
+
+                        if (jsonResponse.Quotes.length > 2) {
                         var outBoundDate3 = jsonResponse.Quotes[2].OutboundLeg.DepartureDate;
-                        // console.log(outBoundDate3);
+                        // console.log(outBoundDate3);       
                         var outBoundDate3Formatted = moment(outBoundDate3).format('YYYY-MM-DD');
                         // console.log("outBoundDate3Formatted " + outBoundDate3Formatted);
-
-
+                        }
 
 
                         //get inboundDates for the Quotes
@@ -323,11 +346,12 @@ var getFlightData = function () {
 
                         //get 3 carriers from the jsonResponse
                         var carrierID1 = jsonResponse.Quotes[0].OutboundLeg.CarrierIds[0];
-                        var carrierID2 = jsonResponse.Quotes[1].OutboundLeg.CarrierIds[0];
-                        var carrierID3 = jsonResponse.Quotes[2].OutboundLeg.CarrierIds[0];
                         console.log("carrierID1 " + carrierID1);
+                        var carrierID2 = jsonResponse.Quotes[1].OutboundLeg.CarrierIds[0];
                         console.log("carrierID2 " + carrierID2);
+                        var carrierID3 = jsonResponse.Quotes[2].OutboundLeg.CarrierIds[0];
                         console.log("carrierID3 " + carrierID3);
+        
 
 
 
@@ -372,8 +396,10 @@ var getFlightData = function () {
                         // console.log("$" + minPrice1);
                         minPrice2 = jsonResponse.Quotes[1].MinPrice;
                         // console.log("$" + minPrice2);
+
                         minPrice3 = jsonResponse.Quotes[2].MinPrice;
                         // console.log("$" + minPrice3);
+                        
 
 
 
@@ -477,6 +503,7 @@ var getFlightData = function () {
                 $(document).ready(function () {
                     $('#generic-error-modal').modal();
                     $('#generic-error-modal').modal('open');
+                    document.getElementById("generic-error-modal-p").innerHTML = "Error: " + response.statusText;
                 });
             }
         })
@@ -658,6 +685,7 @@ var getHotelData = function () {
                 $(document).ready(function () {
                     $('#generic-error-modal').modal();
                     $('#generic-error-modal').modal('open');
+                    document.getElementById("generic-error-modal-p").innerHTML = "Error: " + response.statusText;
                 });
             }
         })

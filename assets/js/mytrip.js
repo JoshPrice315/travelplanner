@@ -93,7 +93,8 @@ var getFlight1FromMyTrip = function () {
     if (startDateFlight1Display == "") {
 
         //adding class to remove the element from the page once the data is deleted from local storage
-        savedFlightCard1El.classList.add("hidden");
+        // savedFlightCard1El.classList.add("hidden");
+        flightRowIdEl.removeChild(savedFlightCard1El);
 
     }
     else {
@@ -179,7 +180,8 @@ var getFlight2FromMyTrip = function () {
     if (startDateFlight2Display == "") {
 
         //adding class to remove the element from the page once the data is deleted from local storage
-        savedFlightCard2El.classList.add("hidden");
+        // savedFlightCard2El.classList.add("hidden");
+        flightRowIdEl.removeChild(savedFlightCard2El);
 
     }
     else {
@@ -253,7 +255,8 @@ var getFlight3FromMyTrip = function () {
 
     if (startDateFlight3Display == "") {
         //adding class to remove the element from the page once the data is deleted from local storage
-        savedFlightCard3El.classList.add("hidden");
+        // savedFlightCard3El.classList.add("hidden");
+        flightRowIdEl.removeChild(savedFlightCard3El);
 
     }
     else {
@@ -378,7 +381,8 @@ var getHotel1FromMyTrip = function () {
 
     if (hotelName1Display == "") {
         //adding class to remove the element from the page once the data is deleted from local storage
-        savedHotelCard1El.classList.add("hidden");
+        // savedHotelCard1El.classList.add("hidden");
+        hotelRowIdEl.removeChild(savedHotelCard1El);
     }
     // get items from localStorage for each item above
 
@@ -412,7 +416,8 @@ var getHotel2FromMyTrip = function () {
 
     if (hotelName2Display == "") {
         //adding class to remove the element from the page once the data is deleted from local storage
-        savedHotelCard2El.classList.add("hidden");
+        // savedHotelCard2El.classList.add("hidden");
+        hotelRowIdEl.removeChild(savedHotelCard2El);
     }
     // get items from localStorage for each item above
     else {
@@ -445,7 +450,8 @@ var getHotel3FromMyTrip = function () {
 
     if (hotelName3Display == "") {
         //adding class to remove the element from the page once the data is deleted from local storage
-        savedHotelCard3El.classList.add("hidden");
+        // savedHotelCard3El.classList.add("hidden");
+        hotelRowIdEl.removeChild(savedHotelCard3El);
     }
     // get items from localStorage for each item above
     else {
