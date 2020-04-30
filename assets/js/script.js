@@ -60,6 +60,23 @@ var enddatepickerinputEl = document.querySelector("#datepicker-end-id");
 var fromLocationInputIdEl = document.querySelector("#from-location-input-id");
 var toLocationInputIdEl = document.querySelector("#to-location-input-id");
 
+// As the user enters letters into the input, leave an error message up until there are three characters typed in
+// toLocationInputIdEl.addEventListener("keyup", function(event) {
+//     event.preventDefault();
+
+//     // While the event.target.value.length is not 3
+//     // display error message
+//     console.log(event.target.value);
+
+//     if (event.target.value.length !== 3) {
+//         $(document).ready(function () {
+//             $('#generic-error-modal').modal();
+//             $('#generic-error-modal').modal('open');
+//         });
+
+//     }
+// });
+
 var outboundDate1El = document.querySelector("#outbounddate1");
 var outboundDate2El = document.querySelector("#outbounddate2");
 var outboundDate3El = document.querySelector("#outbounddate3");
@@ -299,24 +316,21 @@ var getFlightData = function () {
                         var outBoundDate1Formatted = moment(outBoundDate1).format('YYYY-MM-DD');
                         // console.log("outBoundDate1Formatted " + outBoundDate1Formatted);
 
+
+                        if (jsonResponse.Quotes.length > 1) {
                         var outBoundDate2 = jsonResponse.Quotes[1].OutboundLeg.DepartureDate;
                         // console.log(outBoundDate2);
                         var outBoundDate2Formatted = moment(outBoundDate2).format('YYYY-MM-DD');
                         // console.log("outBoundDate2Formatted " + outBoundDate2Formatted);
+                        }
 
+
+                        if (jsonResponse.Quotes.length > 2) {
                         var outBoundDate3 = jsonResponse.Quotes[2].OutboundLeg.DepartureDate;
                         // console.log(outBoundDate3);       
                         var outBoundDate3Formatted = moment(outBoundDate3).format('YYYY-MM-DD');
                         // console.log("outBoundDate3Formatted " + outBoundDate3Formatted);
-
-                        // if(jsonResponse.Quotes > 1) {
-                        //     var outBoundDate3 = jsonResponse.Quotes[2].OutboundLeg.DepartureDate;
-                        //     // console.log(outBoundDate3);       
-                        //     var outBoundDate3Formatted = moment(outBoundDate3).format('YYYY-MM-DD');
-                        //     // console.log("outBoundDate3Formatted " + outBoundDate3Formatted);
-                        //     }
-
-
+                        }
 
 
                         //get inboundDates for the Quotes
@@ -348,8 +362,6 @@ var getFlightData = function () {
                         console.log("destinationID2 " + destinationID2);
                         var destinationID3 = jsonResponse.Quotes[2].OutboundLeg.DestinationId;
                         console.log("destinationID3 " + destinationID3);
-        
-                        
 
 
 
