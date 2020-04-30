@@ -17,15 +17,6 @@ $(document).ready(function () {
     });
 });
 
-// // From Input 
-// $(document).ready(function () {
-//     $('.from-location-input-id').characterCounter();
-// });
-
-// // To Input 
-// $(document).ready(function () {
-//     $('.to-location-input-id').characterCounter();
-// });
 
 // Mobile Navi 
 $(document).ready(function () {
