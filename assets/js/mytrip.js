@@ -244,7 +244,7 @@ var getFlight2FromMyTrip = function () {
 var getFlight3FromMyTrip = function () {
 
 
-    //parse items from localStorage for Flight 1
+    //parse items from localStorage for Flight 3
     var startDateFlight3Display = JSON.parse(localStorage.getItem("startDateFlight3")) || "";
     var endDateFlight3Display = JSON.parse(localStorage.getItem("endDateFlight3")) || "";
     var fromLocationFlight3Display = JSON.parse(localStorage.getItem("fromLocationFlight3")) || "";
@@ -294,13 +294,13 @@ var getFlight3FromMyTrip = function () {
         var priceFlight3DisplayItem
         for (var i = 0; i < priceFlight3Display.length; i++) {
             priceFlight3DisplayItem = priceFlight3Display[0];
-            // console.log(priceFlight2DisplayItem);
+            // console.log(priceFlight3DisplayItem);
         }
 
         var directFlight3DisplayItem
         for (var i = 0; i < directFlight3Display.length; i++) {
             directFlight3DisplayItem = directFlight3Display[0];
-            // console.log(directFlight2DisplayItem);
+            // console.log(directFlight3DisplayItem);
         }
 
 
@@ -355,7 +355,7 @@ var removeFlight2FromMyTrip = function () {
 
 //function to remove items from localStorage on button click for the third flight
 var removeFlight3FromMyTrip = function () {
-    //remove items from localStorage for Flight 1
+    //remove items from localStorage for Flight 3
     localStorage.removeItem("startDateFlight3");
     localStorage.removeItem("endDateFlight3");
     localStorage.removeItem("fromLocationFlight3");
@@ -401,7 +401,7 @@ var getHotel1FromMyTrip = function () {
         for (var i = 0; i < hotelPrice1Display.length; i++) {
             hotelPrice1DisplayItem = hotelPrice1Display[0];
         }
-
+        // 
         document.getElementById("saved-hotel-name1").innerHTML = "Hotel Name: " + hotelName1DisplayItem;
         document.getElementById("saved-hotel-stars1").innerHTML = "Stars: " + hotelStars1DisplayItem;
         document.getElementById("saved-hotel-price1").innerHTML = "Price for stay: " + hotelPrice1DisplayItem;
@@ -409,7 +409,7 @@ var getHotel1FromMyTrip = function () {
 }
 
 var getHotel2FromMyTrip = function () {
-    // parse items from localStorage for Hotel 1
+    // parse items from localStorage for Hotel 2
     var hotelName2Display = JSON.parse(localStorage.getItem("nameArrayHotel2")) || "";
     var hotelStars2Display = JSON.parse(localStorage.getItem("starsArrayHotel2")) || "";
     var hotelPrice2Display = JSON.parse(localStorage.getItem("priceArrayHotel2")) || "";
@@ -443,7 +443,7 @@ var getHotel2FromMyTrip = function () {
 }
 
 var getHotel3FromMyTrip = function () {
-    // parse items from localStorage for Hotel 1
+    // parse items from localStorage for Hotel 3
     var hotelName3Display = JSON.parse(localStorage.getItem("nameArrayHotel3")) || "";
     var hotelStars3Display = JSON.parse(localStorage.getItem("starsArrayHotel3")) || "";
     var hotelPrice3Display = JSON.parse(localStorage.getItem("priceArrayHotel3")) || "";
