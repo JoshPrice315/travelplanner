@@ -321,21 +321,31 @@ var getFlightData = function () {
             //get 3 carriers from the jsonResponse
             var carrierID1 = jsonResponse.Quotes[0].OutboundLeg.CarrierIds[0];
             // console.log("carrierID1 " + carrierID1);
+
+            if (jsonResponse.Quotes.length > 1) {
             var carrierID2 = jsonResponse.Quotes[1].OutboundLeg.CarrierIds[0];
             // console.log("carrierID2 " + carrierID2);
+            }
+
+            if (jsonResponse.Quotes.length > 2) {
             var carrierID3 = jsonResponse.Quotes[2].OutboundLeg.CarrierIds[0];
             // console.log("carrierID3 " + carrierID3);
+            }
 
             //get places(airports codes)
-            var destinationID1 =
-              jsonResponse.Quotes[0].OutboundLeg.DestinationId;
+            var destinationID1 = jsonResponse.Quotes[0].OutboundLeg.DestinationId;
             // console.log("destinationID1 " + destinationID1);
-            var destinationID2 =
-              jsonResponse.Quotes[1].OutboundLeg.DestinationId;
+
+            if (jsonResponse.Quotes.length > 1) {
+            var destinationID2 = jsonResponse.Quotes[1].OutboundLeg.DestinationId;
             // console.log("destinationID2 " + destinationID2);
-            var destinationID3 =
-              jsonResponse.Quotes[2].OutboundLeg.DestinationId;
+            }
+
+            if (jsonResponse.Quotes.length > 2) {
+            var destinationID3 = jsonResponse.Quotes[2].OutboundLeg.DestinationId;
             // console.log("destinationID3 " + destinationID3);
+            }
+
 
             //match up the places ID with the Quote Place ID
             var destinationAirportCode1;
