@@ -328,24 +328,18 @@ var getFlightData = function () {
 
             for (var i = 0; i < jsonResponse.Places.length; i++) {
               var destinationAirportCodes = jsonResponse.Places[i];
-              console.log(destinationAirportCodes);
+            //   console.log(destinationAirportCodes);
               if (destinationID1 === destinationAirportCodes.PlaceId) {
                 destinationAirportCode1 = destinationAirportCodes.IataCode;
-                console.log(
-                  "destinationAirportCode1 " + destinationAirportCode1
-                );
+                // console.log("destinationAirportCode1 " + destinationAirportCode1);
               }
               if (destinationID2 === destinationAirportCodes.PlaceId) {
                 destinationAirportCode2 = destinationAirportCodes.IataCode;
-                console.log(
-                  "destinationAirportCode2 " + destinationAirportCode2
-                );
+                // console.log("destinationAirportCode2 " + destinationAirportCode2);
               }
               if (destinationID3 === destinationAirportCodes.PlaceId) {
                 destinationAirportCode3 = destinationAirportCodes.IataCode;
-                console.log(
-                  "destinationAirportCode3 " + destinationAirportCode3
-                );
+                // console.log("destinationAirportCode3 " + destinationAirportCode3);
               }
             }
 
@@ -368,15 +362,15 @@ var getFlightData = function () {
               // console.log(carriers);
               if (carrierID1 === carriers.CarrierId) {
                 carrierName1 = carriers.Name;
-                console.log("carrierName1 " + carrierName1);
+                // console.log("carrierName1 " + carrierName1);
               }
               if (carrierID2 === carriers.CarrierId) {
                 carrierName2 = carriers.Name;
-                console.log("carrierName2 " + carrierName2);
+                // console.log("carrierName2 " + carrierName2);
               }
               if (carrierID3 === carriers.CarrierId) {
                 carrierName3 = carriers.Name;
-                console.log("carrierName3 " + carrierName3);
+                // console.log("carrierName3 " + carrierName3);
               }
             }
 
