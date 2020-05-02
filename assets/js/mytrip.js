@@ -48,9 +48,6 @@ var savedFlightCard3El = document.querySelector("#saved-flight-card-3");
 var flightRowIdEl = document.querySelector("#row-id");
 var hotelRowIdEl = document.querySelector("#hotel-row-id");
 
-
-//changes from Josh
-// hotel save variables 
 var savedHotelName1El = document.querySelector("#saved-hotel-name1");
 var savedHotelName2El = document.querySelector("#saved-hotel-name2");
 var savedHotelName3El = document.querySelector("#saved-hotel-name3");
@@ -62,7 +59,6 @@ var savedHotelStars3El = document.querySelector("#saved-hotel-stars3");
 var savedHotelPrice1El = document.querySelector("#saved-hotel-price1");
 var savedHotelPrice2El = document.querySelector("#saved-hotel-price2");
 var savedHotelPrice3El = document.querySelector("#saved-hotel-price3");
-
 
 var removeHotel1buttonEl = document.querySelector("#removeHotel1button");
 var removeHotel2buttonEl = document.querySelector("#removeHotel2button");
@@ -145,7 +141,7 @@ var getFlight1FromMyTrip = function () {
 
 
 
-
+        //display data from LocalStorage onto the page
         document.getElementById("saved-outbounddate1").innerHTML = "Outbound: " + startDateFlight1DisplayItem;
         document.getElementById("saved-inbounddate1").innerHTML = "Inbound: " + endDateFlight1DisplayItem;
         document.getElementById("saved-origin1").innerHTML = "Origin: " + fromLocationFlight1DisplayItem;
@@ -227,6 +223,8 @@ var getFlight2FromMyTrip = function () {
             // console.log(directFlight2DisplayItem);
         }
 
+
+        //display data from LocalStorage onto the page
         document.getElementById("saved-outbounddate2").innerHTML = "Outbound: " + startDateFlight2DisplayItem;
         document.getElementById("saved-inbounddate2").innerHTML = "Inbound: " + endDateFlight2DisplayItem;
         document.getElementById("saved-origin2").innerHTML = "Origin: " + fromLocationFlight2DisplayItem;
@@ -305,7 +303,7 @@ var getFlight3FromMyTrip = function () {
 
 
 
-
+        //display data from LocalStorage onto the page
         document.getElementById("saved-outbounddate3").innerHTML = "Outbound: " + startDateFlight3DisplayItem;
         document.getElementById("saved-inbounddate3").innerHTML = "Inbound: " + endDateFlight3DisplayItem;
         document.getElementById("saved-origin3").innerHTML = "Origin: " + fromLocationFlight3DisplayItem;
@@ -401,7 +399,9 @@ var getHotel1FromMyTrip = function () {
         for (var i = 0; i < hotelPrice1Display.length; i++) {
             hotelPrice1DisplayItem = hotelPrice1Display[0];
         }
-        // 
+
+
+        //display data from LocalStorage onto the page
         document.getElementById("saved-hotel-name1").innerHTML = "Hotel Name: " + hotelName1DisplayItem;
         document.getElementById("saved-hotel-stars1").innerHTML = "Stars: " + hotelStars1DisplayItem;
         document.getElementById("saved-hotel-price1").innerHTML = "Price for stay: " + hotelPrice1DisplayItem;
@@ -436,6 +436,8 @@ var getHotel2FromMyTrip = function () {
             hotelPrice2DisplayItem = hotelPrice2Display[0];
         }
 
+
+        //display data from LocalStorage onto the page
         document.getElementById("saved-hotel-name2").innerHTML = "Hotel Name: " + hotelName2DisplayItem;
         document.getElementById("saved-hotel-stars2").innerHTML = "Stars: " + hotelStars2DisplayItem;
         document.getElementById("saved-hotel-price2").innerHTML = "Price for stay: " + hotelPrice2DisplayItem;
@@ -470,6 +472,8 @@ var getHotel3FromMyTrip = function () {
             hotelPrice3DisplayItem = hotelPrice3Display[0];
         }
 
+
+        //display data from LocalStorage onto the page
         document.getElementById("saved-hotel-name3").innerHTML = "Hotel Name: " + hotelName3DisplayItem;
         document.getElementById("saved-hotel-stars3").innerHTML = "Stars: " + hotelStars3DisplayItem;
         document.getElementById("saved-hotel-price3").innerHTML = "Price for stay: " + hotelPrice3DisplayItem;
@@ -510,6 +514,7 @@ var removeHotel3FromMyTrip = function () {
 
 
 
+//function calls
 getFlight1FromMyTrip();
 getFlight2FromMyTrip();
 getFlight3FromMyTrip();

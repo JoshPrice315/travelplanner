@@ -26,6 +26,12 @@ This website is available live on: [GitHub.io](https://izabelacloud.github.io/Tr
 ## Versioning
 We use GitHub (https://github.com/) for versioning. For the versions available, see the [Travel Planner](https://github.com/izabelacloud/Travel-Planner).
 
+## Considerations 
+1. The API is considering the UTC time, therefore some flights searched for for the same date might return an error as the UTC time might be already progressed. Please use future date for flight search.
+1. The data returned from the flight API is inconsistent for the origin at times causing that the origin shows the destination city. This has been noticed when searching for NYC.
+1. Search is enabled for City codes rather than Airport code (examples: NYC instead of JFK for NYC). Testing was successful for SFO, NYC, MIA, ATL, SEA.
+
+
 ## Website Preview
 
 ![Travel Planner - Header](https://github.com/izabelacloud/Travel-Planner/blob/master/assets/images/App1.png?raw=true)

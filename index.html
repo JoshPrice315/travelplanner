@@ -15,17 +15,23 @@
     <nav>
         <div class="nav-wrapper #01579b light-blue darken-4">
             <a href="index.html" class="brand-logo"><span class="logo">Travel Planner</span></a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons"
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons"   
                     id="menu-icon">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="mytrips.html" class="waves-effect waves-light btn #424242 grey darken-3">My Trip</a></li>
+                <li>
+                    <a href="mytrips.html" class="waves-effect waves-light btn #424242 grey darken-3">My Trip
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>
 
     <!-- Mobile Nav -->
     <ul class="sidenav" id="mobile-demo">
-        <li><a href="mytrips.html" class="waves-effect waves-light btn #424242 grey darken-3">My Trip</a></li>
+        <li>
+            <a href="mytrips.html" class="waves-effect waves-light btn #424242 grey darken-3">My Trip
+            </a>
+        </li>
     </ul>
 
     <main>
@@ -44,7 +50,7 @@
 
         <!-- Inputs -->
         <div class="container">
-            <!-- Start Date / End Date Input -->
+            <!-- Start Date Input -->
             <div class="row" id="valueinputform">
                 <form class="col s12 m12 l2">
                     <div class="dates">
@@ -52,29 +58,33 @@
                         <input type="text" class="datepicker-start" id="datepicker-start-id" required placeholder="Select Date">
                     </div>
                 </form>
- 
+                
+             <!-- End Date Input -->
                 <form class="col s12 m12 l2" id="enddateinputform">
                     <div class="dates">
                         <label for="datepicker-end">End Date</label>
                         <input type="text" class="datepicker-end" id="datepicker-end-id" required placeholder="Select Date">
                     </div>
                 </form>
+
+            <!--  Search From City Code -->
                 <div class="input-field col s12 m12 l3">
                     <i class="material-icons prefix">add_location</i>
                     <input type="text" class="current" style="text-transform:uppercase" id="from-location-input-id" name="from-input" maxlength="3" minlength="3" placeholder="City Code" required onkeyup="this.value=this.value.toUpperCase()">
                     <label for="icon_from_location">From</label>
                 </div>
 
+            <!--  Search To City Code -->
                 <div class="input-field col s12 m12 l3">
                     <i class="material-icons prefix">add_location</i>
                     <input type="text" class="destination" style="text-transform:uppercase" id="to-location-input-id" name="to-input" maxlength="3" minlength="3" placeholder="City Code" required onkeyup="this.value=this.value.toUpperCase()">
                     <label for="icon_to_location">To</label>
                 </div>
 
+            <!--  Search Button -->
                 <div class="input-field col s12 m12 l2">
-                    <button class="btn waves-effect waves-light #01579b light-blue darken-4" type="submit"
-                        id="search-button">Search
-                        <i class="material-icons right">done</i>
+                    <button class="btn waves-effect waves-light #01579b light-blue darken-4" type="submit" id="search-button">Search
+                    <i class="material-icons right">done</i>
                     </button>
                 </div>
 
@@ -84,12 +94,12 @@
 
         <!-- Body Cards -->
         <div class="container hidden" id="hidden">
-            <!-- Flight Card -->
+            <!-- Flight Cards -->
             <div class="row" id="title">
                 <h4 class="flight-title #01579b light-blue darken-4 white-text"><i
                         class="material-icons left">flight</i>Your Recommended Flights</h2>
                 </div>
-
+            <!-- Flight Card 1 -->
             <div class="row" id="flights">
                 <div class="col s12 m12 l4">
                     <div class="card">
@@ -109,7 +119,7 @@
                         </div>
                     </div>
                 </div>
-
+            <!-- Flight Card 2 -->
                 <div class="col s12 m12 l4">
                     <div class="card">
                         <span class="card-title">Flight #2</span>
@@ -127,7 +137,7 @@
                         </div>
                     </div>
                 </div>
-
+            <!-- Flight Card 3 -->
                 <div class="col s12 m12 l4">
                     <div class="card">
                         <span class="card-title">Flight #3</span>
@@ -147,45 +157,48 @@
                 </div>
             </div>
 
-            <!-- Hotel Card -->
+            <!-- Hotel Cards -->
             <div class="row" id="title">
                 <h4 class="hotel-title #01579b light-blue darken-4 white-text"><i
                         class="material-icons left">hotel</i>Your Recommended Hotels</h2>
             </div>
-
+            <!-- Hotel Card 1 -->
             <div class="row" id="hotels">
                 <div class="col s12 m12 l4">
                     <div class="card">
                         <span class="card-title">Hotel #1</span>
                         <div id="hotelinfo1div">
-                            <a class="btn-floating halfway-fab waves-effect waves-light #01579b light-blue darken-4"><i
-                                    class="material-icons hotel-1-btn" id="hotel1button" type="submit">add</i></a>
+                            <a class="btn-floating halfway-fab waves-effect waves-light #01579b light-blue darken-4">
+                                <i class="material-icons hotel-1-btn" id="hotel1button" type="submit">add</i>
+                            </a>
                             <h6 id="hotelID1">Hotel Name:</h6>
                             <h6 id="hotelStars1">Stars:</h6>
                             <h6 id="hotelPrice1">Price:</h6>
                         </div>
                     </div>
                 </div>
-
+            <!-- Hotel Card 2 -->
                 <div class="col s12 m12 l4">
                     <div class="card">
                         <span class="card-title">Hotel #2</span>
                         <div id="hotelinfo2div">
-                            <a class="btn-floating halfway-fab waves-effect waves-light #01579b light-blue darken-4"><i
-                                    class="material-icons hotel-2-btn" id="hotel2button" type="submit">add</i></a>
+                            <a class="btn-floating halfway-fab waves-effect waves-light #01579b light-blue darken-4">
+                                <i class="material-icons hotel-2-btn" id="hotel2button" type="submit">add</i>
+                            </a>
                             <h6 id="hotelID2">Hotel Name:</h6>
                             <h6 id="hotelStars2">Stars:</h6>
                             <h6 id="hotelPrice2">Price:</h6>
                         </div>
                     </div>
                 </div>
-
+            <!-- Hotel Card 3 -->
                 <div class="col s12 m12 l4">
                     <div class="card">
                         <span class="card-title">Hotel #3</span>
                         <div id="hotelinfo3div">
-                            <a class="btn-floating halfway-fab waves-effect waves-light #01579b light-blue darken-4"><i
-                                    class="material-icons hotel-3-btn" id="hotel3button" type="submit">add</i></a>
+                            <a class="btn-floating halfway-fab waves-effect waves-light #01579b light-blue darken-4">
+                                <i class="material-icons hotel-3-btn" id="hotel3button" type="submit">add</i>
+                            </a>
                             <h6 id="hotelID3">Hotel Name:</h6>
                             <h6 id="hotelStars3">Stars:</h6>
                             <h6 id="hotelPrice3">Price:</h6>
@@ -218,8 +231,7 @@
                 <p id="city-date-modal-p">Please select a different date or city combination.</p>
             </div>
             <div class="modal-footer">
-                <a href="#!"
-                    class="modal-action modal-close btn waves-effect waves-light #01579b light-blue darken-4">Ok</a>
+                <a href="#!" class="modal-action modal-close btn waves-effect waves-light #01579b light-blue darken-4">Ok</a>
             </div>
         </div>
 
